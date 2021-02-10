@@ -3,7 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheetManager } from 'styled-components';
 import { GlobalStyle } from '../styles/global-styles';
 
-import HomePreview from "./preview-templates/HomePreview";
+import HomeBannerPreview from "./preview-templates/HomeBannerPreview";
+import ServicesPreview from "./preview-templates/ServicesPreview";
+import ClientsPreview from "./preview-templates/ClientsPreview";
+import HomeWorksPreview from "./preview-templates/HomeWorksPreview";
+import TestimonialsPreview from "./preview-templates/TestimonialsPreview";
+import FooterPreview from "./preview-templates/FooterPreview"
 
 function StyleInjector({ children }) {
   const [iframeRef, setIframeRef] = useState(null);
@@ -33,4 +38,9 @@ export default function withStyledComponentsRendered(Comp) {
   );
 }
 
-CMS.registerPreviewTemplate("home", withStyledComponentsRendered(HomePreview));
+CMS.registerPreviewTemplate("homeBanner", withStyledComponentsRendered(HomeBannerPreview));
+CMS.registerPreviewTemplate("homeServices", withStyledComponentsRendered(ServicesPreview));
+CMS.registerPreviewTemplate("homeClients", withStyledComponentsRendered(ClientsPreview));
+CMS.registerPreviewTemplate("homeWorks", withStyledComponentsRendered(HomeWorksPreview));
+CMS.registerPreviewTemplate("testimonials", withStyledComponentsRendered(TestimonialsPreview));
+CMS.registerPreviewTemplate("footer", withStyledComponentsRendered(FooterPreview));

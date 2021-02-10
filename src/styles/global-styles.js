@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
   -webkit-font-smoothing: antialiased;
   overflow-y: auto;
   scroll-behavior: smooth;
+  letter-spacing: 0.05em;
   }
 
   body {
@@ -105,21 +106,21 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
-    font-weight: 600;
-    font-size: 26px;
-    line-height: 39px;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 52px;
     color: ${palette.PRIMARY_TXT_COLOR};
   }
 
   h3 {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 30px;
-    color: ${palette.PRIMARY_TXT_COLOR};
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 31px;
+    color: ${palette.SECONDARY_TXT_COLOR};
   }
 
   h4 {
-    font-weight: 600;
+    font-weight: bold;
     font-size: 18px;
     line-height: 27px;
   }
@@ -137,9 +138,9 @@ export const GlobalStyle = createGlobalStyle`
   p {
     font-family: ${palette.CONTENT_FONT_FAMILY};
     font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
-    color: ${palette.PRIMARY_TXT_COLOR};
+    font-size: 16px;
+    line-height: 26px;
+    color: ${palette.SECONDARY_TXT_COLOR};
   }
   
   .ant-message-notice {
@@ -243,34 +244,40 @@ export const GlobalStyle = createGlobalStyle`
     border: initial !important;
   }
   .ant-btn {
-    border-radius: 8px;
+    border-radius: 100px;
     font-weight: normal;
-    font-size: 15px;
-    line-height: 22px;
-    color: ${palette.PRIMARY_TXT_COLOR};
+    font-size: 14px;
+    line-height: 16px;
+    color: ${palette.WHITE_COLOR};
     padding: 12px 24px;
-    height: 46px;
-    border: 1px solid ${palette.COLOR_DENIM};
+    height: 44px;
+    border: 2px solid ${palette.BUTTON_PRIMARY};
+    box-shadow: none;
+    text-transform: uppercase;
+    background-color: ${palette.BLACK_COLOR};
     &.active, &:hover, &:focus {
-      color: ${palette.PRIMARY_TXT_COLOR} !important;
-      border-color: ${palette.COLOR_DENIM} !important;
+      color: ${palette.WHITE_COLOR} !important;
+      border-color: ${palette.BUTTON_PRIMARY} !important;
+      background-color: ${palette.BUTTON_PRIMARY} !important;
     }
     &:hover {
-      background-color: ${palette.BUTTON_HOVER} !important;
-      border-color: ${palette.BUTTON_HOVER} !important;
+      background-color: ${palette.BUTTON_PRIMARY} !important;
+      border-color: ${palette.BUTTON_PRIMARY} !important;
       color: ${palette.WHITE_COLOR} !important;
-      box-shadow: 0px 0px 0px 5px rgba(24,144,255, 0.1) !important
+      box-shadow: none !important;
     }
   }
   .ant-btn-primary {
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: bold;
+    font-size: 18px;
     line-height: 21px;
-    height: 38px;
-    padding: 8px 28px;
+    height: 54px;
+    padding: 8px 24px;
+    letter-spacing: 0.05em;
     background-color: ${palette.BUTTON_PRIMARY} !important;
     border-color: ${palette.BUTTON_PRIMARY} !important;
     color: ${palette.WHITE_COLOR} !important;
+    text-transform: capitalize;
     &.active, &:hover, &:focus {
       color: ${palette.WHITE_COLOR} !important;
       border-color: ${palette.BUTTON_PRIMARY} !important;

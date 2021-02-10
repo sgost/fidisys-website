@@ -3,16 +3,126 @@ backend:
 
 publish_mode: editorial_workflow
 
-media_folder: 'assets'
+media_folder: 'src/data/assets'
 public_folder: '/'
 
 collections:
   - label: Home
     name: home
     files:
-      - label: Home
-        name: home
-        file: 'home.md'
+      - label: Banner
+        name: homeBanner
+        file: 'src/data/home/banner.md'
+        public_folder: '../assets'
+        fields:
+          - { label: Description, name: description }
+          - { label: Image, name: image, widget: image }
+      - label: Services
+        name: homeServices
+        file: 'src/data/home/services.md'
+        public_folder: '../assets'
         fields:
           - { label: Title, name: title }
           - { label: Description, name: description }
+          - label: Services
+            name: services
+            widget: list
+            fields:
+              - { label: Title, name: title }
+              - { label: Image, name: image, widget: image }
+      - label: Clients
+        name: homeClients
+        file: 'src/data/home/clients.md'
+        public_folder: '../assets'
+        fields:
+          - { label: Title, name: title }
+          - { label: Description, name: description }
+          - label: Clients
+            name: clients
+            widget: list
+            fields:
+              - { label: ID, name: id, widget: number }
+              - { label: Title, name: title }
+              - { label: Image, name: image, widget: image }
+      - label: Works
+        name: homeWorks
+        file: 'src/data/home/works.md'
+        public_folder: '../assets'
+        fields:
+          - { label: Title, name: title }
+          - label: Works
+            name: works
+            widget: list
+            fields:
+              - { label: ID, name: id, widget: number }
+              - { label: Title, name: title }
+              - { label: Description, name: description }
+              - { label: Link, name: link }
+              - { label: Image, name: image, widget: image }
+  - label: Testimonials
+    name: testimonials
+    files:
+      - label: Testimonials
+        name: testimonials
+        file: 'testimonials.md'
+        public_folder: './assets'
+        fields:
+          - { label: Title, name: title }
+          - label: Customers
+            name: customers
+            widget: list
+            fields:
+              - { label: id, name: id, widget: number }
+              - { label: Name, name: name }
+              - { label: Message, name: message }
+              - { label: Comment, name: comment }
+              - { label: Role, name: role }
+              - { label: Company, name: company }
+              - { label: Image, name: image, widget: image }
+  - name: blog
+    label: Blog
+    label_singular: 'Blog'
+    folder: blog
+    slug: '{{slug}}'
+    create: true
+    media_folder: ''
+    public_folder: ''
+    nested:
+      depth: 100
+      summary: '{{title}}'
+    fields:
+      - { name: author_image, label: Author Image, widget: image }
+      - { name: author, label: Author }
+      - { name: bio, label: Bio }
+      - { name: title, label: Title }
+      - { name: date, label: Date, widget: date, default: ''}
+      - { name: previewImage, label: Preview Image, widget: image }
+      - { name: excerpt, label: Excerpt }
+      - { name: tags, label: Tags, widget: list }
+      - { name: body, label: Body, widget: markdown }
+      - label: SEO
+        name: seo
+        widget: object
+        fields:
+          - { name: title, label: Title }
+          - { name: description, label: Description }
+          - { name: keywords, label: Keywords, widget: list }
+  - label: Footer
+    name: footer
+    files:
+      - label: Footer
+        name: footer
+        file: 'footer.md'
+        public_folder: './assets'
+        fields:
+          - { label: Title, name: title }
+          - { label: Image, name: image, widget: image }
+          - label: Media Links
+            name: mediaLinks
+            widget: list
+            fields:
+              - { label: id, name: id, widget: number }
+              - { label: Title, name: title }
+              - { label: Link, name: link }
+              - { label: Image, name: image, widget: image }
+          - { label: Copyright, name: copyright }

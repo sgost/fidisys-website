@@ -1,5 +1,6 @@
 backend:
-  name: test-repo
+  name: gitlab
+  repo: fidisys/website/web-revamp
 
 publish_mode: editorial_workflow
 
@@ -157,3 +158,28 @@ collections:
           - { label: HelpText, name: helpText }
           - { label: Image, name: image, widget: image }
           - { name: body, label: Body, widget: markdown }
+  - label: About
+    name: about
+    files:
+      - label: Banner
+        name: aboutBanner
+        file: 'src/data/about/banner.md'
+        public_folder: '../assets'
+        fields:
+          - { label: Description, name: description }
+          - { label: Image, name: image, widget: image }
+      - label: Highlights
+        name: highlights
+        file: 'src/data/about/highlights.md'
+        public_folder: '../assets'
+        fields:
+          - { label: Title, name: title }
+          - { label: Description, name: description }
+          - label: Highlights
+            name: highlights
+            widget: list
+            fields:
+              - { label: id, name: id, widget: number }
+              - { label: Title, name: title }
+              - { label: Count, name: count }
+              - { label: Image, name: image, widget: image }

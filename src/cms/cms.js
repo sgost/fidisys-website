@@ -14,6 +14,9 @@ import TechBannerPreview from "./preview-templates/TechBannerPreview";
 import ToolsPreview from "./preview-templates/TechToolsPreview";
 import PartnerPreview from "./preview-templates/PartnerPreview";
 
+import AboutBannerPreview from "./preview-templates/AboutBannerPreview";
+import HighlightsPreview from "./preview-templates/HighlightsPreview";
+
 function StyleInjector({ children }) {
   const [iframeRef, setIframeRef] = useState(null);
 
@@ -52,3 +55,6 @@ CMS.registerPreviewTemplate("footer", withStyledComponentsRendered(FooterPreview
 CMS.registerPreviewTemplate("techBanner", withStyledComponentsRendered(TechBannerPreview));
 CMS.registerPreviewTemplate("techTools", withStyledComponentsRendered(ToolsPreview));
 CMS.registerPreviewTemplate("partnership", withStyledComponentsRendered(PartnerPreview));
+
+CMS.registerPreviewTemplate("aboutBanner", withStyledComponentsRendered(AboutBannerPreview));
+CMS.registerPreviewTemplate("highlights", withStyledComponentsRendered(HighlightsPreview));

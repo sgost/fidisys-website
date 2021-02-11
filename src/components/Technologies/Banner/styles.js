@@ -11,8 +11,8 @@ export const BannerTitle = styled.div`
   font-size: 72px;
   line-height: 86px;
   color: ${palette.PRIMARY_TXT_COLOR};
-  padding: 0px 30px 50px;
-  max-width: 990px;
+  padding: 0px 30px 70px;
+  max-width: 1200px;
   margin: 0 auto;
 `;
 

@@ -123,6 +123,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: bold;
     font-size: 18px;
     line-height: 27px;
+    color: ${palette.SECONDARY_TXT_COLOR};
   }
 
   h5 {

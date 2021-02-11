@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { ServicesSection } from "../../components/home/Services";
+import { ServicesSection } from "../../components/Home/Services";
 
 const ServicesPreview = ({ entry, widgetFor, getAsset }) => {
 

@@ -126,3 +126,34 @@ collections:
               - { label: Link, name: link }
               - { label: Image, name: image, widget: image }
           - { label: Copyright, name: copyright }
+  - label: Technologies
+    name: technologies
+    files:
+      - label: Banner
+        name: techBanner
+        file: 'src/data/technologies/banner.md'
+        public_folder: '../assets'
+        fields:
+          - { label: Description, name: description }
+          - { label: Image, name: image, widget: image }
+      - label: Tools
+        name: techTools
+        file: 'src/data/technologies/tools.md'
+        public_folder: '../assets'
+        fields:
+          - { label: Title, name: title }
+          - label: Tools
+            name: tools
+            widget: list
+            fields:
+              - { label: Title, name: title }
+              - { label: Image, name: image, widget: image }
+      - label: Partnership
+        name: partnership
+        file: 'src/data/technologies/partner.md'
+        public_folder: '../assets'
+        fields:
+          - { label: Title, name: title }
+          - { label: HelpText, name: helpText }
+          - { label: Image, name: image, widget: image }
+          - { name: body, label: Body, widget: markdown }

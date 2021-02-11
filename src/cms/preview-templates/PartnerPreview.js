@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { HomeBannerSection } from "../../components/Home/Banner";
+import { PartnerSection } from "../../components/Technologies/Partner";
 
-const HomeBannerPreview = ({ entry, widgetFor, getAsset }) => {
+const PartnerPreview = ({ entry, widgetFor, getAsset }) => {
 
   const data = entry.getIn(["data"]).toJS();
 
@@ -15,19 +15,21 @@ const HomeBannerPreview = ({ entry, widgetFor, getAsset }) => {
   }
 
   return (
-    <HomeBannerSection
-      description={data.description}
+    <PartnerSection
+      helpText={data.helpText}
       image={bannerImage}
+      html={widgetFor('body')}
+      preview={true}
     />
   );
 
 };
 
-HomeBannerPreview.propTypes = {
+PartnerPreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   getAsset: PropTypes.func,
 };
 
-export default HomeBannerPreview;
+export default PartnerPreview;

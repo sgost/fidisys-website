@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { HomeBannerSection } from "../../components/Home/Banner";
+import { TechBannerSection } from "../../components/Technologies/Banner";
 
-const HomeBannerPreview = ({ entry, widgetFor, getAsset }) => {
+const TechBannerPreview = ({ entry, widgetFor, getAsset }) => {
 
   const data = entry.getIn(["data"]).toJS();
 
@@ -15,19 +15,20 @@ const HomeBannerPreview = ({ entry, widgetFor, getAsset }) => {
   }
 
   return (
-    <HomeBannerSection
+    <TechBannerSection
       description={data.description}
       image={bannerImage}
+      preview={true}
     />
   );
 
 };
 
-HomeBannerPreview.propTypes = {
+TechBannerPreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   getAsset: PropTypes.func,
 };
 
-export default HomeBannerPreview;
+export default TechBannerPreview;

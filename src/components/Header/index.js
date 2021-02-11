@@ -27,7 +27,7 @@ const Header = props => {
               <Link to="/">Work</Link>
             </NavLink>
             <NavLink key="technologies">
-              <Link to="/">Technologies</Link>
+              <Link to="/technologies/" activeClassName="activeLink">Technologies</Link>
             </NavLink>
             <NavLink key="about">
               <Link to="/">About</Link>

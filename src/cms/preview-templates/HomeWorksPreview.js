@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { WorksSection } from "../../components/home/Works";
+import { WorksSection } from "../../components/Home/Works";
 
 const HomeWorksPreview = ({ entry, widgetFor, getAsset }) => {
 

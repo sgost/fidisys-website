@@ -8,7 +8,11 @@ import ServicesPreview from "./preview-templates/ServicesPreview";
 import ClientsPreview from "./preview-templates/ClientsPreview";
 import HomeWorksPreview from "./preview-templates/HomeWorksPreview";
 import TestimonialsPreview from "./preview-templates/TestimonialsPreview";
-import FooterPreview from "./preview-templates/FooterPreview"
+import FooterPreview from "./preview-templates/FooterPreview";
+
+import TechBannerPreview from "./preview-templates/TechBannerPreview";
+import ToolsPreview from "./preview-templates/TechToolsPreview";
+import PartnerPreview from "./preview-templates/PartnerPreview";
 
 function StyleInjector({ children }) {
   const [iframeRef, setIframeRef] = useState(null);
@@ -44,3 +48,7 @@ CMS.registerPreviewTemplate("homeClients", withStyledComponentsRendered(ClientsP
 CMS.registerPreviewTemplate("homeWorks", withStyledComponentsRendered(HomeWorksPreview));
 CMS.registerPreviewTemplate("testimonials", withStyledComponentsRendered(TestimonialsPreview));
 CMS.registerPreviewTemplate("footer", withStyledComponentsRendered(FooterPreview));
+
+CMS.registerPreviewTemplate("techBanner", withStyledComponentsRendered(TechBannerPreview));
+CMS.registerPreviewTemplate("techTools", withStyledComponentsRendered(ToolsPreview));
+CMS.registerPreviewTemplate("partnership", withStyledComponentsRendered(PartnerPreview));

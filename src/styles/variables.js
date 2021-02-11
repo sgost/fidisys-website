@@ -11,6 +11,7 @@ export const COCONUT_WHITE = '#FDFDFD';
 export const COD_GRAY = '#0C0C0C';
 export const ROSE_WHITE = '#FFFDFD';
 export const SILVER = '#C4C4C4';
+export const RED_ORANGE = '#FC3838';
 
 export const ACCENT_PORTICA = '#F5DA7D';
 export const ACCENT_TEAL = '#98E5E0';

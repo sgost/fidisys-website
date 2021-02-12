@@ -12,7 +12,7 @@ import {
 
 const Header = props => {
   return (
-    <HeaderContainer>
+    <HeaderContainer id="header">
       <LogoContainer>
         <h1>
           <Link to="/">

@@ -3,7 +3,7 @@ import * as palette from '../../../styles/variables';
 
 export const SectionContainer = styled.section`
   padding: 60px;
-  background: ${palette.BLACK_COLOR};
+  background: #0D0E12;
   @media only screen and (max-width: 768px) {
     padding: 30px;
   }

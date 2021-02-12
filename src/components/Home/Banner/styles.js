@@ -2,10 +2,13 @@ import styled from 'styled-components';
 import * as palette from '../../../styles/variables';
 
 export const BannerSection = styled.section`
-  padding: 0px 70px 60px;
+  padding: 0px 70px 50px;
   background: ${palette.BLACK_COLOR};
   @media only screen and (max-width: 768px) {
-    padding: 0px 30px 30px;
+    padding: 30px 30px;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
+    padding: 40px 70px 50px;
   }
   .rowContainer {
     align-items: center;

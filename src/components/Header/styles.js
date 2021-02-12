@@ -9,15 +9,19 @@ export const HeaderContainer = styled.header`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 28px 100px;
+  padding: 18px 100px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
   @media only screen and (min-width: 768px) and (max-width: 992px) {
-    padding: 28px 30px;
+    padding: 18px 30px;
   }
   @media only screen and (min-width: 992px) and (max-width: 1200px) {
-    padding: 28px 80px;
+    padding: 18px 80px;
   }
   @media (max-width: 768px) {
-    padding: 28px 0px;
+    padding: 18px 0px;
     flex-direction: column;
     justify-content: center;
   }

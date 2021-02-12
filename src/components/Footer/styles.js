@@ -3,7 +3,7 @@ import * as palette from '../../styles/variables';
 
 export const SectionContainer = styled.footer`
   padding: 75px;
-  background-color: ${palette.SECONDARY_SECTION_BACKGROUND};
+  background-color: ${palette.BLACK_COLOR};
   display: flex;
   flex-direction: column;
   justify-content: space-between;

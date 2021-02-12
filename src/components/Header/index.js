@@ -24,7 +24,7 @@ const Header = props => {
         <NavBarContainer >
           <NavLinkContainer>
             <NavLink key="work">
-              <Link to="/">Work</Link>
+              <Link to="/works/" activeClassName="activeLink">Work</Link>
             </NavLink>
             <NavLink key="technologies">
               <Link to="/technologies/" activeClassName="activeLink">Technologies</Link>

@@ -42,8 +42,6 @@ const Articles = ({ data }) => {
     }
   `);
 
-  console.log(posts);
-
   return (
     <SectionContainer>
       <SectionHeading>

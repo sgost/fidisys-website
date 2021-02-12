@@ -204,3 +204,34 @@ collections:
           - { label: Title, name: title }
           - { label: Description, name: description }
           - { label: Keywords, name: keywords, widget: list }
+  - name: works
+    label: Works
+    label_singular: 'Works'
+    folder: src/data/works
+    slug: '{{slug}}'
+    create: true
+    media_folder: ''
+    public_folder: ''
+    nested:
+      depth: 100
+      summary: '{{title}}'
+    fields:
+      - { name: title, label: Title }
+      - { name: description, label: Description }
+      - { name: image, label: Image, widget: image }
+      - { name: theme, label: Theme }
+      - { name: categories, label: Categories, widget: list }
+      - label: Tags
+        name: workTags
+        widget: list
+        fields:
+          - { name: title, label: Title }
+          - { name: themeColor, label: Theme Color }
+          - { name: themeBg, label: Theme Background }
+      - label: SEO
+        name: seo
+        widget: object
+        fields:
+          - { name: title, label: Title }
+          - { name: description, label: Description }
+          - { name: keywords, label: Keywords, widget: list }

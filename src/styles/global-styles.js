@@ -344,4 +344,9 @@ export const GlobalStyle = createGlobalStyle`
     border-color: ${palette.BUTTON_PRIMARY};
   }
 
+  .gradBg {
+    backdrop-filter: blur(40px);
+    background: linear-gradient(112.67deg, rgba(0, 0, 0, 0.4) 29.46%, rgba(0, 0, 0, 0.2) 70.54%);
+  }
+
 `;

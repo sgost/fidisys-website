@@ -9,7 +9,7 @@ export const SectionContainer = styled.section`
   }
   .serviceRow {
     max-width: 1050px;
-    margin: 0 auto;
+    margin: 20px auto 30px;
     justify-content: center;
   }
 `;

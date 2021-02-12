@@ -1,4 +1,5 @@
 import React, { Fragment } from "react"
+import { graphql, useStaticQuery } from "gatsby"
 
 import SEO from "../components/seo"
 import Banner from "../components/Home/Banner"
@@ -9,9 +10,26 @@ import Testimonials from "../components/Testimonials"
 import Articles from "../components/Home/Articles"
 
 const IndexPage = () => {
+
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: {eq: "home/seo.md"}) {
+        childMarkdownRemark {
+          frontmatter {
+            title
+            description
+            keywords
+          }
+        }
+      }
+    }
+  `);
+
+  const seoData = data.file.childMarkdownRemark.frontmatter;
+
   return (
     <Fragment>
-      <SEO title="fidisys - Home" description="We design and develop beautiful applications, experience and brands that breaks the barriers of time and burn into the memories of customers love." keywords={['Mobile Applications development', 'Web Applications Development', 'Chennai Startup', 'UI/UX Designs', 'API Development', 'Devops', 'React', 'ReactNative', 'Angular', 'Vue', 'Kotlin', 'Flutter', 'Ionic', 'Android', 'IOS', 'Invision', 'Figma', 'Rails', 'NodeJS', 'Design System', 'Micro Front Ends']} />
+      <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
       <Banner />
       <Services />
       <Clients />

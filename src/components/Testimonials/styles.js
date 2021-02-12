@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import * as palette from '../../styles/variables';
 
 export const CustomersSection = styled.div`
-  background: #0D0E12;
+  background: ${palette.BLACK_COLOR};
   padding: 60px 80px;
   @media only screen and (min-width: 768px) and (max-width: 992px) {
     padding: 45px 50px;

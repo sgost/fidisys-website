@@ -60,12 +60,19 @@ collections:
               - { label: Description, name: description }
               - { label: Link, name: link }
               - { label: Image, name: image, widget: image }
+      - label: SEO
+        name: homeSeo
+        file: 'src/data/home/seo.md'
+        fields:
+          - { label: Title, name: title }
+          - { label: Description, name: description }
+          - { label: Keywords, name: keywords, widget: list }
   - label: Testimonials
     name: testimonials
     files:
       - label: Testimonials
         name: testimonials
-        file: 'testimonials.md'
+        file: 'src/data/testimonials.md'
         public_folder: './assets'
         fields:
           - { label: Title, name: title }
@@ -83,7 +90,7 @@ collections:
   - name: blog
     label: Blog
     label_singular: 'Blog'
-    folder: blog
+    folder: src/data/blog
     slug: '{{slug}}'
     create: true
     media_folder: ''
@@ -113,7 +120,7 @@ collections:
     files:
       - label: Footer
         name: footer
-        file: 'footer.md'
+        file: 'src/data/footer.md'
         public_folder: './assets'
         fields:
           - { label: Title, name: title }
@@ -158,6 +165,13 @@ collections:
           - { label: HelpText, name: helpText }
           - { label: Image, name: image, widget: image }
           - { name: body, label: Body, widget: markdown }
+      - label: SEO
+        name: techSeo
+        file: 'src/data/technologies/seo.md'
+        fields:
+          - { label: Title, name: title }
+          - { label: Description, name: description }
+          - { label: Keywords, name: keywords, widget: list }
   - label: About
     name: about
     files:
@@ -183,3 +197,10 @@ collections:
               - { label: Title, name: title }
               - { label: Count, name: count }
               - { label: Image, name: image, widget: image }
+      - label: SEO
+        name: aboutSeo
+        file: 'src/data/about/seo.md'
+        fields:
+          - { label: Title, name: title }
+          - { label: Description, name: description }
+          - { label: Keywords, name: keywords, widget: list }

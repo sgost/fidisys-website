@@ -25,7 +25,7 @@ export const TestimonialsSection = ({
   const slider = useRef(null);
 
   return (
-    <CustomersSection>
+    <CustomersSection style={{ background: (typeof window !== 'undefined' && window.location.pathname === '/about/') ? '#0D0E12' : '#000000' }}>
       <SectionHeading>
         <h2>{title}</h2>
       </SectionHeading>

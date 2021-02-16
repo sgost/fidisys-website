@@ -111,6 +111,14 @@ export const FilterContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto 50px;
   padding-left: 25px;
+  @media only screen and (max-width: 576px) {
+    padding: 20px 20px 0px;
+  }
+  @media only screen and (max-width: 400px) {
+    .ant-select {
+      width: 320px !important;
+    }
+  }
   @media only screen and (min-width: 1500px) {
     max-width: 1300px;
   }
@@ -150,6 +158,6 @@ export const FilterContainer = styled.div`
     margin-top: -20px;
     width: 36px;
     height: 36px;
-    right: 0px;
+    right: 0px !important;
   }
 `;

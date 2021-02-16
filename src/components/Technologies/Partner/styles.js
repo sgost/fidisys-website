@@ -3,7 +3,7 @@ import * as palette from '../../../styles/variables';
 
 export const SectionContainer = styled.section`
   padding: 120px 60px;
-  background: #0D0E12;
+  background: ${palette.SECONDARY_SECTION_BACKGROUND};
   position: relative;
   z-index: 1;
   .rowCont {

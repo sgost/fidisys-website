@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 
 import SEO from "../components/seo"
 import WorksList from "../components/Works/WorksList"
+import DribbbleSection from "../components/Dribbble"
 
 const WorksPage = () => {
 
@@ -26,6 +27,7 @@ const WorksPage = () => {
     <Fragment>
       <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
       <WorksList />
+      <DribbbleSection />
     </Fragment>
   )
 }

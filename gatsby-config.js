@@ -85,7 +85,7 @@ module.exports = {
     {
       resolve: `gatsby-source-dribbble`,
       options: {
-        access_token: process.env.DRIBBBLE_TOKEN
+        access_token: `${process.env.ACCESS_TOKEN}` || "none",
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality

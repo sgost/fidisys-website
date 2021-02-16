@@ -197,6 +197,21 @@ collections:
               - { label: Title, name: title }
               - { label: Count, name: count }
               - { label: Image, name: image, widget: image }
+      - label: Activities
+        name: activities
+        file: 'src/data/about/activities.md'
+        public_folder: '../assets'
+        fields:
+          - { label: Title, name: title }
+          - label: Activities
+            name: activities
+            widget: list
+            fields:
+              - { label: ID, name: id, widget: number }
+              - { label: Title, name: title }
+              - { label: Description, name: description }
+              - { label: Link, name: link }
+              - { label: Image, name: image, widget: image }
       - label: SEO
         name: aboutSeo
         file: 'src/data/about/seo.md'

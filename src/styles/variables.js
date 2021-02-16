@@ -30,7 +30,7 @@ export const APP_BRAND_COLOR = '#5860AF';
 export const APP_BACKGROUND_COLOR = '#FFFFFF';
 export const APP_HEADER_BACKGROUND_COLOR = '#FFF';
 export const PRIMARY_SECTION_BACKGROUND = '#F5FBFF';
-export const SECONDARY_SECTION_BACKGROUND = '#0B0B0E';
+export const SECONDARY_SECTION_BACKGROUND = '#0D0E12';
 
 // border colors
 export const BORDER_COLOR = '#CCCCCC';

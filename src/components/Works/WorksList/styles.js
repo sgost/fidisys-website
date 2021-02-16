@@ -150,6 +150,6 @@ export const FilterContainer = styled.div`
     margin-top: -20px;
     width: 36px;
     height: 36px;
-    right: 0px;
+    right: 0px !important;
   }
 `;

@@ -57,8 +57,11 @@ export const ContentSection = styled.div`
     line-height: 86px;
     font-weight: 500;
     color: ${palette.PRIMARY_TXT_COLOR};
+    @media only screen and (min-width: 1200px) and (max-width: 1310px) {
+      font-size: 68px;
+    }
     @media only screen and (min-width: 992px) and (max-width: 1250px) {
-      font-size: 54px;
+      font-size: 50px;
       line-height: 62px;
     }
     @media only screen and (max-width: 992px) {

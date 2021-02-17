@@ -110,6 +110,10 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 40px;
     line-height: 52px;
     color: ${palette.PRIMARY_TXT_COLOR};
+    @media only screen and (max-width: 768px) {
+      font-size: 36px;
+      line-height: 47px;
+    }
   }
 
   h3 {
@@ -117,6 +121,10 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 24px;
     line-height: 31px;
     color: ${palette.SECONDARY_TXT_COLOR};
+    @media only screen and (max-width: 768px) {
+      font-size: 16px;
+      line-height: 21px;
+    }
   }
 
   h4 {
@@ -142,6 +150,10 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     line-height: 26px;
     color: ${palette.SECONDARY_TXT_COLOR};
+    @media only screen and (max-width: 768px) {
+      font-size: 12px;
+      line-height: 16px;
+    }
   }
   
   .ant-message-notice {
@@ -283,6 +295,11 @@ export const GlobalStyle = createGlobalStyle`
       color: ${palette.WHITE_COLOR} !important;
       border-color: ${palette.BUTTON_PRIMARY} !important;
     }
+    @media only screen and (max-width: 768px) {
+      font-size: 14px !important;
+      height: 40px !important;
+      padding: 8px 18px !important;
+    }
   }
   .ant-input {
     text-overflow: ellipsis;
@@ -347,6 +364,35 @@ export const GlobalStyle = createGlobalStyle`
   .gradBg {
     backdrop-filter: blur(40px);
     background: linear-gradient(112.67deg, rgba(0, 0, 0, 0.4) 29.46%, rgba(0, 0, 0, 0.2) 70.54%);
+  }
+
+  .drawerNavMenu {
+    .ant-drawer-header {
+      background: transparent !important;
+      border: none !important;
+      padding: 28px 30px !important;
+    }
+    .ant-drawer-content-wrapper {
+      width: 100% !important;
+    }
+    .ant-drawer-content {
+      backdrop-filter: blur(40px);
+      background: linear-gradient(112.67deg ,rgba(0,0,0,0.4) 29.46%, rgba(0,0,0,0.2) 70.54%);
+    }
+    .ant-drawer-close {
+      color: ${palette.WHITE_COLOR} !important;
+      font-size: 14px;
+      top: 8px;
+      right: 10px;
+    }
+    .ant-drawer-footer {
+      border: none !important;
+    }
+  }
+  .menuLogo {
+    width: 73px;
+    height: 24px;
+    display: inline-block;
   }
 
 `;

@@ -34,6 +34,17 @@ export const SectionHeader = styled.div`
     line-height: 62px;
     color: #FB478D;
   }
+  @media only screen and (max-width: 768px) {
+    margin: 0 auto 33px;
+    span {
+      font-size: 12px;
+      line-height: 16px;
+    }
+    h2 {
+      font-size: 36px !important;
+      line-height: 47px !important;
+    }
+  }
 `;
 
 export const GridContainer = styled.div`
@@ -63,6 +74,9 @@ export const GridItem = styled.a`
   transition: padding 0.62s ease-in-out;
   @media only screen and (max-width: 768px) {
     height: 100% !important;
+    &:hover {
+      padding: 15px;
+    }
   }
   img {
     height: 100%;

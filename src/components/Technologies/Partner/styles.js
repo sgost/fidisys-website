@@ -96,8 +96,15 @@ export const AboutInfo = styled.div`
   span {
     width: 392px;
     display: inline-block;
-    @media only screen and (max-width: 576px) {
-      width: 320px;
+  }
+  @media only screen and (max-width: 768px) {
+    h3 {
+      font-size: 16px !important;
+      line-height: 21px !important;
+    }
+    span {
+      height: 60px;
+      width: 221px;
     }
   }
 `;
@@ -117,7 +124,19 @@ export const ContentCont = styled.div`
     line-height: 30px;
     opacity: 0.8;
   }
+  @media only screen and (max-width: 569px) {
+    width: 276px !important;
+  }
   @media only screen and (max-width: 768px) {
     padding: 0px;
+    width: 400px;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    p {
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+    }
   }
 `;

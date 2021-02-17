@@ -9,6 +9,9 @@ export const SectionContainer = styled.section`
     margin: 0 auto;
     justify-content: center;
   }
+  @media only screen and (max-width: 768px) {
+    padding: 30px;
+  }
 `;
 
 export const SectionHeader = styled.div`
@@ -16,7 +19,7 @@ export const SectionHeader = styled.div`
   margin: 0 auto;
   padding: 50px 0px;
   h2 {
-    color: #FFFFFF;
+    color: ${palette.WHITE_COLOR};
     text-align: center;
   }
   p {
@@ -32,6 +35,19 @@ export const ClientsList = styled.div`
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
   margin: 20px 0px;
+  @media only screen and (max-width: 1100px) {
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 5px;
+    margin: 0px;
+    border-width: 0px;
+    border-style: unset;
+    border-color: unset;
+    max-width: 550px;
+    margin: 0 auto;
+  }
 `;
 
 export const ClientDetail = styled.div`
@@ -49,5 +65,15 @@ export const ClientDetail = styled.div`
     display: inline-flex;
     align-items: center;
     justify-content: center;
+  }
+  @media only screen and (max-width: 768px) {
+    border-width: 0px;
+    border-style: unset;
+    border-color: unset;
+    padding: 0px;
+    span {
+      width: 115px;
+      height: 58px;
+    }
   }
 `;

@@ -12,6 +12,11 @@ export const SectionContainer = styled.section`
     margin: 20px auto 30px;
     justify-content: center;
   }
+  @media only screen and (max-width: 768px) {
+    .serviceRow {
+      max-width: 500px;
+    }
+  }
 `;
 
 export const SectionHeader = styled.div`
@@ -33,7 +38,18 @@ export const ServiceListItem = styled.div`
   justify-content: center;
   margin: 20px 0px;
   @media only screen and (max-width: 768px) {
-    padding: 25px 0px;
+    margin: 0px;
+    span {
+      width: 72px !important;
+      height: 72px !important;
+      img {
+        width: 40px !important;
+        height: 40px !important;
+      }
+    }
+    h3 {
+      margin-top: 12px !important;
+    }
   }
   span {
     background: linear-gradient(135.63deg, #222222 2.64%, #292929 98.78%), #272727;

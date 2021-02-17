@@ -37,8 +37,8 @@ export const ContentSection = styled.div`
       font-size: 36px;
     }
     @media only screen and (max-width: 768px) {
-      font-size: 30px;
-      line-height: 40px;
+      font-size: 24px;
+      line-height: 31px;
     }
   }
   .description {
@@ -68,9 +68,14 @@ export const ContentSection = styled.div`
   @media only screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    h2, .description {
-      text-align: center;
+    .viewLink {
+      font-size: 14px;
+      margin-top: 6px;
+      span {
+        width: 20px;
+        height: 20px;
+        margin-left: 8px;
+      }
     }
   }
 `;
@@ -96,6 +101,11 @@ export const WorksList = styled.div`
         @media only screen and (max-width: 768px) {
           padding-right: 0px;
         }
+      }
+    }
+    @media only screen and (max-width: 768px) {
+      .ant-col {
+        min-width: 100%;
       }
     }
   }
@@ -124,6 +134,11 @@ export const AllworksBtn = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+      @media only screen and (max-width: 768px) {
+        width: 18px;
+        height: 18px;
+        margin-left: 8px !important;
+      }
     }
   }
 `;

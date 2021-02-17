@@ -16,7 +16,7 @@ export const ToolsSection = ({ title, tools, preview }) => {
       <Row className="toolsList">
         {
           tools && tools.map(tool =>
-            <Col key={tool.title} xs={12} sm={8} md={4} lg={4} xl={4}>
+            <Col key={tool.title} xs={8} sm={8} md={4} lg={4} xl={4}>
               <ToolsListItem>
                 {
                   preview ? <span><img src={tool.image} alt={tool.title} /></span> :

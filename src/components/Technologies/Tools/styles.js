@@ -6,6 +6,13 @@ export const SectionContainer = styled.section`
   background: ${palette.BLACK_COLOR};
   @media only screen and (max-width: 768px) {
     padding: 30px;
+    .toolsList {
+      padding: 0px 0px 30px !important;
+      max-width: 600px !important;
+      .ant-col {
+        min-width: 33%;
+      }
+    }
   }
   .toolsList {
     max-width: 1050px;
@@ -26,6 +33,12 @@ export const SectionHeader = styled.div`
     line-height: 62px;
     color: ${palette.HEADING_COLOR};
   }
+  @media only screen and (max-width: 768px) {
+    h2 {
+      font-size: 36px !important;
+      line-height: 47px !important;
+    }
+  }
 `;
 
 export const ToolsListItem = styled.div`
@@ -35,8 +48,16 @@ export const ToolsListItem = styled.div`
   justify-content: center;
   margin: 30px 0px;
   @media only screen and (max-width: 768px) {
-    padding: 20px 0px;
+    padding: 16px 0px;
     margin: 0px;
+    span {
+      width: 43px !important;
+      height: 43px !important;
+    }
+    h3 {
+      font-size: 14px !important;
+      line-height: 18px !important;
+    }
   }
   span {
     width: 56px;

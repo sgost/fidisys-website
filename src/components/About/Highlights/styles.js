@@ -118,16 +118,21 @@ export const HighlightsList = styled.div`
     grid-column-gap: 30px;
     grid-row-gap: 30px;
   }
-  @media only screen and (max-width: 576px) {
-    grid-template-columns: 100%;
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    max-width: 600px;
+    margin: 0px auto 30px;
   }
 `;
 
 export const ListContainer = styled.div`
   padding: 20px;
   margin-left: 30px;
+  @media only screen and (max-width: 768px) {
+    padding: 15px;
+  }
 `;
 
 export const HighlightListItem = styled.div`
@@ -140,6 +145,10 @@ export const CountStr = styled.h3`
   font-size: 96px;
   line-height: 86px;
   color: ${palette.PRIMARY_TXT_COLOR};
+  @media only screen and (max-width: 768px) {
+    font-size: 58px;
+    line-height: 52px;
+  }
 `;
 
 export const ImageText = styled.div`
@@ -160,5 +169,17 @@ export const ImageText = styled.div`
     opacity: 0.8;
     margin-left: 8px;
     font-weight: normal;
+  }
+  @media only screen and (max-width: 768px) {
+    margin-top: 10px;
+    span {
+      width: 16px;
+      height: 16px;
+    }
+    h4 {
+      margin-left: 6px;
+      font-size: 10px;
+      line-height: 18px;
+    }
   }
 `;

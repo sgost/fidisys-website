@@ -14,6 +14,10 @@ export const BannerTitle = styled.div`
   padding: 0px 30px 70px;
   max-width: 1200px;
   margin: 0 auto;
+  @media only screen and (max-width: 768px) {
+    font-size: 36px;
+    line-height: 47px;
+  }
 `;
 
 export const LayoutContainer = styled.div`
@@ -21,6 +25,9 @@ export const LayoutContainer = styled.div`
   overflow: hidden;
   width: 100%;
   height: 546px;
+  @media only screen and (max-width: 768px) {
+    height: 273px;
+  }
 `;
 
 export const BannerBg = styled.div`

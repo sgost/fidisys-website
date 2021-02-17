@@ -34,7 +34,7 @@ export const HomeBannerSection = ({ description, image }) => {
             </Button>
           </Content>
         </Col>
-        <Col xs={24} sm={24} md={11} lg={11} xl={11}>
+        <Col xs={24} sm={24} md={11} lg={11} xl={11} className="bannerImg">
           <ImageContainer>
             <img src={image} alt="banner" />
           </ImageContainer>

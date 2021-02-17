@@ -6,6 +6,17 @@ export const BannerSection = styled.section`
   background: ${palette.BLACK_COLOR};
   @media only screen and (max-width: 768px) {
     padding: 30px 30px;
+    .rowContainer {
+      justify-content: center;
+      .ant-col {
+        min-width: 100%;
+      }
+      .bannerImg {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
   }
   @media only screen and (min-width: 768px) and (max-width: 992px) {
     padding: 40px 70px 50px;
@@ -23,6 +34,30 @@ export const Content = styled.div`
   padding: 0px 30px;
   @media only screen and (max-width: 768px) {
     padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      font-size: 26px;
+      line-height: 34px;
+      margin-bottom: 30px !important;
+      span {
+        width: 50px !important;
+        height: 50px !important;
+        top: -12px !important;
+        left: -12px !important;
+      }
+    }
+    .ant-btn {
+      font-size: 14px !important;
+      height: 40px !important;
+      padding: 8px 18px !important;
+      .arrow {
+        width: 18px;
+        height: 18px;
+        margin-left: 8px !important;
+      }
+    }
   }
   h2 {
     margin-bottom: 60px;
@@ -58,6 +93,11 @@ export const Content = styled.div`
 export const ImageContainer = styled.div`
   max-width: 500px;
   display: inline-block;
+  @media only screen and (max-width: 768px) {
+    width: 320px;
+    height: 270px;
+    overflow: hidden;
+  }
 `;
 
 export const CardSec = styled.div`
@@ -83,6 +123,16 @@ export const CardSec = styled.div`
     right: -35px;
     z-index: -1;
   }
+  @media only screen and (max-width: 768px) {
+    position: relative;
+    margin: 30px 0px 20px;
+    .yellowBg {
+      width: 45px;
+      height: 45px;
+      top: -20px;
+      right: -20px;
+    }
+  }
 `;
 
 export const GlassCard = styled.div`
@@ -99,7 +149,9 @@ export const GlassCard = styled.div`
     padding: 14px 35px 18px;
   }
   @media only screen and (max-width: 768px) {
-    padding: 17px 25px 23px;
+    padding: 16px 30px;
+    max-width: 270px;
+    margin: 0 auto;
   }
 `;
 
@@ -110,6 +162,10 @@ export const Title = styled.span`
   text-align: center;
   color: ${palette.WHITE_COLOR};
   margin-bottom: 10px;
+  @media only screen and (max-width: 768px) {
+    font-size: 12px;
+    line-height: 15px;
+  }
 `;
 
 export const Logo = styled.span`
@@ -119,5 +175,9 @@ export const Logo = styled.span`
   @media only screen and (min-width: 768px) and (max-width: 992px) {
     max-width: 150px;
     height: 40px;
+  }
+  @media only screen and (max-width: 768px) {
+    height: 38px;
+    width: 143px;
   }
 `;

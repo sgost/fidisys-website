@@ -65,6 +65,9 @@ export const ImageContainer = styled.div`
     object-fit: cover;
     display: block;
   }
+  @media (max-width: 768px) {
+    height: 309px;
+  }
 `;
 
 export const WorkDescription = styled.div`
@@ -114,16 +117,35 @@ export const FilterContainer = styled.div`
   @media only screen and (max-width: 576px) {
     padding: 20px 20px 0px;
   }
-  @media only screen and (max-width: 400px) {
-    .ant-select {
-      width: 320px !important;
-    }
-  }
   @media only screen and (min-width: 1500px) {
     max-width: 1300px;
   }
   @media only screen and (min-width: 768px) and (max-width: 992px) {
     padding-left: 15px;
+  }
+  @media (max-width: 768px) {
+    .selLabel {
+      font-size: 12px;
+      line-height: 16px;
+    }
+    .ant-select-selector {
+      width: 290px !important;
+      font-size: 36px !important;
+      line-height: 47px !important;
+      height: 47px !important;
+      min-height: 47px !important;
+      .ant-select-selection-search-input {
+        height: 47px !important;
+      }
+      .ant-select-selection-item {
+        line-height: 47px !important;
+      }
+    }
+    .ant-select-arrow {
+      margin-top: -14px;
+      width: 28px;
+      height: 28px;
+    }
   }
   .selLabel {
     font-weight: normal;

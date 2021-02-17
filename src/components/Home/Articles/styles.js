@@ -21,11 +21,18 @@ export const SectionHeading = styled.div`
 export const ArticlesList = styled.div`
   margin: 25px auto;
   max-width: 1000px;
+  @media only screen and (max-width: 768px) {
+    margin: 12px auto;
+    max-width: 600px;
+  }
 `;
 
 export const ArticleListItem = styled.a`
   padding: 30px 0px;
   display: block;
+  @media only screen and (max-width: 768px) {
+    padding: 12px 0px;
+  }
 `;
 
 export const PreviewImage = styled.div`
@@ -58,5 +65,21 @@ export const BlogContent = styled.div`
     opacity: 0.8;
     margin-top: 30px;
     display: block;
+  }
+  @media only screen and (max-width: 768px) {
+    padding-left: 16px;
+    h3 {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+    }
+    p {
+      display: none;
+    }
+    span {
+      font-size: 10px;
+      line-height: 26px;
+      margin-top: 10px;
+    }
   }
 `;

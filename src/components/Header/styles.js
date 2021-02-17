@@ -49,8 +49,15 @@ export const LogoContainer = styled.div`
     }
   }
   @media (max-width: 768px) {
-    padding: 20px 30px;
+    padding: 0px 0px 0px 30px;
     width: 100%;
+    a {
+      display: inline-flex;
+      img {
+        width: 73px;
+        height: 24px;
+      }
+    }
   }
 `;
 
@@ -83,7 +90,7 @@ export const NavLinkContainer = styled.ul`
     flex-direction: column;
     width: 100%;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   }
 `;
 
@@ -121,10 +128,15 @@ export const NavLink = styled.li`
   @media (max-width: 768px) {
     width: 100%;
     text-align: center;
+    display: flex;
+    padding: 9px 0px;
     a {
       display: inline-block;
-      padding: 10px 18px;
+      padding: 5px 0px;
       text-align: center;
+      font-size: 36px;
+      line-height: 47px;
+      text-transform: capitalize;
       &:hover {
         color: ${palette.HEADING_COLOR};
       }
@@ -134,4 +146,51 @@ export const NavLink = styled.li`
 
 export const ResNavMenu = styled.div`
 
+`;
+
+export const MenuIcon = styled.div`
+  display: none;
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  right: 30px;
+  font-size: 20px;
+  @media (max-width: 768px) {
+    display: block;
+    top: 30px;
+    span {
+      cursor: pointer;
+      width: 24px;
+      height: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+`;
+
+export const IntouchMedia = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 25px;
+  @media only screen and (max-width: 768px) {
+    margin: 80px 0px;
+    justify-content: center;
+    .media-link {
+      opacity: 1 !important;
+      font-size: 24px;
+      margin: 0px 15px;
+    }
+  }
+  .media-link {
+    max-width: 24px;
+    margin: 0px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      opacity: 1;
+    }
+  }
 `;

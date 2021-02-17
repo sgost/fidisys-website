@@ -13,7 +13,9 @@ import {
   CustomerDetails,
   CarouselContainer,
   CustomBg,
-  ArrowContainer
+  ArrowContainer,
+  ResCard,
+  ClientDetailsRes
 } from './styles';
 
 export const TestimonialsSection = ({
@@ -30,36 +32,64 @@ export const TestimonialsSection = ({
         <h2>{title}</h2>
       </SectionHeading>
       <CarouselContainer>
-        <Carousel ref={slider} dots={false}>
+        <Carousel ref={slider} dots={ typeof window !== 'undefined' && window.innerWidth < 769 ? true : false}>
           {
             customers && customers.map(dataItem =>
               <div key={dataItem.id}>
-                <Row className="row">
-                  <Col xs={24} sm={24} md={7} lg={7} xl={7} className="imageCus">
-                    <CustomBg>
-                      <CircleImage>
-                        {
-                          preview ? <img src={dataItem.image} alt={dataItem.name} /> :
-                          <Fragment>
-                            {
-                              (dataItem.image.extension === 'svg' && dataItem.image.childImageSharp === null) ? <img src={dataItem.image.publicURL} alt={dataItem.name} /> : <img src={dataItem.image.childImageSharp.fluid.src} alt={dataItem.name} />
-                            }
-                          </Fragment>
-                        }
-                      </CircleImage>
-                    </CustomBg>
-                  </Col>
-                  <Col xs={24} sm={24} md={17} lg={17} xl={17}>
+                {
+                  typeof window !== 'undefined' && window.innerWidth < 769 ?
+                  <ResCard>
                     <WrapperDetails>
                       <h3>{dataItem.message}</h3>
+                      <p>{dataItem.comment}</p>
+                    </WrapperDetails>
+                    <ClientDetailsRes>
+                      <CustomBg>
+                        <CircleImage>
+                          {
+                            preview ? <img src={dataItem.image} alt={dataItem.name} /> :
+                            <Fragment>
+                              {
+                                (dataItem.image.extension === 'svg' && dataItem.image.childImageSharp === null) ? <img src={dataItem.image.publicURL} alt={dataItem.name} /> : <img src={dataItem.image.childImageSharp.fluid.src} alt={dataItem.name} />
+                              }
+                            </Fragment>
+                          }
+                        </CircleImage>
+                      </CustomBg>
                       <CustomerDetails>
-                        <p>{dataItem.comment}</p>
                         <h4>{dataItem.name}</h4>
                         <span>{dataItem.role}, {dataItem.company}</span>
                       </CustomerDetails>
-                    </WrapperDetails>
-                  </Col>
-                </Row>
+                    </ClientDetailsRes>
+                  </ResCard>
+                  :
+                  <Row className="row">
+                    <Col xs={24} sm={24} md={7} lg={7} xl={7} className="imageCus">
+                      <CustomBg>
+                        <CircleImage>
+                          {
+                            preview ? <img src={dataItem.image} alt={dataItem.name} /> :
+                            <Fragment>
+                              {
+                                (dataItem.image.extension === 'svg' && dataItem.image.childImageSharp === null) ? <img src={dataItem.image.publicURL} alt={dataItem.name} /> : <img src={dataItem.image.childImageSharp.fluid.src} alt={dataItem.name} />
+                              }
+                            </Fragment>
+                          }
+                        </CircleImage>
+                      </CustomBg>
+                    </Col>
+                    <Col xs={24} sm={24} md={17} lg={17} xl={17}>
+                      <WrapperDetails>
+                        <h3>{dataItem.message}</h3>
+                        <CustomerDetails>
+                          <p>{dataItem.comment}</p>
+                          <h4>{dataItem.name}</h4>
+                          <span>{dataItem.role}, {dataItem.company}</span>
+                        </CustomerDetails>
+                      </WrapperDetails>
+                    </Col>
+                  </Row>
+                }
               </div>
             )
           }

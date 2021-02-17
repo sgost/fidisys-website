@@ -18,6 +18,12 @@ export const CustomersSection = styled.div`
 export const SectionHeading = styled.div`
   padding: 20px 0px;
   text-align: center;
+  @media only screen and (max-width: 768px) {
+    h2 {
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
 `;
 
 export const CustomersList = styled.ul`
@@ -79,6 +85,11 @@ export const CircleImage = styled.div`
     display: inline-block;
     object-fit: cover;
   }
+  @media (max-width: 768px) {
+    width: 65px;
+    height: 77px;
+    border-radius: 5px;
+  }
 `;
 
 export const WrapperDetails = styled.div`
@@ -87,10 +98,14 @@ export const WrapperDetails = styled.div`
   padding-top: 25px;
   padding-left: 32px;
   @media (max-width: 768px) {
-    padding: 40px 20px 30px;
+    padding: 0px;
     margin-left: 0;
     h3 {
-      text-align: center;
+      font-size: 18px !important;
+      line-height: 23px !important;
+      letter-spacing: 0.02em;
+      text-align: left;
+      margin: 14px 0px;
     }
   }
   h3 {
@@ -108,6 +123,12 @@ export const ContentBg = styled.div`
   width: 213px;
   display: inline-block;
   height: 213px;
+  @media (max-width: 768px) {
+    width: 84px;
+    height: 63px;
+    top: -12px;
+    right: 30px;
+  }
 `;
 
 export const CustomerDetails = styled.div`
@@ -132,7 +153,18 @@ export const CustomerDetails = styled.div`
     line-height: 31px;
   }
   @media (max-width: 768px) {
-    text-align: center;
+    margin-left: 14px;
+    padding: 0px;
+    h4 {
+      font-size: 16px;
+      line-height: 21px;
+      margin: 0px 0px 2px;
+    }
+    span {
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+    }
   }
 `;
 
@@ -143,6 +175,11 @@ export const CarouselContainer = styled.div`
   border-radius: 24px;
   max-width: 1100px;
   margin: 50px auto;
+  @media only screen and (max-width: 768px) {
+    margin: 34px auto;
+    border-radius: 8px;
+    max-width: 600px;
+  }
   @media (min-width: 1500px) {
     max-width: 1200px;
     margin: 0 auto;
@@ -164,22 +201,22 @@ export const CarouselContainer = styled.div`
     position: relative;
   }
   .slick-dots {
-    bottom: 50px !important;
+    bottom: -24px !important;
   }
   .ant-carousel .slick-dots li {
-    width: 20px;
+    width: 5px;
     height: 5px;
   }
   .ant-carousel .slick-dots li.slick-active {
-    width: 20px;
+    width: 12px;
   }
   .ant-carousel .slick-dots li button {
     height: 5px;
-    border-radius: 8px;
-    background: ${palette.BLACK_COLOR};
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.5);
   }
   .ant-carousel .slick-dots li.slick-active button {
-    background: #1976D1;
+    background: rgba(1, 153, 255, 0.8);
   }
   .leftArrow, .rightArrow {
     width: 36px;
@@ -207,7 +244,7 @@ export const CarouselContainer = styled.div`
       display: none;
     }
     .ant-carousel .slick-list .slick-slide > div > div {
-      padding: 40px 20px 20px;
+      padding: 24px;
     }
     .row {
       margin: 0;
@@ -233,6 +270,13 @@ export const CustomBg = styled.div`
     z-index: -1;
     right: -10%;
     bottom: -9%;
+    @media (max-width: 768px) {
+      right: -8%;
+      bottom: -8%;
+      width: 64px;
+      height: 76px;
+      border-radius: 5px;
+    }
   }
 `;
 
@@ -241,4 +285,15 @@ export const ArrowContainer = styled.div`
   right: 50px;
   display: flex;
   bottom: 40px;
+`;
+
+export const ResCard = styled.div`
+
+`;
+
+export const ClientDetailsRes = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 25px;
 `;

@@ -16,7 +16,9 @@ import PartnerPreview from "./preview-templates/PartnerPreview";
 
 import AboutBannerPreview from "./preview-templates/AboutBannerPreview";
 import HighlightsPreview from "./preview-templates/HighlightsPreview";
-import ActivitiesPreview from "./preview-templates/ActivitiesPreview"
+import ActivitiesPreview from "./preview-templates/ActivitiesPreview";
+
+import BlogPreview from "./preview-templates/BlogPreview";
 
 function StyleInjector({ children }) {
   const [iframeRef, setIframeRef] = useState(null);
@@ -60,3 +62,5 @@ CMS.registerPreviewTemplate("partnership", withStyledComponentsRendered(PartnerP
 CMS.registerPreviewTemplate("aboutBanner", withStyledComponentsRendered(AboutBannerPreview));
 CMS.registerPreviewTemplate("highlights", withStyledComponentsRendered(HighlightsPreview));
 CMS.registerPreviewTemplate("activities", withStyledComponentsRendered(ActivitiesPreview));
+
+CMS.registerPreviewTemplate("blog", withStyledComponentsRendered(BlogPreview));

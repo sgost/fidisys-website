@@ -50,8 +50,7 @@ const Articles = ({ data }) => {
       <ArticlesList>
         {
           posts.allMarkdownRemark.edges.map(edge =>
-            // <ArticleListItem key={edge.node.id} href={edge.node.fields.slug}>
-            <ArticleListItem key={edge.node.id} href="/">
+            <ArticleListItem key={edge.node.id} href={edge.node.fields.slug}>
               <Row>
                 <Col xs={8} sm={8} md={6} lg={6} xl={6}>
                   <PreviewImage>

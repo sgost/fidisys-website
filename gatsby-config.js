@@ -82,6 +82,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify`,
+    `gatsby-remark-reading-time`,
     {
       resolve: `gatsby-source-dribbble`,
       options: {

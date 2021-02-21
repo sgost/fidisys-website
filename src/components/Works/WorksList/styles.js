@@ -128,6 +128,9 @@ export const FilterContainer = styled.div`
       font-size: 12px;
       line-height: 16px;
     }
+    .ant-select {
+      width: 290px !important;
+    }
     .ant-select-selector {
       width: 290px !important;
       font-size: 36px !important;

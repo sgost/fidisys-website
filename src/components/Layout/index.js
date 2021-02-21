@@ -4,6 +4,7 @@ import { GlobalStyle } from '../../styles/global-styles';
 
 import Header from "../Header"
 import Footer from "../Footer"
+import SitemapSection from "../Sitemap"
 
 const Layout = props => {
   //scroll
@@ -34,6 +35,7 @@ const Layout = props => {
       <Header />
       <main>{props.children}</main>
       <Footer />
+      <SitemapSection />
     </>
   )
 }

@@ -19,13 +19,6 @@ const DribbbleSection = () => {
           title
           url
           cover
-          localCover {
-            childImageSharp {
-              fluid {
-                src
-              }
-            }
-          }
         }
       }
     }

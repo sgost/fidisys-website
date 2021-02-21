@@ -180,7 +180,8 @@ export const IntouchMedia = styled.div`
     .media-link {
       opacity: 1 !important;
       font-size: 24px;
-      margin: 0px 15px;
+      max-width: 20px !important;
+      margin: 0px 8px !important;
     }
   }
   .media-link {

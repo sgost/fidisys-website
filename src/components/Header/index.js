@@ -3,6 +3,10 @@ import React, { useState } from "react"
 import { Button, Drawer } from "antd"
 import Logo from '../../images/logo.png';
 import MenuIconImg from "../../images/menu_icon.png"
+import InstaLogo from "../../images/instagram_logo.png"
+import FacebookLogo from "../../images/facebook_logo.png"
+import TwitterLogo from "../../images/twitter_logo.png"
+import YoutubeLogo from "../../images/youtube_logo.png"
 import LinkedinLogo from "../../images/linkedin.png"
 import GithubLogo from "../../images/github.png"
 import DribbbleLogo from "../../images/dribbble.png"
@@ -44,6 +48,46 @@ const Header = props => {
       </a>
       <a
         className="media-link"
+        href="https://www.facebook.com/fidisys/"
+        target="_blank"
+        without="true"
+        rel="noopener noreferrer"
+        onClick={onClose}
+      >
+        <img src={FacebookLogo} alt="Facebook" />
+      </a>
+      <a
+        className="media-link"
+        href="https://www.instagram.com/fidisys/?hl=en"
+        target="_blank"
+        without="true"
+        rel="noopener noreferrer"
+        onClick={onClose}
+      >
+        <img src={InstaLogo} alt="Instagram" />
+      </a>
+      <a
+        className="media-link"
+        href="https://twitter.com/fidisysinc"
+        target="_blank"
+        without="true"
+        rel="noopener noreferrer"
+        onClick={onClose}
+      >
+        <img src={TwitterLogo} alt="Twitter" />
+      </a>
+      <a
+        className="media-link"
+        href="https://www.youtube.com/channel/UCkw8oNfnBB23zci9XCzeoEA"
+        target="_blank"
+        without="true"
+        rel="noopener noreferrer"
+        onClick={onClose}
+      >
+        <img src={YoutubeLogo} alt="Youtube" />
+      </a>
+      <a
+        className="media-link"
         href="https://github.com/fidisys"
         target="_blank"
         without="true"
@@ -54,16 +98,6 @@ const Header = props => {
       </a>
       <a
         className="media-link"
-        href="https://dribbble.com/fidisys"
-        target="_blank"
-        without="true"
-        rel="noopener noreferrer"
-        onClick={onClose}
-      >
-        <img src={DribbbleLogo} alt="Dribbble" />
-      </a>
-      <a
-        className="media-link"
         href="https://medium.com/@fidisys"
         target="_blank"
         without="true"
@@ -71,6 +105,16 @@ const Header = props => {
         onClick={onClose}
       >
         <img src={MediumLogo} alt="Medium" />
+      </a>
+      <a
+        className="media-link"
+        href="https://dribbble.com/fidisys"
+        target="_blank"
+        without="true"
+        rel="noopener noreferrer"
+        onClick={onClose}
+      >
+        <img src={DribbbleLogo} alt="Dribbble" />
       </a>
     </IntouchMedia>
   );

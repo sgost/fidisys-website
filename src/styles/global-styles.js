@@ -455,4 +455,39 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  #___gatsby {
+    height: 100%;
+    background: ${palette.BLACK_COLOR};
+  }
+
+  .fullPageModal {
+    .ant-modal-content {
+      height: 100% !important;
+      background: ${palette.BLACK_COLOR} !important;
+    }
+    .ant-modal-close {
+      top: 24px;
+      right: 40px;
+      color: ${palette.WHITE_COLOR};
+      .ant-modal-close-x {
+        font-size: 24px;
+      }
+    }
+    .ant-modal-body {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @media only screen and (max-width: 769px) {
+      .ant-modal-close {
+        top: 10px;
+        right: 15px;
+      }
+      .ant-modal-body {
+        padding: 24px !important;
+      }
+    }
+  }
+
 `;

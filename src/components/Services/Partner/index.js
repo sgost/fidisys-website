@@ -9,7 +9,7 @@ import {
 
 export const PartnerSection = ({ helpText, image, html, preview }) => {
   return (
-    <SectionContainer>
+    <SectionContainer id="partnership">
       <Row className="rowCont">
         <Col xs={24} sm={24} md={12} lg={12} xl={12}>
           <AboutInfo>
@@ -43,7 +43,7 @@ export const PartnerSection = ({ helpText, image, html, preview }) => {
 const Partner = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "technologies/partner.md" }) {
+      file(relativePath: { eq: "services/partner.md" }) {
         childMarkdownRemark {
           frontmatter {
             helpText

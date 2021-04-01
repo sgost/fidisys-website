@@ -5,8 +5,6 @@ import SEO from "../components/seo"
 
 const BlogPage = ({ data }) => {
 
-  console.log(data.blogData);
-
   const blogList = data.blogData.edges;
 
   const seoData = data.seoData.childMarkdownRemark.frontmatter;

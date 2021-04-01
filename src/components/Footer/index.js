@@ -1,17 +1,35 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Button } from "antd"
+import { Button, Modal } from "antd"
+import ContactSection from "../Contact"
 import RightArrow from "../../images/arrow_right.png"
 import {
   SectionContainer,
   IntouchContainer,
-  IntouchSummary,
-  IntouchFooter,
-  IntouchMedia,
-  IntouchCopyrights
+  IntouchSummary
 } from "./styles"
 
-export const FooterSection = ({ title, image, mediaLinks, copyright, preview }) => {
+export const FooterSection = ({ title, image, preview }) => {
+
+  //modal
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
+  useEffect(() => {
+    if(isModalVisible) {
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.documentElement.style.overflow = 'unset';
+    }
+  }, [isModalVisible]);
+
   return (
     <SectionContainer>
       <IntouchContainer>
@@ -25,40 +43,25 @@ export const FooterSection = ({ title, image, mediaLinks, copyright, preview }) 
               }
             </Fragment>
           }
-          <Button type="primary">
+          <Button type="primary" onClick={showModal}>
             Get in Touch
             <span className="arrow">
               <img src={RightArrow} alt="arrow" />
             </span>
           </Button>
         </IntouchSummary>
-        <IntouchFooter>
-          <IntouchMedia>
-            {
-              mediaLinks && mediaLinks.map(dataItem =>
-                <a
-                  className="media-link"
-                  href={dataItem.link}
-                  target="_blank"
-                  without="true"
-                  rel="noopener noreferrer"
-                  key={dataItem.id}
-                >
-                  {
-                    preview ? <img src={dataItem.image} alt={dataItem.title} /> :
-                    <Fragment>
-                      {
-                        (dataItem.image.extension === 'svg' && dataItem.image.childImageSharp === null) ? <img src={dataItem.image.publicURL} alt={dataItem.title} /> : <img src={dataItem.image.childImageSharp.fluid.src} alt={dataItem.title} />
-                      }
-                    </Fragment>
-                  }
-                </a>
-              )
-            }
-          </IntouchMedia>
-          <IntouchCopyrights>{copyright}</IntouchCopyrights>
-        </IntouchFooter>
       </IntouchContainer>
+      <Modal
+        title=""
+        visible={isModalVisible}
+        footer={null}
+        closable
+        onCancel={handleCancel}
+        getContainer={() => document.getElementById('___gatsby')}
+        className="fullPageModal"
+      >
+        <ContactSection />
+      </Modal>
     </SectionContainer>
   )
 }
@@ -79,21 +82,6 @@ const Footer = () => {
               extension
               publicURL
             }
-            mediaLinks {
-              id
-              title
-              link
-              image {
-                childImageSharp {
-                  fluid {
-                    src
-                  }
-                }
-                extension
-                publicURL
-              }
-            }
-            copyright
           }
         }
       }
@@ -106,8 +94,6 @@ const Footer = () => {
         <FooterSection
           title={data.file.childMarkdownRemark.frontmatter.title}
           image={data.file.childMarkdownRemark.frontmatter.image}
-          mediaLinks={data.file.childMarkdownRemark.frontmatter.mediaLinks}
-          copyright={data.file.childMarkdownRemark.frontmatter.copyright}
           preview={false}
         />
       )}

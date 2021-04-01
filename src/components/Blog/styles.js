@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 import * as palette from '../../styles/variables';
 
+export const BlogPageSection = styled.div`
+  background: ${palette.WHITE_COLOR};
+`;
+
 export const BlogContainer = styled.div`
   max-width: 700px;
-  margin: 48px auto;
+  margin: 0 auto;
+  padding: 48px 0px;
   @media (max-width: 768px) {
     padding: 24px;
   }

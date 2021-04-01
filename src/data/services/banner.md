@@ -1,5 +1,5 @@
 ---
 title: Technologies Banner
-description: Tailored tech stack to your business needs
+description: IT services you can count on for your business needs
 image: ../assets/tech_banner.png
 ---

@@ -1,12 +1,9 @@
-import { Link } from "gatsby"
-import React, { useState } from "react"
-import { Button, Drawer } from "antd"
+import { graphql, Link, useStaticQuery } from "gatsby"
+import React, { useState, useEffect } from "react"
+import { Button, Drawer, Modal } from "antd"
+import ContactSection from "../Contact"
 import Logo from '../../images/logo.png';
 import MenuIconImg from "../../images/menu_icon.png"
-import LinkedinLogo from "../../images/linkedin.png"
-import GithubLogo from "../../images/github.png"
-import DribbbleLogo from "../../images/dribbble.png"
-import MediumLogo from "../../images/medium.png"
 import {
   HeaderContainer,
   LogoContainer,
@@ -20,6 +17,29 @@ import {
 
 const Header = props => {
 
+  //modal
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = flag => {
+    setIsModalVisible(true);
+    if(flag === 'mob') {
+      setVisible(false);
+    }
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
+  useEffect(() => {
+    if(isModalVisible) {
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.documentElement.style.overflow = 'unset';
+    }
+  }, [isModalVisible]);
+
+  //drawer
   const [visible, setVisible] = useState(false);
 
   const showDrawer = () => {
@@ -30,48 +50,50 @@ const Header = props => {
     setVisible(false);
   };
 
+  const smdata = useStaticQuery(graphql`
+  query {
+    file(relativePath: {eq: "smLinks.md"}) {
+      childMarkdownRemark {
+        frontmatter {
+          mediaLinks {
+            id
+            title
+            link
+            image {
+              childImageSharp {
+                fluid {
+                  src
+                }
+              }
+              extension
+              publicURL
+            }
+          }
+        }
+      }
+    }
+  }
+`);
+
   const smLinks = (
     <IntouchMedia>
-      <a
-        className="media-link"
-        href="https://www.linkedin.com/company/fidisys"
-        target="_blank"
-        without="true"
-        rel="noopener noreferrer"
-        onClick={onClose}
-      >
-        <img src={LinkedinLogo} alt="Linkedin" />
-      </a>
-      <a
-        className="media-link"
-        href="https://github.com/fidisys"
-        target="_blank"
-        without="true"
-        rel="noopener noreferrer"
-        onClick={onClose}
-      >
-        <img src={GithubLogo} alt="Github" />
-      </a>
-      <a
-        className="media-link"
-        href="https://dribbble.com/fidisys"
-        target="_blank"
-        without="true"
-        rel="noopener noreferrer"
-        onClick={onClose}
-      >
-        <img src={DribbbleLogo} alt="Dribbble" />
-      </a>
-      <a
-        className="media-link"
-        href="https://medium.com/@fidisys"
-        target="_blank"
-        without="true"
-        rel="noopener noreferrer"
-        onClick={onClose}
-      >
-        <img src={MediumLogo} alt="Medium" />
-      </a>
+      {
+        smdata && smdata.file.childMarkdownRemark.frontmatter.mediaLinks && smdata.file.childMarkdownRemark.frontmatter.mediaLinks.map(smLink =>
+          <a
+            className="media-link"
+            href={smLink.link}
+            target="_blank"
+            without="true"
+            rel="noopener noreferrer"
+            onClick={onClose}
+            key={smLink.id}
+          >
+            {
+              (smLink.image.extension === 'svg' && smLink.image.childImageSharp === null) ? <img src={smLink.image.publicURL} alt={smLink.title} /> : <img src={smLink.image.childImageSharp.fluid.src} alt={smLink.title} />
+            }
+          </a>
+        )
+      }
     </IntouchMedia>
   );
 
@@ -90,14 +112,14 @@ const Header = props => {
             <NavLink key="work">
               <Link to="/works/" activeClassName="activeLink">Work</Link>
             </NavLink>
-            <NavLink key="technologies">
-              <Link to="/technologies/" activeClassName="activeLink">Technologies</Link>
+            <NavLink key="services">
+              <Link to="/services/" activeClassName="activeLink">Services</Link>
             </NavLink>
             <NavLink key="about">
               <Link to="/about/" activeClassName="activeLink">About</Link>
             </NavLink>
           </NavLinkContainer>
-          <Button>Contact Us</Button>
+          <Button onClick={showModal}>Contact Us</Button>
         </NavBarContainer>
       </div>
       <ResNavMenu>
@@ -126,19 +148,31 @@ const Header = props => {
               <NavLink key="work">
                 <Link to="/works/" activeClassName="activeLink" onClick={onClose}>Work</Link>
               </NavLink>
-              <NavLink key="technologies">
-                <Link to="/technologies/" activeClassName="activeLink" onClick={onClose}>Technologies</Link>
+              <NavLink key="services">
+                <Link to="/services/" activeClassName="activeLink" onClick={onClose}>Services</Link>
               </NavLink>
               <NavLink key="about">
                 <Link to="/about/" activeClassName="activeLink" onClick={onClose}>About</Link>
               </NavLink>
               <NavLink key="contact">
-                <Link to="/" onClick={onClose}>Contact Us</Link>
+                <span className="contactLink" role="presentation" onClick={() => showModal('mob')}>Contact Us</span>
+                {/* <Link to="/" onClick={() => showModal('mob')}>Contact Us</Link> */}
               </NavLink>
             </NavLinkContainer>
           </NavBarContainer>
         </Drawer>
       </ResNavMenu>
+      <Modal
+        title=""
+        visible={isModalVisible}
+        footer={null}
+        closable
+        onCancel={handleCancel}
+        getContainer={() => document.getElementById('___gatsby')}
+        className="fullPageModal"
+      >
+        <ContactSection />
+      </Modal>
     </HeaderContainer>
   )
 }

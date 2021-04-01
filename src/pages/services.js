@@ -2,14 +2,15 @@ import React, { Fragment } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
 import SEO from "../components/seo"
-import WorksList from "../components/Works/WorksList"
-import DribbbleSection from "../components/Dribbble"
+import TechBanner from "../components/Services/Banner"
+import Tools from "../components/Services/Tools"
+import Partner from "../components/Services/Partner"
 
-const WorksPage = ({ location }) => {
+const TechPage = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: {eq: "seoWorks.md"}) {
+      file(relativePath: {eq: "services/seo.md"}) {
         childMarkdownRemark {
           frontmatter {
             title
@@ -26,10 +27,11 @@ const WorksPage = ({ location }) => {
   return (
     <Fragment>
       <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
-      <WorksList filter={location.hash} />
-      <DribbbleSection />
+      <TechBanner />
+      <Tools />
+      <Partner />
     </Fragment>
   )
 }
 
-export default WorksPage
+export default TechPage

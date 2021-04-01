@@ -19,19 +19,10 @@ const DribbbleSection = () => {
           title
           url
           cover
-          localCover {
-            childImageSharp {
-              fluid {
-                src
-              }
-            }
-          }
         }
       }
     }
   `);
-
-  console.log(data);
 
   useEffect(() => {
     if(data) {

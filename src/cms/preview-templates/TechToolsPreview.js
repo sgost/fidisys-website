@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { ToolsSection } from "../../components/Technologies/Tools";
+import { ToolsSection } from "../../components/Services/Tools";
 
 const ToolsPreview = ({ entry, widgetFor, getAsset }) => {
 
   const data = entry.getIn(["data"]).toJS();
 
-  if(data.hasOwnProperty('tools')) {
-    if(data.tools) {
-      data.tools.map(tool => {
+  if(data.hasOwnProperty('technologies')) {
+    if(data.technologies) {
+      data.technologies.map(tool => {
         var getImage = getAsset(tool.image);
         tool.image = getImage.toString();
         return tool;
@@ -20,7 +20,7 @@ const ToolsPreview = ({ entry, widgetFor, getAsset }) => {
   return (
     <ToolsSection
       title={data.title}
-      tools={data.tools}
+      technologies={data.technologies}
       preview={true}
     />
   );

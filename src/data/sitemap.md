@@ -6,40 +6,37 @@ sitemapList:
     sitemap:
       - id: 1
         title: Design
-        link: "#design"
+        link: "/services/#design"
       - id: 2
         title: Web
-        link: "#web"
+        link: "/services/#web"
       - id: 3
         title: Mobile
-        link: "#mobile"
+        link: "/services/#mobile"
   - id: 2
     title: Fidisys 360
     sitemap:
       - id: 1
         title: Highlights
-        link: "#highlights"
+        link: "/about/#highlights"
       - id: 2
-        title: FidiShow
-        link: "#fidishow"
-      - id: 3
         title: "#FridayAtFidisys"
-        link: "#fridayatfidisys"
-      - id: 4
+        link: "/about/#fridayatfidisys"
+      - id: 3
         title: Start App Show
-        link: "#startapp"
+        link: "/about/#startapp"
   - id: 3
     title: Works
     sitemap:
       - id: 1
         title: Websites
-        link: "#websites"
+        link: "/works/#websites"
       - id: 2
         title: Mobile Apps
-        link: "#mobileapp"
+        link: "/works/#mobileapp"
       - id: 3
         title: UI/UX Projects
-        link: "#ui/ux"
+        link: "/works/#ui/ux"
   - id: 4
     title: More
     sitemap:
@@ -48,7 +45,7 @@ sitemapList:
         link: /blog/
       - id: 2
         title: Gatsby Partnership
-        link: "#partnership"
+        link: "/services/#partnership"
       - id: 3
         title: Privacy Policy
         link: /
@@ -67,55 +64,5 @@ sitemapList:
       - id: 2
         title: Email
         link: "hello@fidisys.com"
-mediaLinks: [
-  {
-    id: 1,
-    title: "linkedin",
-    link: "https://www.linkedin.com/company/fidisys",
-    image: "./assets/linkedin.png"
-  },
-  {
-    id: 2,
-    title: "facebook",
-    link: "https://www.facebook.com/fidisys/",
-    image: "./assets/facebook_logo.png"
-  },
-  {
-    id: 3,
-    title: "instagram",
-    link: "https://www.instagram.com/fidisys/?hl=en",
-    image: "./assets/instagram_logo.png"
-  },
-  {
-    id: 4,
-    title: "twitter",
-    link: "https://twitter.com/fidisysinc",
-    image: "./assets/twitter_logo.png"
-  },
-  {
-    id: 5,
-    title: "youtube",
-    link: "https://www.youtube.com/channel/UCkw8oNfnBB23zci9XCzeoEA",
-    image: "./assets/youtube_logo.png"
-  },
-  {
-    id: 6,
-    title: "github",
-    link: "https://github.com/fidisys",
-    image: "./assets/github.png"
-  },
-  {
-    id: 7,
-    title: "medium",
-    link: "https://medium.com/@fidisys",
-    image: "./assets/medium.png"
-  },
-  {
-    id: 8,
-    title: "dribbble",
-    link: "https://dribbble.com/fidisys",
-    image: "./assets/dribbble.png"
-  }
-]
 copyright: "©2020 fidisys"
 ---

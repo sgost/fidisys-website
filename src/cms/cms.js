@@ -20,6 +20,10 @@ import ActivitiesPreview from "./preview-templates/ActivitiesPreview";
 
 import BlogPreview from "./preview-templates/BlogPreview";
 
+import SitemapPreview from "./preview-templates/SitemapPreview";
+
+import ContactPreview from "./preview-templates/ContactPreview"
+
 function StyleInjector({ children }) {
   const [iframeRef, setIframeRef] = useState(null);
 
@@ -64,3 +68,7 @@ CMS.registerPreviewTemplate("highlights", withStyledComponentsRendered(Highlight
 CMS.registerPreviewTemplate("activities", withStyledComponentsRendered(ActivitiesPreview));
 
 CMS.registerPreviewTemplate("blog", withStyledComponentsRendered(BlogPreview));
+
+CMS.registerPreviewTemplate("sitemap", withStyledComponentsRendered(SitemapPreview));
+
+CMS.registerPreviewTemplate("contact", withStyledComponentsRendered(ContactPreview));

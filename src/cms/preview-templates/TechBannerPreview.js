@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { TechBannerSection } from "../../components/Technologies/Banner";
+import { TechBannerSection } from "../../components/Services/Banner";
 
 const TechBannerPreview = ({ entry, widgetFor, getAsset }) => {
 

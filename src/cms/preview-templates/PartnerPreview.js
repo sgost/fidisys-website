@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { PartnerSection } from "../../components/Technologies/Partner";
+import { PartnerSection } from "../../components/Services/Partner";
 
 const PartnerPreview = ({ entry, widgetFor, getAsset }) => {
 

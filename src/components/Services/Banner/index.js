@@ -28,7 +28,7 @@ export const TechBannerSection = ({ description, image, preview }) => {
 const TechBanner = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "technologies/banner.md" }) {
+      file(relativePath: { eq: "services/banner.md" }) {
         childMarkdownRemark {
           frontmatter {
             description

@@ -34,8 +34,12 @@ const Layout = props => {
       <GlobalStyle />
       <Header />
       <main>{props.children}</main>
-      <Footer />
-      <SitemapSection />
+      {
+        typeof window !== 'undefined' && window.location.pathname !== '/sitemap/' &&  <Footer />
+      }
+      {
+        typeof window !== 'undefined' && window.location.pathname !== '/sitemap/' &&  <SitemapSection />
+      }
     </>
   )
 }

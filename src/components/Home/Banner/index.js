@@ -1,6 +1,7 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Button, Row, Col } from "antd"
+import { Button, Row, Col, Modal } from "antd"
+import ContactSection from "../../Contact"
 import RightArrow from "../../../images/arrow_right.png"
 import Gatsbylogo from "../../../data/assets/gatsby_logo.png"
 import {
@@ -14,6 +15,26 @@ import {
 } from "./styles"
 
 export const HomeBannerSection = ({ description, image }) => {
+
+  //modal
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
+  useEffect(() => {
+    if(isModalVisible) {
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.documentElement.style.overflow = 'unset';
+    }
+  }, [isModalVisible]);
+
   return (
     <BannerSection>
       <Row className="rowContainer">
@@ -26,7 +47,7 @@ export const HomeBannerSection = ({ description, image }) => {
                 <span></span>
               </h2>
             }
-            <Button type="primary">
+            <Button type="primary" onClick={showModal}>
               Let’s Work Together
               <span className="arrow">
                 <img src={RightArrow} alt="arrow" />
@@ -49,6 +70,17 @@ export const HomeBannerSection = ({ description, image }) => {
           </CardSec>
         </Col>
       </Row>
+      <Modal
+        title=""
+        visible={isModalVisible}
+        footer={null}
+        closable
+        onCancel={handleCancel}
+        getContainer={() => document.getElementById('___gatsby')}
+        className="fullPageModal"
+      >
+        <ContactSection />
+      </Modal>
     </BannerSection>
   )
 }

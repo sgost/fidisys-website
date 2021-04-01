@@ -91,6 +91,7 @@ export const NavLinkContainer = styled.ul`
     width: 100%;
     justify-content: center;
     align-items: flex-start;
+    margin-right: 0px;
   }
 `;
 
@@ -99,7 +100,7 @@ export const NavLink = styled.li`
   @media (max-width: 992px) {
     margin: 0px 8px;
   }
-  a {
+  a, .contactLink {
     display: inline-block;
     padding: 6px 0px;
     font-weight: normal;
@@ -108,6 +109,7 @@ export const NavLink = styled.li`
     color: ${palette.SECONDARY_TXT_COLOR};
     position: relative;
     text-transform: uppercase;
+    cursor: pointer;
     &:hover {
       color: ${palette.HEADING_COLOR};
     }
@@ -130,7 +132,7 @@ export const NavLink = styled.li`
     text-align: center;
     display: flex;
     padding: 9px 0px;
-    a {
+    a, .contactLink {
       display: inline-block;
       padding: 5px 0px;
       text-align: center;
@@ -175,8 +177,7 @@ export const IntouchMedia = styled.div`
   justify-content: space-evenly;
   margin-bottom: 25px;
   @media only screen and (max-width: 768px) {
-    margin: 80px 0px;
-    justify-content: center;
+    margin: 20px 8px 70px;
     .media-link {
       opacity: 1 !important;
       font-size: 24px;

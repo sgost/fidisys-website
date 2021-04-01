@@ -19,19 +19,22 @@ export const SitemapPreviewSection = ({
   return (
     <FooterSection>
       <SitemapContainer>
-        <SitemapList className="logoListItem">
-          <Link to="/" className="linkItem">
-            <img className="logo" src={Logo} alt="logo" />
-          </Link>
-        </SitemapList>
+        {
+          typeof window !== 'undefined' && window.location.pathname !== '/sitemap/' &&
+          <SitemapList className="logoListItem">
+            <Link to="/" className="linkItem">
+              <img className="logo" src={Logo} alt="logo" />
+            </Link>
+          </SitemapList>
+        }
         {
           sitemapList && sitemapList.map(dataItem =>
             <SitemapList key={dataItem.id}>
               <h5>{dataItem.title}</h5>
               {
                 dataItem.sitemap && dataItem.sitemap.map(sitemap =>
-                  dataItem.title === 'Contact us' ? 
-                  <Fragment>
+                  dataItem.title === 'Contact us' ?
+                  <Fragment key={sitemap.id}>
                     {
                       sitemap.title === 'Call' &&
                       <a href={'tel:' + sitemap.link} key={sitemap.id} className="linkItem">
@@ -86,7 +89,7 @@ const SitemapSection = props => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: {eq: "sitemap.md"}) {
+      sitemaps: file(relativePath: {eq: "sitemap.md"}) {
         childMarkdownRemark {
           frontmatter {
             sitemapList {
@@ -98,6 +101,13 @@ const SitemapSection = props => {
                 title
               }
             }
+            copyright
+          }
+        }
+      }
+      sm: file(relativePath: {eq: "smLinks.md"}) {
+        childMarkdownRemark {
+          frontmatter {
             mediaLinks {
               id
               title
@@ -112,16 +122,14 @@ const SitemapSection = props => {
                 publicURL
               }
             }
-            copyright
           }
         }
       }
     }
   `);
 
-  console.log(data);
-
-  const content = data.file.childMarkdownRemark.frontmatter;
+  const content = data.sitemaps.childMarkdownRemark.frontmatter;
+  const mediaContent = data.sm.childMarkdownRemark.frontmatter;
 
   return (
     <Fragment>
@@ -130,7 +138,7 @@ const SitemapSection = props => {
           <SitemapPreviewSection
             title={content.title}
             sitemapList={content.sitemapList}
-            mediaLinks={content.mediaLinks}
+            mediaLinks={mediaContent.mediaLinks}
             copyright={content.copyright}
             preview={false}
           />

@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react"
+import React, { Fragment, useState, useEffect, useCallback,useRef } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Row, Col, Select } from "antd"
 import Arrow from "../../../images/arrow_down.png"
@@ -12,7 +12,7 @@ import {
   FilterContainer
 } from "./styles"
 
-const WorksList = () => {
+const WorksList = props => {
 
   const { Option } = Select;
 
@@ -64,7 +64,7 @@ const WorksList = () => {
 
   //filter
 
-  const filterData = (val) => {
+  const filterData = useCallback((val) => {
     if(val === 'all') {
       setWorksData(allData);
     } else {
@@ -78,15 +78,27 @@ const WorksList = () => {
         setWorksData(data_filter);
       }
     }
-  };
+  }, [allData]);
 
   const filterChange = (value) => {
     setFilterVal(value);
     filterData(value);
   };
 
+  const myRef = useRef(null)
+
+  useEffect(() => {
+    if(props.filter) {
+      let str = props.filter;
+      str = str.substring(1);
+      setFilterVal(str);
+      filterData(str);
+      myRef.current.scrollIntoView();
+    }
+  }, [props.filter, filterData]);
+
   return (
-    <SectionContainer>
+    <SectionContainer ref={myRef}>
       <FilterContainer>
         <span className="selLabel">Show me</span>
         <Select defaultValue="all" value={filterVal} style={{ width: 372 }} onChange={filterChange} suffixIcon={<img src={Arrow} alt="arrow" />}>

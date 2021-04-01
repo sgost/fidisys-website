@@ -2,6 +2,7 @@ import React, { Fragment } from "react"
 import { graphql } from "gatsby"
 import SEO from "../seo"
 import {
+  BlogPageSection,
   BlogContainer,
   AuthorInfo,
   BlogContent,
@@ -23,7 +24,7 @@ export const BlogPost = ({
   // const content = data.markdownRemark;
 
   return (
-    <Fragment>
+    <BlogPageSection>
       <BlogContainer>
         <AuthorInfo>
           <div className="author_image">
@@ -64,7 +65,7 @@ export const BlogPost = ({
           </TagsList>
         }
       </BlogContainer>
-    </Fragment>
+    </BlogPageSection>
   )
 }
 

@@ -1,6 +1,7 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import { Button } from "antd"
+import { Button, Modal } from "antd"
+import ContactSection from "../Contact"
 import RightArrow from "../../images/arrow_right.png"
 import {
   SectionContainer,
@@ -9,6 +10,26 @@ import {
 } from "./styles"
 
 export const FooterSection = ({ title, image, preview }) => {
+
+  //modal
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
+  useEffect(() => {
+    if(isModalVisible) {
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.documentElement.style.overflow = 'unset';
+    }
+  }, [isModalVisible]);
+
   return (
     <SectionContainer>
       <IntouchContainer>
@@ -22,7 +43,7 @@ export const FooterSection = ({ title, image, preview }) => {
               }
             </Fragment>
           }
-          <Button type="primary">
+          <Button type="primary" onClick={showModal}>
             Get in Touch
             <span className="arrow">
               <img src={RightArrow} alt="arrow" />
@@ -30,6 +51,17 @@ export const FooterSection = ({ title, image, preview }) => {
           </Button>
         </IntouchSummary>
       </IntouchContainer>
+      <Modal
+        title=""
+        visible={isModalVisible}
+        footer={null}
+        closable
+        onCancel={handleCancel}
+        getContainer={() => document.getElementById('___gatsby')}
+        className="fullPageModal"
+      >
+        <ContactSection />
+      </Modal>
     </SectionContainer>
   )
 }

@@ -13,7 +13,7 @@ export const ToolsSection = ({ title, technologies, preview }) => {
       <div>
         {
           technologies && technologies.map(tech =>
-            <div>
+            <div id={`${tech.id}`} key={tech.id} className="toolsCont">
               <SectionHeader>
                 <h2>{tech.title}</h2>
                 <p>{tech.description}</p>
@@ -48,13 +48,14 @@ export const ToolsSection = ({ title, technologies, preview }) => {
 const Tools = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "technologies/tools.md" }) {
+      file(relativePath: { eq: "services/tools.md" }) {
         childMarkdownRemark {
           frontmatter {
             title
             technologies {
               title
               description
+              id
               tools {
                 title
                 image {

@@ -1,5 +1,5 @@
 import React, { Fragment } from "react"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, Link, navigate, useStaticQuery } from "gatsby"
 import { Row, Col, Button } from "antd"
 import RightArrow from "../../../images/arrow_right.png"
 import ArrowRight from "../../../images/arrow_right_blue.png"
@@ -13,6 +13,11 @@ import {
 } from "./styles"
 
 export const WorksSection = ({ title, works, preview }) => {
+
+  const goToWorks = () => {
+    navigate('/works/');
+  };
+
   return (
     <SectionContainer>
       <SectionHeader>
@@ -51,7 +56,7 @@ export const WorksSection = ({ title, works, preview }) => {
         }
       </WorksList>
       <AllworksBtn>
-        <Button type="primary">
+        <Button type="primary" onClick={goToWorks}>
           Browse all our works
           <span className="arrow">
             <img src={RightArrow} alt="arrow" />

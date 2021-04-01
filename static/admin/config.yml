@@ -125,40 +125,38 @@ collections:
         fields:
           - { label: Title, name: title }
           - { label: Image, name: image, widget: image }
-          - label: Media Links
-            name: mediaLinks
-            widget: list
-            fields:
-              - { label: id, name: id, widget: number }
-              - { label: Title, name: title }
-              - { label: Link, name: link }
-              - { label: Image, name: image, widget: image }
-          - { label: Copyright, name: copyright }
-  - label: Technologies
-    name: technologies
+  - label: Services
+    name: services
     files:
       - label: Banner
         name: techBanner
-        file: 'src/data/technologies/banner.md'
+        file: 'src/data/services/banner.md'
         public_folder: '../assets'
         fields:
           - { label: Description, name: description }
           - { label: Image, name: image, widget: image }
       - label: Tools
         name: techTools
-        file: 'src/data/technologies/tools.md'
+        file: 'src/data/services/tools.md'
         public_folder: '../assets'
         fields:
           - { label: Title, name: title }
-          - label: Tools
-            name: tools
+          - label: Technologies
+            name: technologies
             widget: list
             fields:
               - { label: Title, name: title }
-              - { label: Image, name: image, widget: image }
+              - { label: Description, name: description }
+              - { label: ID, name: id }
+              - label: Technologies
+                name: technologies
+                widget: list
+                fields:
+                  - { label: Title, name: title }
+                  - { label: Image, name: image, widget: image }
       - label: Partnership
         name: partnership
-        file: 'src/data/technologies/partner.md'
+        file: 'src/data/services/partner.md'
         public_folder: '../assets'
         fields:
           - { label: Title, name: title }
@@ -167,7 +165,7 @@ collections:
           - { name: body, label: Body, widget: markdown }
       - label: SEO
         name: techSeo
-        file: 'src/data/technologies/seo.md'
+        file: 'src/data/services/seo.md'
         fields:
           - { label: Title, name: title }
           - { label: Description, name: description }
@@ -260,3 +258,60 @@ collections:
           - { label: Title, name: title }
           - { label: Description, name: description }
           - { label: Keywords, name: keywords, widget: list }
+  - label: Social Media Links
+    name: socialMediaLinks
+    files:
+      - label: Social Media Links
+        name: socialMediaLinks
+        file: 'src/data/smLinks.md'
+        public_folder: './assets'
+        fields:
+          - { label: Title, name: title }
+          - label: Media Links
+            name: mediaLinks
+            widget: list
+            fields:
+              - { label: id, name: id, widget: number }
+              - { label: Title, name: title }
+              - { label: Link, name: link }
+              - { label: Image, name: image, widget: image }
+  - label: Sitemap
+    name: sitemap
+    files:
+      - label: Sitemap
+        name: sitemap
+        file: 'src/data/sitemap.md'
+        fields:
+          - { label: Title, name: title }
+          - label: SitemapList
+            name: sitemapList
+            widget: list
+            fields:
+              - { label: id, name: id, widget: number }
+              - { label: Title, name: title }
+              - label: Sitemap
+                name: sitemap
+                widget: list
+                fields:
+                  - { label: id, name: id, widget: number }
+                  - { label: Title, name: title }
+                  - { label: Link, name: link }
+          - { label: Copyright, name: copyright }
+  - label: Contact
+    name: contact
+    files:
+      - label: Contact
+        name: contact
+        file: 'src/data/contact.md'
+        public_folder: './assets'
+        fields:
+          - { label: Title, name: title }
+          - label: Contact
+            name: contact
+            widget: list
+            fields:
+              - { label: id, name: id, widget: number }
+              - { label: Title, name: title }
+              - { label: Info, name: info }
+              - { label: Image, name: image, widget: image }
+          - { name: body, label: Body, widget: markdown }

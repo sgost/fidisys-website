@@ -24,8 +24,6 @@ const DribbbleSection = () => {
     }
   `);
 
-  console.log(data);
-
   useEffect(() => {
     if(data) {
       setAllData(data.allDribbbleShot.nodes);

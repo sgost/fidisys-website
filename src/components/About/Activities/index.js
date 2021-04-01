@@ -14,7 +14,7 @@ export const ActivitiesSection = ({ activities, preview }) => {
     <Fragment>
       {
         activities && activities.map(activity =>
-          <SectionContainer key={activity.id}>
+          <SectionContainer key={activity.id} id={activity.navId}>
             <WorksList>
               <Row className="workRow">
                 <Col xs={24} sm={24} md={13} lg={13} xl={13}>
@@ -60,6 +60,7 @@ const Activities = () => {
               id
               title
               description
+              navId
               link
               image {
                 childImageSharp {

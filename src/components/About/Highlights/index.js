@@ -12,7 +12,7 @@ import {
 
 export const HighlightsSection = ({ title, description, highlights, preview }) => {
   return (
-    <SectionContainer>
+    <SectionContainer id="highlights">
       <SectionHeader>
         <h2>{title}</h2>
         <p>{description}</p>

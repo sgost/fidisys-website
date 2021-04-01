@@ -4,10 +4,12 @@ import * as palette from '../../../styles/variables';
 export const SectionContainer = styled.section`
   padding: 60px;
   background: ${palette.BLACK_COLOR};
+  .toolsCont {
+    padding-top: 50px;
+  }
   @media only screen and (max-width: 768px) {
     padding: 30px;
     .toolsList {
-      padding: 0px 0px 50px !important;
       max-width: 600px !important;
       .ant-col {
         min-width: 33%;
@@ -17,7 +19,6 @@ export const SectionContainer = styled.section`
   .toolsList {
     max-width: 1050px;
     margin: 0 auto;
-    padding: 0px 0px 70px;
     justify-content: center;
   }
 `;
@@ -25,7 +26,7 @@ export const SectionContainer = styled.section`
 export const SectionHeader = styled.div`
   max-width: 660px;
   margin: 0 auto;
-  padding: 50px 0px;
+  padding: 50px 0px 70px;
   h2 {
     text-align: center;
     font-weight: 500;
@@ -40,7 +41,7 @@ export const SectionHeader = styled.div`
     margin-top: 10px;
   }
   @media only screen and (max-width: 768px) {
-    padding: 50px 0px 30px;
+    padding-bottom: 50px 0px 30px;
     h2 {
       font-size: 36px !important;
       line-height: 47px !important;

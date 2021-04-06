@@ -41,11 +41,13 @@ export const Content = styled.div`
       font-size: 26px;
       line-height: 34px;
       margin-bottom: 30px !important;
-      span {
+      text-align: center;
+      &:before {
         width: 50px !important;
         height: 50px !important;
         top: -12px !important;
-        left: -12px !important;
+        left: unset !important;
+        margin: 0 -20px;
       }
     }
     .ant-btn {
@@ -65,12 +67,13 @@ export const Content = styled.div`
     position: relative;
     display: inline-block;
     z-index: 1;
-    span {
+    &:before {
+      content: '';
       width: 89px;
       height: 89px;
       border-radius: 100%;
       background: ${palette.LIGHT_RED};
-      display: block;
+      display: inline-block;
       position: absolute;
       top: -28px;
       left: -35px;

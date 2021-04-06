@@ -118,6 +118,9 @@ const Header = props => {
             <NavLink key="about">
               <Link to="/about/" activeClassName="activeLink">About</Link>
             </NavLink>
+            <NavLink key="blog">
+              <Link to="/blog/" activeClassName="activeLink">Blog</Link>
+            </NavLink>
           </NavLinkContainer>
           <Button onClick={showModal}>Contact Us</Button>
         </NavBarContainer>
@@ -153,6 +156,9 @@ const Header = props => {
               </NavLink>
               <NavLink key="about">
                 <Link to="/about/" activeClassName="activeLink" onClick={onClose}>About</Link>
+              </NavLink>
+              <NavLink key="blog">
+                <Link to="/blog/" activeClassName="activeLink" onClick={onClose}>Blog</Link>
               </NavLink>
               <NavLink key="contact">
                 <span className="contactLink" role="presentation" onClick={() => showModal('mob')}>Contact Us</span>

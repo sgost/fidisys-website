@@ -49,6 +49,14 @@ export const WorksSection = ({ title, works, preview }) => {
                       <img src={ArrowRight} alt="arrow" />
                     </span>
                   </Link>
+                  <AllworksBtn className="mobView">
+                    <Button type="primary" onClick={goToWorks}>
+                      Browse all our works
+                      <span className="arrow">
+                        <img src={RightArrow} alt="arrow" />
+                      </span>
+                    </Button>
+                  </AllworksBtn>
                 </ContentSection>
               </Col>
             </Row>

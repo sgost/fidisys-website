@@ -10,7 +10,7 @@ const BlogPage = ({ data }) => {
   const seoData = data.seoData.childMarkdownRemark.frontmatter;
 
   return (
-    <Fragment>
+    <div style={{ background: '#000' }}>
       <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
       <div className="blogListContainer">
         <h2>Blog</h2>
@@ -40,7 +40,7 @@ const BlogPage = ({ data }) => {
           })
         }
       </div>
-    </Fragment>
+    </div>
   )
 }
 

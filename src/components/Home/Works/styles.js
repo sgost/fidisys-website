@@ -5,7 +5,7 @@ export const SectionContainer = styled.section`
   padding: 60px;
   background: ${palette.SECONDARY_SECTION_BACKGROUND};
   @media only screen and (max-width: 768px) {
-    padding: 30px;
+    padding: 0px;
   }
   .serviceRow {
     max-width: 1050px;
@@ -103,9 +103,28 @@ export const WorksList = styled.div`
         }
       }
     }
+    .mobView {
+      display: none;
+    }
     @media only screen and (max-width: 768px) {
+      padding: 40px 30px 60px;
       .ant-col {
         min-width: 100%;
+      }
+      &:nth-child(odd) {
+        background: ${palette.SECONDARY_SECTION_BACKGROUND};
+      }
+      &:nth-child(even) {
+        background: ${palette.BLACK_COLOR};
+      }
+      .mobView {
+        margin: 0px;
+        padding: 60px 0px 0px;
+      }
+      &:last-child {
+        .mobView {
+          display: flex;
+        }
       }
     }
   }
@@ -140,5 +159,8 @@ export const AllworksBtn = styled.div`
         margin-left: 8px !important;
       }
     }
+  }
+  @media only screen and (max-width: 768px) {
+    display: none;
   }
 `;

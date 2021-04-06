@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import * as palette from '../../../styles/variables';
 
 export const SectionContainer = styled.section`
-  padding: 60px;
+  padding: 80px 60px;
   background: ${palette.SECONDARY_SECTION_BACKGROUND};
   @media only screen and (max-width: 768px) {
     padding: 30px;

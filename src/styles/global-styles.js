@@ -397,11 +397,11 @@ export const GlobalStyle = createGlobalStyle`
 
   .blogListContainer {
     max-width: 700px;
-    margin: 48px auto;
+    margin: 0 auto;
+    padding: 48px 0px;
     h2 {
       font-size: 30px;
-      padding: 24px;
-      color: ${palette.BLACK_COLOR};
+      padding: 24px 0px;
     }
     .blogListItem {
       box-shadow: rgba(46, 41, 51, 0.08) 0px 1px 2px, rgba(71, 63, 79, 0.08) 0px 2px 4px;

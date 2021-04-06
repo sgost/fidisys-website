@@ -44,7 +44,7 @@ export const HomeBannerSection = ({ description, image }) => {
               description &&
               <h2>
                 {description}
-                <span></span>
+                {/* <span></span> */}
               </h2>
             }
             <Button type="primary" onClick={showModal}>

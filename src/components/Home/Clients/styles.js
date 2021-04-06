@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import * as palette from '../../../styles/variables';
 
 export const SectionContainer = styled.section`
-  padding: 60px 0px;
+  padding: 60px 0px 100px;
   background: ${palette.BLACK_COLOR};
   .serviceRow {
     max-width: 1050px;
@@ -10,7 +10,7 @@ export const SectionContainer = styled.section`
     justify-content: center;
   }
   @media only screen and (max-width: 768px) {
-    padding: 30px;
+    padding: 30px 30px 60px;
   }
 `;
 

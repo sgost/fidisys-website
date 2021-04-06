@@ -5,7 +5,7 @@ export const SectionContainer = styled.section`
   padding: 60px;
   background: ${palette.BLACK_COLOR};
   .toolsCont {
-    padding-top: 50px;
+    padding: 50px 0px;
   }
   @media only screen and (max-width: 768px) {
     padding: 30px;
@@ -41,7 +41,7 @@ export const SectionHeader = styled.div`
     margin-top: 10px;
   }
   @media only screen and (max-width: 768px) {
-    padding-bottom: 50px 0px 30px;
+    padding: 50px 0px 30px;
     h2 {
       font-size: 36px !important;
       line-height: 47px !important;

@@ -1,5 +1,6 @@
 import React, { Fragment } from "react"
 import { graphql, useStaticQuery } from "gatsby"
+import { Router } from "@reach/router"
 
 import SEO from "../components/seo"
 import WorksList from "../components/Works/WorksList"
@@ -26,7 +27,10 @@ const WorksPage = ({ location }) => {
   return (
     <Fragment>
       <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
-      <WorksList filter={location.hash} />
+      <Router>
+        <WorksList path="/works"  filter={location.hash} />
+        <WorksList path="/works/:id"  filter={location.hash} />
+      </Router>
       <DribbbleSection />
     </Fragment>
   )

@@ -110,16 +110,16 @@ const Header = props => {
         <NavBarContainer >
           <NavLinkContainer>
             <NavLink key="work">
-              <Link to="/works/" activeClassName="activeLink">Work</Link>
+              <Link to="/works/" activeClassName="activeLink" partiallyActive={true}>Work</Link>
             </NavLink>
             <NavLink key="services">
-              <Link to="/services/" activeClassName="activeLink">Services</Link>
+              <Link to="/services/" activeClassName="activeLink" partiallyActive={true}>Services</Link>
             </NavLink>
             <NavLink key="about">
-              <Link to="/about/" activeClassName="activeLink">About</Link>
+              <Link to="/about/" activeClassName="activeLink" partiallyActive={true}>About</Link>
             </NavLink>
             <NavLink key="blog">
-              <Link to="/blog/" activeClassName="activeLink">Blog</Link>
+              <Link to="/blog/" activeClassName="activeLink" partiallyActive={true}>Blog</Link>
             </NavLink>
           </NavLinkContainer>
           <Button onClick={showModal}>Contact Us</Button>
@@ -146,19 +146,19 @@ const Header = props => {
           <NavBarContainer >
             <NavLinkContainer>
               <NavLink key="home">
-                <Link to="/" activeClassName="activeLink" onClick={onClose}>Home</Link>
+                <Link to="/" activeClassName="activeLink" partiallyActive={true} onClick={onClose}>Home</Link>
               </NavLink>
               <NavLink key="work">
-                <Link to="/works/" activeClassName="activeLink" onClick={onClose}>Work</Link>
+                <Link to="/works/" activeClassName="activeLink" partiallyActive={true} onClick={onClose}>Work</Link>
               </NavLink>
               <NavLink key="services">
-                <Link to="/services/" activeClassName="activeLink" onClick={onClose}>Services</Link>
+                <Link to="/services/" activeClassName="activeLink" partiallyActive={true} onClick={onClose}>Services</Link>
               </NavLink>
               <NavLink key="about">
-                <Link to="/about/" activeClassName="activeLink" onClick={onClose}>About</Link>
+                <Link to="/about/" activeClassName="activeLink" partiallyActive={true} onClick={onClose}>About</Link>
               </NavLink>
               <NavLink key="blog">
-                <Link to="/blog/" activeClassName="activeLink" onClick={onClose}>Blog</Link>
+                <Link to="/blog/" activeClassName="activeLink" partiallyActive={true} onClick={onClose}>Blog</Link>
               </NavLink>
               <NavLink key="contact">
                 <span className="contactLink" role="presentation" onClick={() => showModal('mob')}>Contact Us</span>

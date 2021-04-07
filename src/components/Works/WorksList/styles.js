@@ -28,7 +28,7 @@ export const SectionContainer = styled.section`
         }
       }
       @media only screen and (min-width: 768px) and (max-width: 992px) {
-        padding: 15px;
+        padding: 25px 15px;
       }
       &:first-child {
         margin-top: 0% !important;
@@ -114,6 +114,38 @@ export const FilterContainer = styled.div`
   max-width: 1200px;
   margin: 0 auto 50px;
   padding-left: 25px;
+  .filterBtn {
+    border: none;
+    background: none !important;
+    border-bottom: 1px solid ${palette.WHITE_COLOR} !important;
+    border-radius: 0px !important;
+    width: 372px;
+    display: flex;
+    align-items: center;
+    height: 62px !important;
+    min-height: 62px !important;
+    padding: 0px !important;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 62px !important;
+    text-transform: capitalize;
+    position: relative;
+    color: ${palette.HEADING_COLOR};
+    &:hover, &:active, &:focus {
+      border: none;
+      background: none !important;
+      border-bottom: 1px solid ${palette.WHITE_COLOR} !important;
+      border-radius: 0px !important;
+      color: ${palette.HEADING_COLOR} !important;
+    }
+    .downArrow {
+      margin-top: -20px;
+      width: 36px;
+      height: 36px;
+      position: absolute;
+      right: 0px;
+    }
+  }
   @media only screen and (max-width: 576px) {
     padding: 20px 20px 0px;
   }
@@ -124,6 +156,18 @@ export const FilterContainer = styled.div`
     padding-left: 15px;
   }
   @media (max-width: 768px) {
+    .filterBtn {
+      width: 290px !important;
+      font-size: 36px !important;
+      line-height: 47px !important;
+      height: 47px !important;
+      min-height: 47px !important;
+      .downArrow {
+        margin-top: -14px;
+        width: 28px;
+        height: 28px;
+      }
+    }
     .selLabel {
       font-size: 12px;
       line-height: 16px;
@@ -184,5 +228,53 @@ export const FilterContainer = styled.div`
     width: 36px;
     height: 36px;
     right: 0px !important;
+  }
+`;
+
+export const NavLinkContainer = styled.ul`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  margin-right: 0px;
+  padding: 100px 0px 0px 100px;
+  @media only screen and (max-width: 768px) {
+    padding: 40px 0px 0px;
+  }
+`;
+
+export const NavLink = styled.li`
+  width: 100%;
+  text-align: center;
+  display: flex;
+  padding: 9px 0px;
+  a, .contactLink {
+    display: inline-block;
+    padding: 5px 0px;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 47px;
+    color: ${palette.SECONDARY_TXT_COLOR};
+    position: relative;
+    text-transform: capitalize;
+    cursor: pointer;
+    text-align: center;
+    &:hover {
+      color: ${palette.HEADING_COLOR};
+    }
+  }
+  .activeLink {
+    color: ${palette.HEADING_COLOR};
+    font-weight: bold;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: ${palette.HEADING_COLOR};
+      bottom: 0;
+      left: 0;
+    }
   }
 `;

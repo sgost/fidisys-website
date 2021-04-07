@@ -3,7 +3,7 @@ title: "Eatout"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, venenatis sit urna, purus non egestas."
 image: ""
 theme: "#6F67BD"
-categories: ["mobileapp", "ui/ux"]
+categories: ["mobileapp", "ui-ux"]
 workTags: [
   {
     title: "Native Android",

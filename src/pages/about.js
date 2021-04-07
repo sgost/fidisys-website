@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import SEO from "../components/seo"
 import AboutBanner from "../components/About/Banner"
 import Highlights from "../components/About/Highlights"
+import Fidishow from "../components/About/Fidishow"
 import Activities from "../components/About/Activities"
 import Testimonials from "../components/Testimonials"
 
@@ -30,6 +31,7 @@ const AboutPage = () => {
       <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
       <AboutBanner />
       <Highlights />
+      <Fidishow />
       <Activities />
       <Testimonials />
     </Fragment>

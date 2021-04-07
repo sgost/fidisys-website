@@ -3,7 +3,7 @@ title: "Exams"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, venenatis sit urna, purus non egestas."
 image: ""
 theme: "#F65F92"
-categories: ["mobileapp", "ui/ux"]
+categories: ["mobileapp", "ui-ux"]
 workTags: [
   {
     title: "Native Android",

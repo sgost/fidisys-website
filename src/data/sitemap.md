@@ -20,9 +20,12 @@ sitemapList:
         title: Highlights
         link: "/about/#highlights"
       - id: 2
+        title: "FidiShow"
+        link: "/about/#fidishow"
+      - id: 3
         title: "#FridayAtFidisys"
         link: "/about/#fridayatfidisys"
-      - id: 3
+      - id: 4
         title: Start App Show
         link: "/about/#startapp"
   - id: 3
@@ -30,13 +33,13 @@ sitemapList:
     sitemap:
       - id: 1
         title: Websites
-        link: "/works/#websites"
+        link: "/works/websites"
       - id: 2
         title: Mobile Apps
-        link: "/works/#mobileapp"
+        link: "/works/mobileapp"
       - id: 3
         title: UI/UX Projects
-        link: "/works/#ui/ux"
+        link: "/works/ui-ux"
   - id: 4
     title: More
     sitemap:

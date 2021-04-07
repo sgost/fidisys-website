@@ -3,7 +3,7 @@ title: "Needsmart"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, venenatis sit urna, purus non egestas."
 image: ""
 theme: "#FF7550"
-categories: ["mobileapp", "ui/ux", "websites"]
+categories: ["mobileapp", "ui-ux", "websites"]
 workTags: [
   {
     title: "Native Android",

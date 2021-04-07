@@ -39,7 +39,7 @@ const DribbbleSection = () => {
       <GridContainer>
         {
           allData && allData.map(dataItem =>
-            <Fragment>
+            <Fragment key={dataItem.url}>
               {
                 dataItem.cover !== null &&
                 <GridItem href={dataItem.url} target="_blank" without="true" rel="noopener noreferrer">

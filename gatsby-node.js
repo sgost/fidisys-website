@@ -23,6 +23,15 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 }
 
+
+exports.onCreatePage = async ({page, actions}) =>{
+  const {createPage} = actions
+  if(page.path.match(/^\/works/)){
+    page.matchPath = "/works/*"
+    createPage(page)
+  }
+}
+
 exports.createPages = async ({ graphql, actions }) => {
 
   const { createPage } = actions

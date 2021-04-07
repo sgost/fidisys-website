@@ -6,7 +6,7 @@ image: content-concepts.png
 theme: "#6F67BD"
 categories:
   - websites
-  - ui/ux
+  - ui-ux
 workTags:
   - title: React
     themeColor: "#34D7FF"

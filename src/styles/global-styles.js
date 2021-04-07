@@ -401,7 +401,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 48px 0px;
     h2 {
       font-size: 30px;
-      padding: 24px 0px;
+      padding: 24px;
     }
     .blogListItem {
       box-shadow: rgba(46, 41, 51, 0.08) 0px 1px 2px, rgba(71, 63, 79, 0.08) 0px 2px 4px;
@@ -487,6 +487,12 @@ export const GlobalStyle = createGlobalStyle`
       .ant-modal-body {
         padding: 24px !important;
       }
+    }
+  }
+
+  .worksFilterModal {
+    .ant-modal-body {
+      align-items: flex-start;
     }
   }
 

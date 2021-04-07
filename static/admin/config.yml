@@ -208,8 +208,22 @@ collections:
               - { label: ID, name: id, widget: number }
               - { label: Title, name: title }
               - { label: Description, name: description }
+              - { label: Nav Id, name: navId }
               - { label: Link, name: link }
               - { label: Image, name: image, widget: image }
+      - label: Fidishow
+        name: fidishow
+        file: 'src/data/about/fidishow.md'
+        public_folder: '../assets'
+        fields:
+          - { label: Title, name: title }
+          - { label: Help Text, name: helpText }
+          - { label: Author, name: showAuthor, widget: image }
+          - { label: Platform Logo, name: pfLogo, widget: image }
+          - { label: Nav Id, name: navId }
+          - { label: Link, name: link }
+          - { label: Image, name: image, widget: image }
+          - { name: body, label: Body, widget: markdown }
       - label: SEO
         name: aboutSeo
         file: 'src/data/about/seo.md'

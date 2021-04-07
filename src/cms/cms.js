@@ -17,6 +17,7 @@ import PartnerPreview from "./preview-templates/PartnerPreview";
 import AboutBannerPreview from "./preview-templates/AboutBannerPreview";
 import HighlightsPreview from "./preview-templates/HighlightsPreview";
 import ActivitiesPreview from "./preview-templates/ActivitiesPreview";
+import FidishowPreview from "./preview-templates/FidishowPreview";
 
 import BlogPreview from "./preview-templates/BlogPreview";
 
@@ -66,6 +67,7 @@ CMS.registerPreviewTemplate("partnership", withStyledComponentsRendered(PartnerP
 CMS.registerPreviewTemplate("aboutBanner", withStyledComponentsRendered(AboutBannerPreview));
 CMS.registerPreviewTemplate("highlights", withStyledComponentsRendered(HighlightsPreview));
 CMS.registerPreviewTemplate("activities", withStyledComponentsRendered(ActivitiesPreview));
+CMS.registerPreviewTemplate("fidishow", withStyledComponentsRendered(FidishowPreview));
 
 CMS.registerPreviewTemplate("blog", withStyledComponentsRendered(BlogPreview));
 

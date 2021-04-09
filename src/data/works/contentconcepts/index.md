@@ -17,8 +17,10 @@ workTags:
   - title: Figma
     themeColor: "#FF699B"
     themeBg: rgba(248, 101, 150, 0.3)
+type: website
+pageLink: "https://contentconcepts.in/"
 seo:
-  title: fidisys - Works
+  title: ContentConcepts
   description: We design and develop beautiful applications, experience and brands
     that breaks the barriers of time and burn into the memories of customers
     love.

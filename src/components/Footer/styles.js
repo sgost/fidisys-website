@@ -8,7 +8,7 @@ export const SectionContainer = styled.footer`
   flex-direction: column;
   justify-content: space-between;
   @media only screen and (max-width: 845px) {
-    padding: 35px;
+    padding: 50px 35px;
   }
 `;
 

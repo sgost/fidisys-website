@@ -37,7 +37,6 @@ export const FidishowSection = ({
       .then(res => res.json())
       .then(
         (result) => {
-          console.log(result);
           if(result.items.length > 0) {
             result.items.sort(function(a, b){
               return moment(b.snippet.publishedAt).diff(a.snippet.publishedAt);
@@ -106,8 +105,8 @@ export const FidishowSection = ({
           <h3>Recent Episodes</h3>
           <EpisodesList>
             {
-              playList.length > 0 && playList.map(list =>
-                <EpisodeListItem href={`https://www.youtube.com/watch?v=${list.snippet.resourceId.videoId}`} target="_blank" without="true" rel="noopener noreferrer">
+              playList.length > 0 && playList.slice(0, 4).map(list =>
+                <EpisodeListItem href={`https://www.youtube.com/watch?v=${list.snippet.resourceId.videoId}`} target="_blank" without="true" rel="noopener noreferrer" key={list.id}>
                   <Row>
                     <Col xs={16} sm={16} md={18} lg={18} xl={18}>
                       <EpisodeContent>

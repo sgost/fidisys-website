@@ -1,5 +1,5 @@
 import React, { Fragment } from "react"
-import { graphql, Link, navigate, useStaticQuery } from "gatsby"
+import { graphql, navigate, useStaticQuery } from "gatsby"
 import { Row, Col, Button } from "antd"
 import RightArrow from "../../../images/arrow_right.png"
 import ArrowRight from "../../../images/arrow_right_blue.png"
@@ -43,12 +43,17 @@ export const WorksSection = ({ title, works, preview }) => {
                 <ContentSection className="contentSec">
                   <h2>{work.title}</h2>
                   <p className="description">{work.description}</p>
-                  <Link className="viewLink" to={work.link}>
-                    View Casestudy
+                  <a className="viewLink" href={work.link} target="_blank" without="true" rel="noopener noreferrer">
+                    {
+                      work.type === 'casestudy' && 'View Casestudy'
+                    }
+                    {
+                      work.type === 'website' && 'View Website'
+                    }
                     <span>
                       <img src={ArrowRight} alt="arrow" />
                     </span>
-                  </Link>
+                  </a>
                   <AllworksBtn className="mobView">
                     <Button type="primary" onClick={goToWorks}>
                       Browse all our works
@@ -86,6 +91,7 @@ const Works = () => {
               id
               title
               description
+              type
               link
               image {
                 childImageSharp {

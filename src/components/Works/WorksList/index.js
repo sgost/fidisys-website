@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect, useCallback } from "react"
+import React, { useState, useEffect, useCallback } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import { Row, Col, Modal, Button } from "antd"
 import Arrow from "../../../images/arrow_down.png"
@@ -16,8 +16,6 @@ import {
 import Loader from "../../Loader"
 
 const WorksList = props => {
-
-  console.log(props);
 
   const[loading, setLoading] = useState(true);
 
@@ -54,6 +52,8 @@ const WorksList = props => {
               themeColor
               themeBg
             }
+            type
+            pageLink
           }
         }
       }
@@ -150,16 +150,24 @@ const WorksList = props => {
           {
             worksData && worksData.map(dataItem =>
               <Col xs={24} sm={24} md={12} lg={12} xl={12} key={dataItem.id} className="workCol">
-                <WorkItem>
-                  <ImageContainer bg={dataItem.frontmatter.theme}>
+                <WorkItem href={dataItem.frontmatter.type === 'casestudy' ? dataItem.fields.slug : dataItem.frontmatter.pageLink} target="_blank" without="true" rel="noopener noreferrer" type={dataItem.frontmatter.type} image={dataItem.frontmatter.image}>
+                  <ImageContainer bg={dataItem.frontmatter.image === null && dataItem.frontmatter.theme} className="imageCont">
                     {
-                      dataItem.frontmatter.image !== null &&
-                      <Fragment>
+                      dataItem.frontmatter.image !== null ?
+                      <span className="imgSec">
                         {
                           (dataItem.frontmatter.image.extension === 'svg' && dataItem.frontmatter.image.childImageSharp === null) ? <img src={dataItem.frontmatter.image.publicURL} alt={dataItem.frontmatter.title} /> : <img src={dataItem.frontmatter.image.childImageSharp.fluid.originalImg} alt={dataItem.frontmatter.title} />
                         }
-                      </Fragment>
+                      </span> : <span className="imgSec"></span>
                     }
+                    <span className="hoverIcon">
+                      {
+                        dataItem.frontmatter.type !== null && dataItem.frontmatter.type === 'casestudy' && 'View Casestudy'
+                      }
+                      {
+                        dataItem.frontmatter.type !== null && dataItem.frontmatter.type === 'website' && 'View Website'
+                      }
+                    </span>
                   </ImageContainer>
                   <WorkDescription>
                     <h3>{dataItem.frontmatter.title}</h3>
@@ -189,7 +197,7 @@ const WorksList = props => {
       >
         <NavLinkContainer>
           <NavLink key="all">
-            <Link to="/works/all" className={filterVal === 'all' && 'activeLink'} activeClassName="activeLink" onClick={handleCancel}>All Projects</Link>
+            <Link to="/works/all" className={filterVal === 'all' ? 'activeLink' : undefined} activeClassName="activeLink" onClick={handleCancel}>All Projects</Link>
           </NavLink>
           <NavLink key="websites">
             <Link to="/works/websites" activeClassName="activeLink" onClick={handleCancel}>Websites</Link>

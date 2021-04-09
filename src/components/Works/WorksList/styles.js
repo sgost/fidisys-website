@@ -43,23 +43,63 @@ export const SectionContainer = styled.section`
   }
 `;
 
-export const WorkItem = styled.div`
+export const WorkItem = styled.a`
   height: 100%;
   overflow: hidden;
   max-width: 573px;
   cursor: pointer;
+  display: block;
+  .imageCont {
+    transition: padding 0.62s ease-in-out;
+    .imgSec {
+      transition: background 0.62s ease-in-out;
+    }
+    .hoverIcon {
+      display: none;
+    }
+  }
+  &:hover {
+    .imageCont {
+      padding: ${props => props.type !== null && '20px'};
+      .hoverIcon {
+        display: ${props => props.type === null ? 'none' : 'flex'};
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 96px;
+        height: 96px;
+        background: ${palette.HEADING_COLOR};
+        border-radius: 100%;
+        text-align: center;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        color: ${palette.WHITE_COLOR};
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .imgSec {
+        background: ${props => (props.type !== null && props.image !== null) && palette.BLACK_COLOR};
+        opacity: ${props => props.type !== null && 0.4};
+      }
+    }
+  }
   @media (max-width: 768px) {
     max-width: 100%;
   }
 `;
 
 export const ImageContainer = styled.div`
-  display: block;
   position: relative;
   overflow: hidden;
-  background: ${props => props.bg && props.bg};
-  width: 100%;
-  height: 430px;
+  span {
+    display: block;
+    width: 100%;
+    height: 430px;
+    background: ${props => props.bg ? props.bg : palette.BLACK_COLOR};
+  }
   img {
     height: 100%;
     object-fit: cover;
@@ -107,6 +147,9 @@ export const TagItem = styled.span`
   margin-right: 16px;
   &:last-child {
     margin-right: 0px;
+  }
+  @media (max-width: 768px) {
+    margin-top: 16px;
   }
 `;
 

@@ -28,8 +28,8 @@ const WorksPage = ({ location }) => {
     <Fragment>
       <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
       <Router>
-        <WorksList path="/works"  filter={location.hash} />
-        <WorksList path="/works/:id"  filter={location.hash} />
+        <WorksList path="/works" filter={location.hash} />
+        <WorksList path="/works/:id" filter={location.hash} />
       </Router>
       <DribbbleSection />
     </Fragment>

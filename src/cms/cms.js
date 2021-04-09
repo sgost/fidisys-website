@@ -25,6 +25,8 @@ import SitemapPreview from "./preview-templates/SitemapPreview";
 
 import ContactPreview from "./preview-templates/ContactPreview"
 
+import WorksPreview from "./preview-templates/WorksPreview"
+
 function StyleInjector({ children }) {
   const [iframeRef, setIframeRef] = useState(null);
 
@@ -74,3 +76,5 @@ CMS.registerPreviewTemplate("blog", withStyledComponentsRendered(BlogPreview));
 CMS.registerPreviewTemplate("sitemap", withStyledComponentsRendered(SitemapPreview));
 
 CMS.registerPreviewTemplate("contact", withStyledComponentsRendered(ContactPreview));
+
+CMS.registerPreviewTemplate("works", withStyledComponentsRendered(WorksPreview));

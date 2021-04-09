@@ -146,7 +146,7 @@ const Header = props => {
           <NavBarContainer >
             <NavLinkContainer>
               <NavLink key="home">
-                <Link to="/" activeClassName="activeLink" partiallyActive={true} onClick={onClose}>Home</Link>
+                <Link to="/" activeClassName="activeLink" onClick={onClose}>Home</Link>
               </NavLink>
               <NavLink key="work">
                 <Link to="/works/" activeClassName="activeLink" partiallyActive={true} onClick={onClose}>Work</Link>

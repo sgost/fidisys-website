@@ -152,6 +152,14 @@ export const InfoTextContainer = styled.div`
     position: relative;
     padding: 0px 90px 65px;
   }
+  @media only screen and (max-width: 769px) {
+    div {
+      padding: 0px 0px 50px;
+    }
+    h2 {
+      padding-top: 5px;
+    }
+  }
   h2 {
     font-weight: 600;
     font-size: 48px;

@@ -1,5 +1,5 @@
 ---
 title: Banner
-description: Redefining digital product design and development
+description: Digital engineering. Exceptional user experience.
 image: ../assets/banner.png
 ---

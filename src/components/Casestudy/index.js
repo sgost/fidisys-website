@@ -40,13 +40,14 @@ export const ViewCasestudy = ({
           className="playstore-star-icon"
           src={StarIcon}
           alt="star"
+          key={i}
         />
       );
     }
   }
 
   return (
-    <Container>
+    <Container id="casestudy">
       <ProductFeatureBanner>
         <ProductFeatureContainer>
           <ProductFeatureDetails>

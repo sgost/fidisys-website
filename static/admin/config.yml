@@ -58,6 +58,7 @@ collections:
               - { label: ID, name: id, widget: number }
               - { label: Title, name: title }
               - { label: Description, name: description }
+              - { name: type, label: Type, widget: "select", options: ["casestudy", "website"] }
               - { label: Link, name: link }
               - { label: Image, name: image, widget: image }
       - label: SEO

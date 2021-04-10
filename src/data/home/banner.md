@@ -1,5 +1,5 @@
 ---
 title: Banner
-description: Digital product design and development company based in India..
+description: Redefining digital product design and development
 image: ../assets/banner.png
 ---

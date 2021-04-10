@@ -111,11 +111,11 @@ export const NavLink = styled.li`
     text-transform: uppercase;
     cursor: pointer;
     &:hover {
-      color: ${palette.HEADING_COLOR};
+      color: ${palette.HEADING_COLOR} !important;
     }
   }
   .activeLink {
-    color: ${palette.HEADING_COLOR};
+    color: ${palette.HEADING_COLOR} !important;
     font-weight: bold;
     &:after {
       content: '';

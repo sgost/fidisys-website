@@ -24,7 +24,7 @@ export const BlogPost = ({
   // const content = data.markdownRemark;
 
   return (
-    <BlogPageSection>
+    <BlogPageSection id="blogView">
       <BlogContainer>
         <AuthorInfo>
           <div className="author_image">

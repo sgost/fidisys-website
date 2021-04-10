@@ -108,7 +108,7 @@ const Header = props => {
       </LogoContainer>
       <div className="navMenu">
         <NavBarContainer >
-          <NavLinkContainer>
+          <NavLinkContainer id="navLinks">
             <NavLink key="work">
               <Link to="/works/" activeClassName="activeLink" partiallyActive={true}>Work</Link>
             </NavLink>

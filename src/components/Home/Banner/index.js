@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react"
+import React, { Fragment, useState, useEffect, useRef } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Button, Row, Col, Modal } from "antd"
 import ContactSection from "../../Contact"
@@ -35,6 +35,27 @@ export const HomeBannerSection = ({ description, image }) => {
     }
   }, [isModalVisible]);
 
+  //button position aware effect
+  const btnRef = useRef(null);
+
+  const hoverBtn = (e) => {
+    if(btnRef !== null) {
+      var relX = e.clientX - btnRef.current.getBoundingClientRect().left;
+      var relY = e.clientY - btnRef.current.getBoundingClientRect().top;
+      btnRef.current.children[0].style.top = relY + 'px';
+      btnRef.current.children[0].style.left = relX + 'px';
+    }
+  };
+
+  const leaveBtn = (e, i) => {
+    if(btnRef !== null) {
+      var relX = e.clientX - btnRef.current.getBoundingClientRect().left;
+      var relY = e.clientY - btnRef.current.getBoundingClientRect().top;
+      btnRef.current.children[0].style.top = relY + 'px';
+      btnRef.current.children[0].style.left = relX + 'px';
+    }
+  };
+
   return (
     <BannerSection>
       <Row className="rowContainer">
@@ -48,9 +69,12 @@ export const HomeBannerSection = ({ description, image }) => {
               </h2>
             }
             <Button type="primary" onClick={showModal}>
-              Let’s Work Together
-              <span className="arrow">
-                <img src={RightArrow} alt="arrow" />
+              <span role="presentation" className="btnCont" onMouseEnter={hoverBtn} onMouseLeave={leaveBtn} ref={btnRef}>
+                <span className="btn-bg"></span>
+                Let’s Work Together
+                <span className="arrow">
+                  <img src={RightArrow} alt="arrow" />
+                </span>
               </span>
             </Button>
           </Content>

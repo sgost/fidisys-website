@@ -77,6 +77,42 @@ export const NavBarContainer = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
   }
+  .contactBtn {
+    padding: 0px !important;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &:hover, &:active, &:focus {
+      background-color: transparent !important;
+    }
+    .btnCont {
+      max-width: 100%;
+      width: 100%;
+      display: block;
+      color: ${palette.WHITE_COLOR} !important;
+      padding: 12px 24px;
+      &:hover, &:active, &:focus {
+        color: ${palette.WHITE_COLOR} !important;
+      }
+      &:hover {
+        .btn-bg {
+          width: 225%;
+          height: ${133*2.25}%;
+        }
+      }
+      .btn-bg {
+        position: absolute;
+        display: block;
+        border-radius: 50%;
+        width: 0%;
+        height: 0%;
+        background-color: ${palette.BUTTON_PRIMARY};
+        transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+      }
+    }
+  }
 `;
 
 export const NavLinkContainer = styled.ul`
@@ -110,22 +146,33 @@ export const NavLink = styled.li`
     position: relative;
     text-transform: uppercase;
     cursor: pointer;
+    transition: 250ms;
+    &:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 2px;
+      top: 100%;
+      left: 0;
+      background: ${palette.HEADING_COLOR};
+      transition: transform 250ms ease-in-out;
+      transform: scaleX(0);
+      transform-origin: right;
+    }
     &:hover {
       color: ${palette.HEADING_COLOR} !important;
+    }
+    &:hover {
+      &:after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
     }
   }
   .activeLink {
     color: ${palette.HEADING_COLOR} !important;
     font-weight: bold;
-    &:after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background-color: ${palette.HEADING_COLOR};
-      bottom: 0;
-      left: 0;
-    }
+    border-bottom: 2px solid ${palette.HEADING_COLOR};
   }
   @media (max-width: 768px) {
     width: 100%;

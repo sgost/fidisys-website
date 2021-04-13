@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react"
+import React, { Fragment, useState, useEffect, useRef } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Button, Modal } from "antd"
 import ContactSection from "../Contact"
@@ -30,6 +30,27 @@ export const FooterSection = ({ title, image, preview }) => {
     }
   }, [isModalVisible]);
 
+  //button position aware effect
+  const btnRef = useRef(null);
+
+  const hoverBtn = (e) => {
+    if(btnRef !== null) {
+      var relX = e.clientX - btnRef.current.getBoundingClientRect().left;
+      var relY = e.clientY - btnRef.current.getBoundingClientRect().top;
+      btnRef.current.children[0].style.top = relY + 'px';
+      btnRef.current.children[0].style.left = relX + 'px';
+    }
+  };
+
+  const leaveBtn = (e, i) => {
+    if(btnRef !== null) {
+      var relX = e.clientX - btnRef.current.getBoundingClientRect().left;
+      var relY = e.clientY - btnRef.current.getBoundingClientRect().top;
+      btnRef.current.children[0].style.top = relY + 'px';
+      btnRef.current.children[0].style.left = relX + 'px';
+    }
+  };
+
   return (
     <SectionContainer>
       <IntouchContainer>
@@ -44,9 +65,12 @@ export const FooterSection = ({ title, image, preview }) => {
             </Fragment>
           }
           <Button type="primary" onClick={showModal}>
-            Get in Touch
-            <span className="arrow">
-              <img src={RightArrow} alt="arrow" />
+            <span role="presentation" className="btnCont" onMouseEnter={hoverBtn} onMouseLeave={leaveBtn} ref={btnRef}>
+              <span className="btn-bg"></span>
+              Get in Touch
+              <span className="arrow">
+                <img src={RightArrow} alt="arrow" />
+              </span>
             </span>
           </Button>
         </IntouchSummary>

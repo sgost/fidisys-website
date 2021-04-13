@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useRef } from "react"
 import { graphql, navigate, useStaticQuery } from "gatsby"
 import { Row, Col, Button } from "antd"
 import RightArrow from "../../../images/arrow_right.png"
@@ -16,6 +16,27 @@ export const WorksSection = ({ title, works, preview }) => {
 
   const goToWorks = () => {
     navigate('/works/');
+  };
+
+  //button position aware effect
+  const btnRef = useRef(null);
+
+  const hoverBtn = (e) => {
+    if(btnRef !== null) {
+      var relX = e.clientX - btnRef.current.getBoundingClientRect().left;
+      var relY = e.clientY - btnRef.current.getBoundingClientRect().top;
+      btnRef.current.children[0].style.top = relY + 'px';
+      btnRef.current.children[0].style.left = relX + 'px';
+    }
+  };
+
+  const leaveBtn = (e, i) => {
+    if(btnRef !== null) {
+      var relX = e.clientX - btnRef.current.getBoundingClientRect().left;
+      var relY = e.clientY - btnRef.current.getBoundingClientRect().top;
+      btnRef.current.children[0].style.top = relY + 'px';
+      btnRef.current.children[0].style.left = relX + 'px';
+    }
   };
 
   return (
@@ -45,20 +66,23 @@ export const WorksSection = ({ title, works, preview }) => {
                   <p className="description">{work.description}</p>
                   <a className="viewLink" href={work.link} target="_blank" without="true" rel="noopener noreferrer">
                     {
-                      work.type === 'casestudy' && 'View Casestudy'
+                      work.type === 'casestudy' && <span className="text">View Casestudy</span>
                     }
                     {
-                      work.type === 'website' && 'View Website'
+                      work.type === 'website' && <span className="text">View Website</span>
                     }
-                    <span>
+                    <span className="arrow">
                       <img src={ArrowRight} alt="arrow" />
                     </span>
                   </a>
                   <AllworksBtn className="mobView">
                     <Button type="primary" onClick={goToWorks}>
-                      Browse all our works
-                      <span className="arrow">
-                        <img src={RightArrow} alt="arrow" />
+                      <span role="presentation" className="btnCont" onMouseEnter={hoverBtn} onMouseLeave={leaveBtn} ref={btnRef}>
+                        <span className="btn-bg"></span>
+                        Browse all our works
+                        <span className="arrow">
+                          <img src={RightArrow} alt="arrow" />
+                        </span>
                       </span>
                     </Button>
                   </AllworksBtn>
@@ -70,9 +94,12 @@ export const WorksSection = ({ title, works, preview }) => {
       </WorksList>
       <AllworksBtn>
         <Button type="primary" onClick={goToWorks}>
-          Browse all our works
-          <span className="arrow">
-            <img src={RightArrow} alt="arrow" />
+          <span role="presentation" className="btnCont" onMouseEnter={hoverBtn} onMouseLeave={leaveBtn} ref={btnRef}>
+            <span className="btn-bg"></span>
+            Browse all our works
+            <span className="arrow">
+              <img src={RightArrow} alt="arrow" />
+            </span>
           </span>
         </Button>
       </AllworksBtn>

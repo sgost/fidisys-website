@@ -1,5 +1,5 @@
 import { graphql, Link, useStaticQuery } from "gatsby"
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { Button, Drawer, Modal } from "antd"
 import ContactSection from "../Contact"
 import Logo from '../../images/logo.png';
@@ -97,6 +97,27 @@ const Header = props => {
     </IntouchMedia>
   );
 
+  //button position aware effect
+  const btnRef = useRef(null);
+
+  const hoverBtn = (e) => {
+    if(btnRef !== null) {
+      var relX = e.clientX - btnRef.current.getBoundingClientRect().left;
+      var relY = e.clientY - btnRef.current.getBoundingClientRect().top;
+      btnRef.current.children[0].style.top = relY + 'px';
+      btnRef.current.children[0].style.left = relX + 'px';
+    }
+  };
+
+  const leaveBtn = (e, i) => {
+    if(btnRef !== null) {
+      var relX = e.clientX - btnRef.current.getBoundingClientRect().left;
+      var relY = e.clientY - btnRef.current.getBoundingClientRect().top;
+      btnRef.current.children[0].style.top = relY + 'px';
+      btnRef.current.children[0].style.left = relX + 'px';
+    }
+  };
+
   return (
     <HeaderContainer id="header">
       <LogoContainer>
@@ -122,7 +143,12 @@ const Header = props => {
               <Link to="/blog/" activeClassName="activeLink" partiallyActive={true}>Blog</Link>
             </NavLink>
           </NavLinkContainer>
-          <Button onClick={showModal}>Contact Us</Button>
+          <Button onClick={showModal} className="contactBtn">
+            <span role="presentation" className="btnCont" onMouseEnter={hoverBtn} onMouseLeave={leaveBtn} ref={btnRef}>
+              Contact Us
+              <span className="btn-bg"></span>
+            </span>
+          </Button>
         </NavBarContainer>
       </div>
       <ResNavMenu>

@@ -67,5 +67,5 @@ sitemapList:
       - id: 2
         title: Email
         link: "hello@fidisys.com"
-copyright: "©2020 fidisys"
+copyright: "©2021 fidisys"
 ---

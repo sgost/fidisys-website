@@ -303,8 +303,25 @@ export const NavLink = styled.li`
     text-transform: capitalize;
     cursor: pointer;
     text-align: center;
+    transition: 250ms;
+    &:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 2px;
+      top: 100%;
+      left: 0;
+      background: ${palette.HEADING_COLOR};
+      transition: transform 250ms ease-in-out;
+      transform: scaleX(0);
+      transform-origin: right;
+    }
     &:hover {
       color: ${palette.HEADING_COLOR};
+      &:after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
     }
   }
   .activeLink {

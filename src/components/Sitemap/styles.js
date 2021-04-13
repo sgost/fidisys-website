@@ -35,6 +35,7 @@ export const SitemapContainer = styled.ul`
 export const SitemapList = styled.li`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   margin: 0px 12px;
   @media only screen and (min-width: 768px) and (max-width: 992px) {
     margin: 15px 30px;
@@ -58,8 +59,27 @@ export const SitemapList = styled.li`
     font-weight: normal;
     font-size: 14px;
     line-height: 32px;
+    display: inline-block;
+    position: relative;
+    transition: 250ms;
+    &:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 2px;
+      top: 100%;
+      left: 0;
+      background: ${palette.HEADING_COLOR};
+      transition: transform 250ms ease-in-out;
+      transform: scaleX(0);
+      transform-origin: right;
+    }
     &:hover {
       color: ${palette.HEADING_COLOR};
+      &:after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
     }
     .logo {
       height: 32px;

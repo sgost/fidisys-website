@@ -93,17 +93,52 @@ export const ContentSection = styled.div`
     font-size: 8px;
     line-height: 8px;
     color: #888888;
-    display: inline-flex;
-    align-items: center;
-    flex-direction: column;
     margin-top: 22px;
+    display: inline-flex;
+    padding: 0px !important;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
     border: 1px solid #888888;
     border-radius: 8px;
-    padding: 8px;
+    &:hover, &:active, &:focus {
+      border-color: ${palette.BUTTON_PRIMARY};
+      color: ${palette.WHITE_COLOR};
+    }
+    .btnCont {
+      max-width: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 8px;
+      &:hover, &:active, &:focus {
+        color: ${palette.WHITE_COLOR} !important;
+      }
+      &:hover {
+        border-color: ${palette.BUTTON_PRIMARY};
+        color: ${palette.WHITE_COLOR};
+        .btn-bg {
+          width: 250%;
+          height: ${133*2.25}%;
+        }
+      }
+      .btn-bg {
+        position: absolute;
+        display: block;
+        border-radius: 50%;
+        width: 0%;
+        height: 0%;
+        background-color: ${palette.BUTTON_PRIMARY};
+        transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+      }
+    }
     &:hover, &:active, &:focus {
       color: ${palette.SECONDARY_TXT_COLOR};
     }
-    span {
+    .icon {
       width: 115px;
       height: 26px;
       display: inline-flex;

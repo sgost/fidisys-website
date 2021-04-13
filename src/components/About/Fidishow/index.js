@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react"
+import React, { Fragment, useEffect, useState, useRef } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Row, Col } from "antd"
 import Loader from "../../Loader"
@@ -51,6 +51,27 @@ export const FidishowSection = ({
       )
   }, []);
 
+  //button position aware effect
+  const btnRef = useRef(null);
+
+  const hoverBtn = (e) => {
+    if(btnRef !== null) {
+      var relX = e.clientX - btnRef.current.getBoundingClientRect().left;
+      var relY = e.clientY - btnRef.current.getBoundingClientRect().top;
+      btnRef.current.children[0].style.top = relY + 'px';
+      btnRef.current.children[0].style.left = relX + 'px';
+    }
+  };
+
+  const leaveBtn = (e, i) => {
+    if(btnRef !== null) {
+      var relX = e.clientX - btnRef.current.getBoundingClientRect().left;
+      var relY = e.clientY - btnRef.current.getBoundingClientRect().top;
+      btnRef.current.children[0].style.top = relY + 'px';
+      btnRef.current.children[0].style.left = relX + 'px';
+    }
+  };
+
   return (
     <SectionContainer id={navId}>
       <WorksList>
@@ -73,15 +94,18 @@ export const FidishowSection = ({
                 preview ? <div className="description">{html}</div> : <div className="description" dangerouslySetInnerHTML={{ __html: html }} />
               }
               <a className="viewLink" href={link} target="_blank" without="true" rel="noopener noreferrer">
-                Watch on
-                {
-                  preview ? <span><img src={pfLogo} alt="logo" /></span> :
-                  <span>
-                    {
-                      (pfLogo.extension === 'svg' && pfLogo.childImageSharp === null) ? <img src={pfLogo.publicURL} alt="logo" /> : <img src={pfLogo.childImageSharp.fluid.src} alt={title} />
-                    }
-                  </span>
-                }
+                <span role="presentation" className="btnCont" onMouseEnter={hoverBtn} onMouseLeave={leaveBtn} ref={btnRef}>
+                  <span className="btn-bg"></span>
+                  Watch on
+                  {
+                    preview ? <span className="icon"><img src={pfLogo} alt="logo" /></span> :
+                    <span className="icon">
+                      {
+                        (pfLogo.extension === 'svg' && pfLogo.childImageSharp === null) ? <img src={pfLogo.publicURL} alt="logo" /> : <img src={pfLogo.childImageSharp.fluid.src} alt={title} />
+                      }
+                    </span>
+                  }
+                </span>
               </a>
             </ContentSection>
           </Col>

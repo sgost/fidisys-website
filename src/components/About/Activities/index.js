@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useRef } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Row, Col } from "antd"
 import LinkedinLogo from "../../../images/logos_linkedin.png"
@@ -10,10 +10,33 @@ import {
 } from "./styles"
 
 export const ActivitiesSection = ({ activities, preview }) => {
+
+  //button position aware effect
+  const btnRef = useRef([]);
+  btnRef.current = [];
+
+  const hoverBtn = (e, i) => {
+    if(btnRef.current.length > 0) {
+      var relX = e.clientX - btnRef.current[i].getBoundingClientRect().left;
+      var relY = e.clientY - btnRef.current[i].getBoundingClientRect().top;
+      btnRef.current[i].children[0].style.top = relY + 'px';
+      btnRef.current[i].children[0].style.left = relX + 'px';
+    }
+  };
+
+  const leaveBtn = (e, i) => {
+    if(btnRef.current.length > 0) {
+      var relX = e.clientX - btnRef.current[i].getBoundingClientRect().left;
+      var relY = e.clientY - btnRef.current[i].getBoundingClientRect().top;
+      btnRef.current[i].children[0].style.top = relY + 'px';
+      btnRef.current[i].children[0].style.left = relX + 'px';
+    }
+  };
+
   return (
     <Fragment>
       {
-        activities && activities.map(activity =>
+        activities && activities.map((activity, i) =>
           <SectionContainer key={activity.id} id={activity.navId}>
             <WorksList>
               <Row className="workRow">
@@ -22,9 +45,12 @@ export const ActivitiesSection = ({ activities, preview }) => {
                     <h2>{activity.title}</h2>
                     <p className="description">{activity.description}</p>
                     <a className="viewLink" href={activity.link} target="_blank" without="true" rel="noopener noreferrer">
-                      View on
-                      <span>
-                        <img src={LinkedinLogo} alt="linkedin" />
+                      <span role="presentation" className="btnCont" onMouseEnter={(e) => hoverBtn(e, i)} onMouseLeave={(e) => leaveBtn(e, i)}  ref={(el) => btnRef.current[i] = el}>
+                        <span className="btn-bg"></span>
+                        View on
+                        <span className="icon">
+                          <img src={LinkedinLogo} alt="linkedin" />
+                        </span>
                       </span>
                     </a>
                   </ContentSection>

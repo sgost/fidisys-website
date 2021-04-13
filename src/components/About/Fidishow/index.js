@@ -33,7 +33,7 @@ export const FidishowSection = ({
   const[loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${YOUTUBE_API}?part=snippet&playlistId=${process.env.YOUTUBE_PLAYLIST_ID}&maxResults=50&key=${process.env.YOUTUBE_KEY}`)
+    fetch(`${YOUTUBE_API}?part=snippet&playlistId=PLrXRlvlTQNUIwL024RZvbzgad6zc99d4U&maxResults=50&key=AIzaSyDOFnqhyORn0OD8PYobM97fische9YyrPc`)
       .then(res => res.json())
       .then(
         (result) => {

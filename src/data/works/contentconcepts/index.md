@@ -1,7 +1,7 @@
 ---
 title: ContentConcepts
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
-  venenatis sit urna, purus non egestas.
+description: We build the official website and CMS system for Content Concepts
+  which involves in editing and proofreading services.
 image: content-concepts.png
 theme: "#6F67BD"
 categories:
@@ -18,7 +18,7 @@ workTags:
     themeColor: "#FF699B"
     themeBg: rgba(248, 101, 150, 0.3)
 type: website
-pageLink: "https://contentconcepts.in/"
+pageLink: https://contentconcepts.in/
 seo:
   title: ContentConcepts
   description: We design and develop beautiful applications, experience and brands

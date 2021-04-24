@@ -1,12 +1,12 @@
 ---
 title: Highlights
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
-  venenatis sit urna, purus non egestas. Lorem ipsum dolor sit amet, consectetur
-  adipiscing elit. Et, venenatis sit urna, purus non egestas.
+description: We are a family filled with talented experts that help global
+  brands, enterprises, mid-size businesses and startups with innovative
+  solutions.
 highlights:
   - id: 1
     title: Team Size
-    count: 17+
+    count: 20+
     image: ../assets/team.png
   - id: 2
     title: Projects Delivered
@@ -18,7 +18,7 @@ highlights:
     image: ../assets/work.png
   - id: 4
     title: Tech Events Conducted
-    count: 06+
+    count: 10+
     image: ../assets/calendar.png
   - id: 5
     title: Opensourced Projects

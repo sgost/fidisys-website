@@ -8,4 +8,4 @@ link: "https://www.youtube.com/watch?v=vv8Yw6t7xzA&list=PLrXRlvlTQNUIwL024RZvbzg
 image: ../assets/podcast.png
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, venenatis sit urna, purus non egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, venenatis sit urna, purus non egestas.
+FidiShow is our startup technology podcast/webinar series where we will discuss thought provoking ideas with the technologists, CEOs, leaders of the Tech industry.

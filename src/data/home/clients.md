@@ -1,7 +1,7 @@
 ---
 title: Our Clients
-description: We have worked with companies without compromising quality. You can
-  be next to work with us.
+description: "Delivering exceptional value to our beloved clients. We just not
+  work as a vendor, we work as a partner. "
 clients:
   - id: 1
     title: Hiringbees

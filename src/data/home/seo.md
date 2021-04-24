@@ -1,6 +1,7 @@
 ---
-title: "fidisys - Home"
-description: "We design and develop beautiful applications, experience and brands that breaks the barriers of time and burn into the memories of customers love."
+title: Fidisys Technologies
+description: We design and develop beautiful applications, experience and brands
+  that breaks the barriers of time and burn into the memories of customers love.
 keywords:
   - Mobile Applications development
   - Web Applications Development

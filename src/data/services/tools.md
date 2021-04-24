@@ -1,98 +1,57 @@
 ---
-title: "Technologies & Tools"
-technologies: [
-  {
-    title: Web Development,
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, venenatis sit urna, purus non egestas. Lorem ipsum dolor sit amet, consect.",
-    id: web,
-    tools: [
-      {
-        title: HTML,
+title: Technologies & Tools
+technologies:
+  - title: UI/UX Design
+    description: Great UX is critical to successful projects, memorable brands and
+      happy users. Fidisys Technologies provides user experience design services
+      to businesses large and small.
+    id: design
+    tools:
+      - title: HTML
         image: ../assets/Html.png
-      },
-      {
-        title: CSS,
+      - title: CSS
         image: ../assets/css.png
-      },
-      {
-        title: JavaScript,
+      - title: JavaScript
         image: ../assets/Js.png
-      },
-      {
-        title: Sass,
+      - title: Sass
         image: ../assets/Sass.png
-      },
-      {
-        title: ReactJS,
+      - title: ReactJS
         image: ../assets/React.png
-      },
-      {
-        title: Angular,
+      - title: Angular
         image: ../assets/Angular.png
-      }
-    ]
-  },
-  {
-    title: Mobile Applications,
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, venenatis sit urna, purus non egestas. Lorem ipsum dolor sit amet, consect.",
-    id: mobile,
-    tools: [
-      {
-        title: HTML,
+    technologies: []
+  - title: Web Development
+    description: Developing responsive websites with complete content control and
+      scalability.
+    id: web
+    tools:
+      - title: HTML
         image: ../assets/Html.png
-      },
-      {
-        title: CSS,
+      - title: CSS
         image: ../assets/css.png
-      },
-      {
-        title: JavaScript,
+      - title: JavaScript
         image: ../assets/Js.png
-      },
-      {
-        title: Sass,
+      - title: Sass
         image: ../assets/Sass.png
-      },
-      {
-        title: ReactJS,
+      - title: ReactJS
         image: ../assets/React.png
-      },
-      {
-        title: Angular,
+      - title: Angular
         image: ../assets/Angular.png
-      }
-    ]
-  },
-  {
-    title: "UI/UX Desgin",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, venenatis sit urna, purus non egestas. Lorem ipsum dolor sit amet, consect.",
-    id: design,
-    tools: [
-      {
-        title: Flutter,
+  - title: Mobile Apps Development
+    description: Developing iOS and Android apps for smartphones and tablets with
+      great attention to design.
+    id: mobile
+    tools:
+      - title: Flutter
         image: ../assets/Flutter.png
-      },
-      {
-        title: Kotlin,
+      - title: Kotlin
         image: ../assets/Kotlin.png
-      },
-      {
-        title: Java,
+      - title: Java
         image: ../assets/Java.png
-      },
-      {
-        title: Figma,
+      - title: Figma
         image: ../assets/Figma.png
-      },
-      {
-        title: Photoshop,
+      - title: Photoshop
         image: ../assets/Photoshop.png
-      },
-      {
-        title: Illustrator,
+      - title: Illustrator
         image: ../assets/Illustrator.png
-      }
-    ]
-  }
-]
 ---

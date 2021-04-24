@@ -54,4 +54,17 @@ technologies:
         image: ../assets/Photoshop.png
       - title: Illustrator
         image: ../assets/Illustrator.png
+  - title: Digital Marketing
+    id: seo
+    description: Entire online marketing stack with focus on content, creative,
+      social media and digital.
+  - title: Digital Transformation
+    description: Change the entire operating model of your business and creating a
+      digital mindset across the organization that focuses on providing a
+      frictionless experience in every direction.
+    id: transformation
+  - title: Consulting
+    description: End-to-end digital consulting services - create a winning digital
+      strategy tailored to your business and unique objectives.
+    id: consulting
 ---

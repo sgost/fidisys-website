@@ -5,14 +5,14 @@ description: From mobile apps to core business systems, we develop reliable,
 services:
   - title: UI & UX Design
     image: ../assets/design.png
-  - title: Web & App Development
+  - title: Web Development
     image: ../assets/web.png
-  - title: Consulting
+  - title: Mobile Apps
     image: ../assets/mobile.png
   - title: Digital Marketing
     image: ../assets/web.png
   - title: Digital Transformation
     image: ../assets/mobile.png
-  - title: Strategy & Planning
+  - title: Consulting
     image: ../assets/design.png
 ---

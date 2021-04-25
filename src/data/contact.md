@@ -11,4 +11,4 @@ contact:
     image: "./assets/whatsapp_filled.png"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, venenatis sit urna, purus non egestas. Lorem ipsum dolor sit amet, consect.
+Want to get in touch with us? Prefer human over chatbot? Just call us or mail your details. 

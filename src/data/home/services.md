@@ -9,9 +9,9 @@ services:
     image: ../assets/web.png
   - title: Mobile
     image: ../assets/mobile.png
-  - title: SEO
+  - title: Digital Marketing
     image: ../assets/web.png
-  - title: Social Media
+  - title: Transformation
     image: ../assets/mobile.png
   - title: Consulting
     image: ../assets/design.png

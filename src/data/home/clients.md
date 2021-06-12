@@ -13,21 +13,24 @@ clients:
     title: Newslate
     image: ../assets/NewSlate.png
   - id: 4
-    title: Archimedis
-    image: ../assets/TechFetch.png
-  - id: 5
     title: Techfetch
     image: ../assets/TechFetch.png
-  - id: 6
+  - id: 5
     title: ContentConcepts
     image: ../assets/ContentConcepts.png
+  - id: 6
+    title: Inquetec
+    image: ../assets/inquetec1.png
   - id: 7
     title: Eatout
     image: ../assets/eatout.png
   - id: 8
     title: Natural minds
-    image: ../assets/ContentConcepts.png
+    image: ../assets/naturalminds.png
   - id: 9
-    title: Chase communications
-    image: ../assets/ContentConcepts.png
+    title: Archimedis
+    image: ../assets/archimedis.png
+  - id: 10
+    title: chase
+    image: ../assets/chase.png
 ---

@@ -8,7 +8,7 @@ customers:
       using in-depth knowledge of methodology and development practices.
     role: CEO
     company: Content Concepts
-    image: ./assets/customer_img.png
+    image: assets/customer_img.png
   - id: 2
     name: Kevin
     message: "Very flexible "
@@ -18,5 +18,5 @@ customers:
       improve the method and science behind making customer decisions
     role: CEO
     company: Goshoot
-    image: ./assets/customer_img.png
+    image: assets/customer_img.png
 ---

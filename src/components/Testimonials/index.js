@@ -44,7 +44,7 @@ export const TestimonialsSection = ({
                       <p>{dataItem.comment}</p>
                     </WrapperDetails>
                     <ClientDetailsRes>
-                      <CustomBg>
+                      {/* <CustomBg>
                         <CircleImage>
                           {
                             preview ? <img src={dataItem.image} alt={dataItem.name} /> :
@@ -55,7 +55,7 @@ export const TestimonialsSection = ({
                             </Fragment>
                           }
                         </CircleImage>
-                      </CustomBg>
+                      </CustomBg> */}
                       <CustomerDetails>
                         <h4>{dataItem.name}</h4>
                         <span>{dataItem.role}, {dataItem.company}</span>
@@ -64,7 +64,7 @@ export const TestimonialsSection = ({
                   </ResCard>
                   :
                   <Row className="row">
-                    <Col xs={24} sm={24} md={7} lg={7} xl={7} className="imageCus">
+                    {/* <Col xs={24} sm={24} md={7} lg={7} xl={7} className="imageCus">
                       <CustomBg>
                         <CircleImage>
                           {
@@ -77,7 +77,7 @@ export const TestimonialsSection = ({
                           }
                         </CircleImage>
                       </CustomBg>
-                    </Col>
+                    </Col> */}
                     <Col xs={24} sm={24} md={17} lg={17} xl={17}>
                       <WrapperDetails>
                         <h3>{dataItem.message}</h3>

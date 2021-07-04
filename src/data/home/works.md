@@ -36,6 +36,6 @@ works:
       registered medical practitioners in their day-to-day practice"
     title: SpotCare
     type: casestudy
-    link: https://play.google.com/store/apps/details?id=com.carereceiver
+    link: /works/spotcare
     image: ../assets/spotcare.jpg
 ---

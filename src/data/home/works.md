@@ -36,6 +36,6 @@ works:
       registered medical practitioners in their day-to-day practice"
     title: SpotCare
     type: casestudy
-    link: /works/spotcare
+    link: /works/fidisys-invoice
     image: ../assets/spotcare.jpg
 ---

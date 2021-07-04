@@ -30,4 +30,12 @@ works:
     type: casestudy
     link: /works/eatout
     image: ../assets/eatout_works.png
+  - id: 5
+    description: " Health App for General Public, developed with the sole intention
+      of enabling new age technologies to bring in significant value to
+      registered medical practitioners in their day-to-day practice"
+    title: SpotCare
+    type: casestudy
+    link: https://play.google.com/store/apps/details?id=com.carereceiver
+    image: ../assets/spotcare.jpg
 ---

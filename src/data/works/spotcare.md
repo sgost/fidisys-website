@@ -12,7 +12,7 @@ workTags:
   - title: Figma
     themeColor: "#FF699B"
     themeBg: rgba(248, 101, 150, 0.3)
-type: website
+type: casestudy
 seo:
   description: We design and develop beautiful applications, experience and brands
     that breaks the barriers of time and burn into the memories of customers

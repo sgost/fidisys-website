@@ -4,7 +4,8 @@ description: " Health App for General Public, developed with the sole intention
   of enabling new age technologies to bring in significant value to registered
   medical practitioners in their day-to-day practice"
 theme: "#6F67BD"
-categories: mobileapp
+categories:
+  - mobileapp
 workTags:
   - title: Native Android
     themeColor: "#3DDAAB"

@@ -7,8 +7,8 @@ works:
       registered medical practitioners in their day-to-day practice"
     title: SpotCare
     type: casestudy
-    link: /works/fidisys-invoice
-    image: ../assets/spotcare.jpg
+    link: /works/spotcare
+    image: ../assets/frame-1942.png
   - id: 1
     title: The Invoice
     description: Fidisys Invoice mobile app helps freelancers, small business owners

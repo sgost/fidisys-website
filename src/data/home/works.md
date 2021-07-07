@@ -1,6 +1,14 @@
 ---
 title: Our Works
 works:
+  - id: 5
+    description: " Health App for General Public, developed with the sole intention
+      of enabling new age technologies to bring in significant value to
+      registered medical practitioners in their day-to-day practice"
+    title: SpotCare
+    type: casestudy
+    link: /works/fidisys-invoice
+    image: ../assets/spotcare.jpg
   - id: 1
     title: The Invoice
     description: Fidisys Invoice mobile app helps freelancers, small business owners
@@ -30,12 +38,4 @@ works:
     type: casestudy
     link: /works/eatout
     image: ../assets/eatout_works.png
-  - id: 5
-    description: " Health App for General Public, developed with the sole intention
-      of enabling new age technologies to bring in significant value to
-      registered medical practitioners in their day-to-day practice"
-    title: SpotCare
-    type: casestudy
-    link: /works/fidisys-invoice
-    image: ../assets/spotcare.jpg
 ---

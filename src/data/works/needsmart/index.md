@@ -1,36 +1,31 @@
 ---
-title: "Needsmart"
-description: "Use this app to buy groceries online from the nearby outlets within your town."
-image: ""
+title: Needsmart
+description: Use this app to buy groceries online from the nearby outlets within your town.
+image: needsmart.png
 theme: "#FF7550"
-categories: ["mobileapp", "ui-ux", "websites"]
-workTags: [
-  {
-    title: "Native Android",
-    themeColor: "#3DDAAB",
-    themeBg: "rgba(78, 251, 200, 0.3)"
-  },
-  {
-    title: "Figma",
-    themeColor: "#FF699B",
-    themeBg: "rgba(248, 101, 150, 0.3)"
-  },
-  {
-    title: "React",
-    themeColor: "#34D7FF",
-    themeBg: "rgba(53, 208, 247, 0.3)"
-  }
-]
+categories:
+  - mobileapp
+  - ui-ux
+  - websites
+workTags:
+  - title: Native Android
+    themeColor: "#3DDAAB"
+    themeBg: rgba(78, 251, 200, 0.3)
+  - title: Figma
+    themeColor: "#FF699B"
+    themeBg: rgba(248, 101, 150, 0.3)
+  - title: React
+    themeColor: "#34D7FF"
+    themeBg: rgba(53, 208, 247, 0.3)
 type: casestudy
 pageLink: ""
 appLogo: ./needsmart_logo.svg
 bannerImage: ./needsmart_feature_banner.png
 bannerBackgroundImage: ./needsmart-banner-frame.png
-review: {
-  rating: 5,
-  comment: "Well thought App.",
-  username: "Yugandhar Vardhineni"
-}
+review:
+  rating: 5
+  comment: Well thought App.
+  username: Yugandhar Vardhineni
 seo:
   keywords:
     - Mobile Applications development
@@ -54,7 +49,9 @@ seo:
     - NodeJS
     - Design System
     - Micro Front Ends
-  description: We design and develop beautiful applications, experience and brands that breaks the barriers of time and burn into the memories of customers love.
+  description: We design and develop beautiful applications, experience and brands
+    that breaks the barriers of time and burn into the memories of customers
+    love.
   title: Needsmart
 ---
 <div>

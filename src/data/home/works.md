@@ -1,6 +1,13 @@
 ---
 title: Our Works
 works:
+  - id: 3
+    title: ContentConcepts
+    description: "We build the official website and CMS system for Content Concepts
+      which involves in editing and proofreading services. "
+    type: website
+    link: https://contentconcepts.in/
+    image: ../assets/cc_works.png
   - id: 5
     description: " Health App for General Public, developed with the sole intention
       of enabling new age technologies to bring in significant value to
@@ -8,7 +15,7 @@ works:
     title: SpotCare
     type: casestudy
     link: /works/spotcare
-    image: ../assets/frame-1942.png
+    image: ../assets/spotcare.png
   - id: 1
     title: The Invoice
     description: Fidisys Invoice mobile app helps freelancers, small business owners
@@ -24,13 +31,6 @@ works:
     type: casestudy
     link: /works/needsmart
     image: ../assets/needsmart_works.png
-  - id: 3
-    title: ContentConcepts
-    description: "We build the official website and CMS system for Content Concepts
-      which involves in editing and proofreading services. "
-    type: website
-    link: https://contentconcepts.in/
-    image: ../assets/cc_works.png
   - id: 4
     title: EatOut
     description: Paperless menu app ordering app for restaurants using QR code.

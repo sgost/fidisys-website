@@ -2,7 +2,7 @@
 title: What they say about us
 customers:
   - id: 1
-    name: Senthil Kumar
+    name: DHANALAKSHMI N
     message: Excellent Choice
     comment: Fidisys created and designed the application development environment
       using in-depth knowledge of methodology and development practices.

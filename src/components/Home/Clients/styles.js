@@ -10,7 +10,7 @@ export const SectionContainer = styled.section`
     justify-content: center;
   }
   @media only screen and (max-width: 768px) {
-    padding: 30px 30px 60px;
+    padding: 60px 30px 60px;
   }
 `;
 

@@ -20,7 +20,7 @@ works:
     title: EatOut
     description: Paperless menu app ordering app for restaurants using QR code.
       Scan, Order and Pay for the meals.
-    type: casestudy
+    type: website
     link: https://www.behance.net/gallery/124825109/EatOut-Restaurant-Management-App-UI-UX-Project
     image: ../assets/eatout_works.png
   - id: 2

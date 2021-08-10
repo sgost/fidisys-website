@@ -5,12 +5,15 @@ export const SectionContainer = styled.section`
   padding: 60px;
   background: ${palette.SECONDARY_SECTION_BACKGROUND};
   @media only screen and (max-width: 768px) {
-    padding: 30px;
+    padding: 60px 30px;
   }
   .serviceRow {
     max-width: 1050px;
     margin: 20px auto 30px;
     justify-content: center;
+    h3 {
+      font-size: 20px;
+    }
   }
   @media only screen and (max-width: 768px) {
     .serviceRow {

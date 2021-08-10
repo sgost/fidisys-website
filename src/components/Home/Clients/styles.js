@@ -10,7 +10,7 @@ export const SectionContainer = styled.section`
     justify-content: center;
   }
   @media only screen and (max-width: 768px) {
-    padding: 30px 30px 60px;
+    padding: 60px 30px 60px;
   }
 `;
 
@@ -47,6 +47,10 @@ export const ClientsList = styled.div`
     border-color: unset;
     max-width: 550px;
     margin: 0 auto;
+    /* hiding the last one in the mobile to fix the space */
+    div:last-of-type {
+      display: none;
+    }
   }
 `;
 

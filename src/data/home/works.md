@@ -16,6 +16,20 @@ works:
     type: casestudy
     link: /works/spotcare
     image: ../assets/spotcare.png
+  - id: 4
+    title: EatOut
+    description: Paperless menu app ordering app for restaurants using QR code.
+      Scan, Order and Pay for the meals.
+    type: website
+    link: https://www.behance.net/gallery/124825109/EatOut-Restaurant-Management-App-UI-UX-Project
+    image: ../assets/eatout_works.png
+  - id: 2
+    title: NeedsMart
+    description: "E-commerce shopping app that allows user to buy groceries online
+      from the nearby outlets within the neighborhood "
+    type: casestudy
+    link: /works/needsmart
+    image: ../assets/needsmart_works.png
   - id: 1
     title: The Invoice
     description: Fidisys Invoice mobile app helps freelancers, small business owners
@@ -24,18 +38,4 @@ works:
     type: casestudy
     link: /works/fidisys-invoice
     image: ../assets/invoice_works.png
-  - id: 2
-    title: NeedsMart
-    description: "E-commerce shopping app that allows user to buy groceries online
-      from the nearby outlets within the neighborhood "
-    type: casestudy
-    link: /works/needsmart
-    image: ../assets/needsmart_works.png
-  - id: 4
-    title: EatOut
-    description: Paperless menu app ordering app for restaurants using QR code.
-      Scan, Order and Pay for the meals.
-    type: casestudy
-    link: /works/eatout
-    image: ../assets/eatout_works.png
 ---

@@ -11,6 +11,9 @@ export const SectionContainer = styled.section`
     max-width: 1050px;
     margin: 20px auto 30px;
     justify-content: center;
+    h3 {
+      font-size: 20px;
+    }
   }
   @media only screen and (max-width: 768px) {
     .serviceRow {

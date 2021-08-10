@@ -47,6 +47,10 @@ export const ClientsList = styled.div`
     border-color: unset;
     max-width: 550px;
     margin: 0 auto;
+    /* hiding the last one in the mobile to fix the space */
+    div:last-of-type {
+      display: none;
+    }
   }
 `;
 

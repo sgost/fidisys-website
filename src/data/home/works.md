@@ -22,7 +22,7 @@ works:
       Scan, Order and Pay for the meals.
     type: website
     link: https://www.behance.net/gallery/124825109/EatOut-Restaurant-Management-App-UI-UX-Project
-    image: ../assets/eatout_works.png
+    image: ../assets/eatout-image.png
   - id: 2
     title: NeedsMart
     description: "E-commerce shopping app that allows user to buy groceries online

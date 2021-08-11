@@ -41,7 +41,7 @@ const DribbbleSection = () => {
           allData && allData.map(dataItem =>
             <Fragment key={dataItem.url}>
               {
-                dataItem.cover !== null &&
+                dataItem.cover !== null && dataItem.title !== "Day - Night Transition" && dataItem.title !== "Minimal Home Scene Voxel Art" && dataItem.title !== "Wall-E Eve in Pixar Soul Style" && dataItem.title !== "ContentConcepts - Website" && dataItem.title !== "Icons with 3D effect created using Figma" &&
                 <GridItem href={dataItem.url} target="_blank" without="true" rel="noopener noreferrer">
                   <img src={dataItem.cover} alt={dataItem.title} />
                 </GridItem>

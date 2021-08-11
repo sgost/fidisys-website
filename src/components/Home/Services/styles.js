@@ -13,6 +13,9 @@ export const SectionContainer = styled.section`
     justify-content: center;
     h3 {
       font-size: 20px;
+      @media only screen and (max-width: 768px) {
+        font-size: 16px;
+      }
     }
   }
   @media only screen and (max-width: 768px) {

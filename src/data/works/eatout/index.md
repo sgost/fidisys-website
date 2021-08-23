@@ -2,7 +2,7 @@
 title: Eatout
 description: Paperless menu app ordering app for restaurants using QR code.
   Scan, Order and Pay for the meals.
-image: ""
+image: eatout.png
 theme: "#6F67BD"
 categories:
   - mobileapp

@@ -1,7 +1,7 @@
 ---
 title: Housemates
 description: Gamified app for the people to take up challenges and earn credits.
-image: ""
+image: housemates.png
 theme: "#BBDDFF"
 categories:
   - mobileapp

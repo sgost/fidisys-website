@@ -1,7 +1,7 @@
 ---
 title: Housemates
 description: Gamified app for the people to take up challenges and earn credits.
-image: ""
+image: housemates.png
 theme: "#BBDDFF"
 categories:
   - mobileapp
@@ -32,30 +32,20 @@ Users can create houses for their housemates and assign tasks to them. Any indiv
 
 ## Problem & Solution
 
-# SOLUTION
-
 Year 2020 has created its own identity of making all individuals locked down in their houses for a couple of months. In order to prevent all individuals from boredom and spend everyday filled with lots of fun and activities, we came up with the idea of Housemates.
 
 The idea was to make every individual busy by assigning them a task. Therefore we have created a platform for the users to create a virtual house and adding members to the house. The user who creates the house is an admin and supervises the completion of tasks by the housemates and rewarding them.
 
 ## Development
 
-# DEVELOPMENT
-
 Application was built using React Framework and adapted into native android app using web view. Backend was built on RoR. The communication between the web view form the app and react app is performed using Javascript Interface mechanism.
 
 ## Challenges
-
-# CHALLENGES
 
 Caching the resources in the app for fast reloading of the pages.
 
 ## Benefits
 
-# BENEFITS
-
 1. To have recreation amidst the daily life.
-
 2. Save the activities done by the individuals as a picture as one of their memories.
-
 3. Surprises individuals with tasks as it was assigned by a bot.

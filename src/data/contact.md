@@ -3,7 +3,7 @@ title: Lets Work Together
 contact:
   - id: mail
     title: "Mail"
-    info: "lalapeta.prasanth@fidisys.com"
+    info: "pravallika@fidisys.com"
     image: "./assets/mail_filled.png"
   - id: whatsapp
     title: "Call/Whatsapp"

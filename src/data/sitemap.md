@@ -66,6 +66,6 @@ sitemapList:
         link: +91-7550043399
       - id: 2
         title: Email
-        link: hello@fidisys.com
+        link: lalapeta.prasanth@fidisys.com
 copyright: ©2021 Fidisys Technologies
 ---

@@ -11,4 +11,4 @@ contact:
     image: "./assets/whatsapp_filled.png"
 ---
 
-Want to get in touch with us? Prefer human over chatbot? Just call us or mail your details. 
+Want to get in touch with us? Prefer human over chatbot? Just call us or mail your details.

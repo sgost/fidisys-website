@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: gitlab
+  repo: fidisys/website/web-revamp
 
 publish_mode: editorial_workflow
 

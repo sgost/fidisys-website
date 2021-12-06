@@ -11,7 +11,7 @@ import {
 
 export const BlogPost = ({
   fields,
-  profile,
+  previewImages,
   author,
   bio,
   linkdin,
@@ -28,7 +28,7 @@ export const BlogPost = ({
       <BlogContainer>
         <AuthorInfo>
           <div className="author_image">
-            <img src={profile} alt={author} />
+            <img src={previewImages} alt={author} />
           </div>
           <div className="author_info">
             <h4>{author}</h4>
@@ -60,11 +60,11 @@ const Blog = ({ data }) => {
 
   const seoData = post.frontmatter.seo;
 
-  let profile;
-  if(post.frontmatter.profile.publicURL) {
-    profile = post.frontmatter.profile.publicURL;
+  let previewImages;
+  if(post.frontmatter.previewImages.publicURL) {
+    previewImages = post.frontmatter.previewImages.publicURL;
   } else {
-    profile = post.frontmatter.profile;
+    previewImages = post.frontmatter.previewImages;
   }
 
   const previewImage = post.frontmatter.previewImage.publicURL;
@@ -74,7 +74,7 @@ const Blog = ({ data }) => {
       <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
       <BlogPost
         fields={post.fields}
-        profile={profile}
+        previewImages={previewImages}
         preview_image={previewImage}
         author={post.frontmatter.author}
         bio={post.frontmatter.bio}
@@ -102,7 +102,7 @@ export const query = graphql`
       }
       frontmatter {
         author
-        profile {
+        previewImages {
           publicURL
         }
         previewImage {

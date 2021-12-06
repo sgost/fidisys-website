@@ -1,5 +1,5 @@
 ---
-profile: ./author.png
+previewImages: ./author.png
 author: Fidisys Technologies
 bio: We are a digital product design and development company.
 linkdin: https://www.linkedin.com/feed/?trk=homepage-basic_google-one-tap-submit

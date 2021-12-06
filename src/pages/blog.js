@@ -30,9 +30,9 @@ const BlogPage = ( { data } ) =>
                     </div>
                     <div className="authorImage">
                       {
-                        blogItem.node.frontmatter.profile.publicURL ?
-                          <img src={ blogItem.node.frontmatter.profile.publicURL } alt={ blogItem.node.frontmatter.author } style={ { borderRadius: `30px` } } /> :
-                          <img src={ blogItem.node.frontmatter.profile } alt={ blogItem.node.frontmatter.author } style={ { borderRadius: `30px` } } />
+                        blogItem.node.frontmatter.previewImages.publicURL ?
+                          <img src={ blogItem.node.frontmatter.previewImages.publicURL } alt={ blogItem.node.frontmatter.author } style={ { borderRadius: `30px` } } /> :
+                          <img src={ blogItem.node.frontmatter.previewImages } alt={ blogItem.node.frontmatter.author } style={ { borderRadius: `30px` } } />
                       }
                       <p className="blogAuthor">{ blogItem.node.frontmatter.author }</p>
                       <p className="blogDate">{ blogItem.node.frontmatter.date }</p>
@@ -64,7 +64,7 @@ export const pageQuery = graphql`
             title
             excerpt
             author
-            profile {
+            previewImages {
               publicURL
             }
             previewImage {

@@ -12,11 +12,11 @@ const BlogPreview = ({ entry, widgetFor, getAsset }) => {
     var date = moment(data.date).format("MMMM DD YYYY")
   }
 
-  var image = entry.getIn(['data', 'profile']);
+  var image = entry.getIn(['data', 'previewImages']);
   var getImage = getAsset(image);
 
   if(getImage) {
-    var profile = getImage.toString();
+    var previewImages = getImage.toString();
   }
 
 
@@ -29,7 +29,7 @@ const BlogPreview = ({ entry, widgetFor, getAsset }) => {
 
   return (
     <BlogPost
-      profile={profile}
+      previewImages={previewImages}
       preview_image={previewImage}
       author={data.author}
       bio={data.bio}

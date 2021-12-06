@@ -2,28 +2,22 @@ import styled from 'styled-components';
 import * as palette from '../../../styles/variables';
 
 export const SectionContainer = styled.section`
-  padding: 60px 0;
+  padding: 60px;
   background: ${palette.BLACK_COLOR};
   .toolsCont {
     padding: 50px 0px;
-  }
-  .toolsList {
-    width: 100% !important;
-    .ant-col {
-      width: 100%;
-    }
   }
   @media only screen and (max-width: 768px) {
     padding: 30px;
     .toolsList {
       max-width: 600px !important;
       .ant-col {
-        min-width: 50%;
+        min-width: 33%;
       }
     }
   }
   .toolsList {
-    width: 100%;
+    max-width: 1050px;
     margin: 0 auto;
     justify-content: center;
   }
@@ -65,9 +59,6 @@ export const ToolsListItem = styled.div`
   align-items: center;
   justify-content: center;
   margin: 30px 0px;
-  h3 {
-    font-size: 1.5vw !important;
-  }
   @media only screen and (max-width: 768px) {
     padding: 16px 0px;
     margin: 0px;

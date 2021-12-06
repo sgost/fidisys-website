@@ -1,7 +1,7 @@
 ---
 title: Fidisys Invoice
 description: An app to generate and share invoices instantly with the clients.
-image: invoice.svg
+image: ./fidisys_invoice.png
 theme: "#57D28A"
 categories:
   - mobileapp

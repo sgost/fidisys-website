@@ -1,10 +1,9 @@
 ---
-previewImages: ./author.png
-author: Fidisys Technologies
-bio: We are a digital product design and development company.
-linkdin: https://www.linkedin.com/feed/?trk=homepage-basic_google-one-tap-submit
 title: "Gatsby+Fidisys"
 date: 2020-07-07
+author: Fidisys Technologies
+author_image: ./author.png
+bio: We are a digital product design and development company.
 previewImage: ./gatsby_fidisys.png
 excerpt: "#WithFidisys We are happy to announce our partnership with Gatsby. Now we are official agency partner with Gatsby.Gatsby is an open source, modern website framework that builds performance into every site by leveraging the latest Web technologies su..."
 tags:

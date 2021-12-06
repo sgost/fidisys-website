@@ -6,7 +6,6 @@ import AboutBanner from "../components/About/Banner"
 import Highlights from "../components/About/Highlights"
 import Fidishow from "../components/About/Fidishow"
 import Activities from "../components/About/Activities"
-import Family from "../components/About/Family"
 import Testimonials from "../components/Testimonials"
 
 const AboutPage = () => {
@@ -34,7 +33,6 @@ const AboutPage = () => {
       <Highlights />
       <Fidishow />
       <Activities />
-      <Family/>
       <Testimonials />
     </Fragment>
   )

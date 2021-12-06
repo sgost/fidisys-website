@@ -12,32 +12,23 @@ const BlogPreview = ({ entry, widgetFor, getAsset }) => {
     var date = moment(data.date).format("MMMM DD YYYY")
   }
 
-  var image = entry.getIn(['data', 'previewImages']);
+  var image = entry.getIn(['data', 'author_image']);
   var getImage = getAsset(image);
 
   if(getImage) {
-    var previewImages = getImage.toString();
-  }
-
-
-  var image2 = entry.getIn(['data', 'preview_image']);
-  var getImage2 = getAsset(image2);
-
-  if(getImage2) {
-    var previewImage = getImage2.toString();
+    var authorImage = getImage.toString();
   }
 
   return (
     <BlogPost
-      previewImages={previewImages}
-      preview_image={previewImage}
+      author_image={authorImage}
       author={data.author}
       bio={data.bio}
-      linkdin={data.linkdin}
       date={date}
       title={data.title}
       html={widgetFor('body')}
       preview={true}
+      tags={data.tags}
     />
   );
 

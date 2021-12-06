@@ -38,6 +38,12 @@ const WorksList = props => {
             description
             theme
             image {
+              childImageSharp {
+                fluid {
+                  originalImg
+                }
+              }
+              extension
               publicURL
             }
             categories
@@ -150,7 +156,7 @@ const WorksList = props => {
                       dataItem.frontmatter.image !== null ?
                       <span className="imgSec">
                         {
-                          (dataItem.frontmatter.image.publicURL) ? <img src={dataItem.frontmatter.image.publicURL} alt={dataItem.frontmatter.title} /> : <img src={dataItem.frontmatter.image} alt={dataItem.frontmatter.title} />
+                          (dataItem.frontmatter.image.extension === 'svg' && dataItem.frontmatter.image.childImageSharp === null) ? <img src={dataItem.frontmatter.image.publicURL} alt={dataItem.frontmatter.title} /> : <img src={dataItem.frontmatter.image.childImageSharp.fluid.originalImg} alt={dataItem.frontmatter.title} />
                         }
                       </span> : <span className="imgSec"></span>
                     }

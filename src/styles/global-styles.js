@@ -396,9 +396,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .blogListContainer {
-    max-width: 900px;
+    max-width: 700px;
     margin: 0 auto;
-    padding: 48px 2vw;
+    padding: 48px 0px;
     h2 {
       font-size: 30px;
       padding: 24px;

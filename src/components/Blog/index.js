@@ -1,23 +1,23 @@
 import React, { Fragment } from "react"
 import { graphql } from "gatsby"
 import SEO from "../seo"
-import { ArrowRightOutlined } from '@ant-design/icons';
 import {
   BlogPageSection,
   BlogContainer,
   AuthorInfo,
   BlogContent,
+  TagsList
 } from './styles';
 
 export const BlogPost = ({
   fields,
-  previewImages,
+  author_image,
   author,
   bio,
-  linkdin,
   date,
   title,
   html,
+  tags,
   preview
 }) => {
 
@@ -28,19 +28,17 @@ export const BlogPost = ({
       <BlogContainer>
         <AuthorInfo>
           <div className="author_image">
-            <img src={previewImages} alt={author} />
+            <img src={author_image} alt={author} />
           </div>
           <div className="author_info">
             <h4>{author}</h4>
             <span>{bio}</span>
-           
             <div>
               {
                 fields && <span>{fields.readingTime.text} &middot; </span>
               }
               <span>{date}</span>
             </div>
-            <a id="link" href={linkdin} target="_blank"  without rel="noopener noreferrer">View Profile<ArrowRightOutlined className="icon"/></a>
           </div>
         </AuthorInfo>
         <BlogContent>
@@ -49,6 +47,23 @@ export const BlogPost = ({
             preview ? <div>{html}</div> : <div dangerouslySetInnerHTML={{ __html: html }} />
           }
         </BlogContent>
+        {
+          tags &&
+          <TagsList>
+            Tagged with
+            {
+              tags.map((type, i, arr) => {
+                let divider = i<arr.length-1 && <>, </>;
+                return (
+                  <span key={type}>{type}{divider}</span>
+                )
+              })
+            }
+            {/* {
+              content.frontmatter.tags.map(tag => <span>{tag}</span>)
+            } */}
+          </TagsList>
+        }
       </BlogContainer>
     </BlogPageSection>
   )
@@ -60,25 +75,21 @@ const Blog = ({ data }) => {
 
   const seoData = post.frontmatter.seo;
 
-  let previewImages;
-  if(post.frontmatter.previewImages.publicURL) {
-    previewImages = post.frontmatter.previewImages.publicURL;
+  let authorImage;
+  if(post.frontmatter.author_image.extension === 'svg' && post.frontmatter.author_image.childImageSharp === null) {
+    authorImage = post.frontmatter.author_image.publicURL;
   } else {
-    previewImages = post.frontmatter.previewImages;
+    authorImage = post.frontmatter.author_image.childImageSharp.fluid.src;
   }
-
-  const previewImage = post.frontmatter.previewImage.publicURL;
 
   return (
     <Fragment>
       <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
       <BlogPost
         fields={post.fields}
-        previewImages={previewImages}
-        preview_image={previewImage}
+        author_image={authorImage}
         author={post.frontmatter.author}
         bio={post.frontmatter.bio}
-        linkdin={post.frontmatter.linkdin}
         date={post.frontmatter.date}
         title={post.frontmatter.title}
         html={post.html}
@@ -102,16 +113,19 @@ export const query = graphql`
       }
       frontmatter {
         author
-        previewImages {
-          publicURL
-        }
-        previewImage {
+        author_image {
+          childImageSharp {
+            fluid {
+              src
+            }
+          }
+          extension
           publicURL
         }
         bio
-        linkdin
         date(formatString: "MMMM DD, YYYY")
         title
+        tags
         seo {
           title
           description

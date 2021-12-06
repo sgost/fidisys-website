@@ -20,15 +20,11 @@ export const AuthorInfo = styled.div`
   align-items: center;
   margin-bottom: 32px;
   .author_image {
-    margin-right: 22px;
-    width: 100px;
-    height: 100px;
+    margin-right: 8px;
+    width: 64px;
+    height: 64px;
     border-radius: 100%;
     overflow: hidden;
-    @media (max-width: 500px) {
-      width: 64px;
-      height: 64px;
-    }
   }
   .author_info {
     display: flex;
@@ -36,27 +32,11 @@ export const AuthorInfo = styled.div`
     h4 {
       line-height: 22px;
       color: ${palette.BLACK_COLOR};
-      margin: 0 0 10px 0;
     }
     span {
       font-size: 14px;
       color: #78757a;
-      line-height: 18px;
-    }
-    #link {
-      font-size: 14px;
-      color: black;
-    }
-    #link:hover {
-      color: blue;
-    }
-    #link .icon{
-      font-size: 11px;
-      color: black;
-      margin: 0 0 0 5px;
-    }
-    #link:hover .icon {
-      color: blue;
+      line-height: 20px;
     }
   }
 `;
@@ -104,14 +84,6 @@ export const BlogContent = styled.div`
     font-size: 16px;
     color: ${palette.BLACK_COLOR};
     margin: 15px 0px;
-  }
-  pre {
-    background: #000000b8;
-    color: white;
-    font-size: 14px;
-    margin: 0 0 24px 0;
-    padding: 10px 10px 10px 15px;
-    border-radius: 10px;
   }
   blockquote {
     padding-left: 23px;

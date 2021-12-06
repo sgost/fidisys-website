@@ -7,10 +7,12 @@ import QuoteLeft from "../../images/quote_icon.png"
 import {
   CustomersSection,
   SectionHeading,
+  CircleImage,
   WrapperDetails,
   ContentBg,
   CustomerDetails,
   CarouselContainer,
+  CustomBg,
   ArrowContainer,
   ResCard,
   ClientDetailsRes

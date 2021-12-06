@@ -85,12 +85,12 @@ module.exports = {
     },
     `gatsby-plugin-netlify`,
     `gatsby-remark-reading-time`,
-    {
-      resolve: `gatsby-source-dribbble`,
-      options: {
-        access_token: `${process.env.ACCESS_TOKEN}` || "none",
-      }
-    }
+    // {
+    //   resolve: `gatsby-source-dribbble`,
+    //   options: {
+    //     access_token: `${process.env.ACCESS_TOKEN}` || "none",
+    //   }
+    // }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

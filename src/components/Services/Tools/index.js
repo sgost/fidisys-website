@@ -21,13 +21,13 @@ export const ToolsSection = ({ title, technologies, preview }) => {
               <Row className="toolsList">
                 {
                   tech.tools && tech.tools.map(tool =>
-                    <Col key={tool.title} xs={8} sm={8} md={4} lg={4} xl={4}>
+                    <Col key={tool.title} xs={8} sm={8} md={4} lg={3} xl={3}>
                       <ToolsListItem>
                         {
                           preview ? <span><img src={tool.image} alt={tool.title} /></span> :
                           <span>
                             {
-                              (tool.image.extension === 'svg' && tool.image.childImageSharp === null) ? <img src={tool.image.publicURL} alt={tool.title} /> : <img src={tool.image.childImageSharp.fluid.src} alt={tool.title} />
+                              (tool.image.publicURL) ? <img src={tool.image.publicURL} alt={tool.title} /> : <img src={tool.image} alt={tool.title} />
                             }
                           </span>
                         }
@@ -59,12 +59,6 @@ const Tools = () => {
               tools {
                 title
                 image {
-                  childImageSharp {
-                    fluid {
-                      src
-                    }
-                  }
-                  extension
                   publicURL
                 }
               }

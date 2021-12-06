@@ -24,6 +24,7 @@ const WorksPage = ({ location }) => {
 
   const seoData = data.file.childMarkdownRemark.frontmatter;
 
+
   return (
     <Fragment>
       <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
@@ -31,7 +32,7 @@ const WorksPage = ({ location }) => {
         <WorksList path="/works" filter={location.hash} />
         <WorksList path="/works/:id" filter={location.hash} />
       </Router>
-      <DribbbleSection />
+      <DribbbleSection/>
     </Fragment>
   )
 }

@@ -105,7 +105,7 @@ collections:
       depth: 100
       summary: "{{title}}"
     fields:
-      - { name: author_image, label: Author Image, widget: image, required: false }
+      - { name: profile, label: Author Image, widget: image, required: false }
       - { name: author, label: Author, required: false }
       - { name: bio, label: Bio, required: false }
       - { name: title, label: Title, required: false }

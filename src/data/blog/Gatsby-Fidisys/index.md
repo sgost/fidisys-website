@@ -2,7 +2,7 @@
 title: "Gatsby+Fidisys"
 date: 2020-07-07
 author: Fidisys Technologies
-authorimage: ./author.png
+profile: ./author.png
 bio: We are a digital product design and development company.
 linkdin: https://www.linkedin.com/feed/?trk=homepage-basic_google-one-tap-submit
 previewImage: ./gatsby_fidisys.png

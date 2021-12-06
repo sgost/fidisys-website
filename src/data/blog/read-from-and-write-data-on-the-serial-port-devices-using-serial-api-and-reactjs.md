@@ -1,5 +1,5 @@
 ---
-authorimage: ./pachi.jfif
+profile: ./pachi.jfif
 author: Pachiyappan Velu
 bio: Senior Frontend Developer at Fidisys
 linkdin: https://www.linkedin.com/in/pachiyappan-v-46a35311b/

@@ -1,11 +1,11 @@
 backend:
-  name: git-gateway
-  branch: blogs
+  name: gitlab
+  repo: fidisys/website/web-revamp
 
 publish_mode: editorial_workflow
 
-media_folder: "src/data/assets"
-public_folder: "/"
+media_folder: 'src/data/assets'
+public_folder: '/'
 
 collections:
   - label: Home
@@ -13,15 +13,15 @@ collections:
     files:
       - label: Banner
         name: homeBanner
-        file: "src/data/home/banner.md"
-        public_folder: "../assets"
+        file: 'src/data/home/banner.md'
+        public_folder: '../assets'
         fields:
           - { label: Description, name: description }
           - { label: Image, name: image, widget: image }
       - label: Services
         name: homeServices
-        file: "src/data/home/services.md"
-        public_folder: "../assets"
+        file: 'src/data/home/services.md'
+        public_folder: '../assets'
         fields:
           - { label: Title, name: title }
           - { label: Description, name: description }
@@ -33,8 +33,8 @@ collections:
               - { label: Image, name: image, widget: image }
       - label: Clients
         name: homeClients
-        file: "src/data/home/clients.md"
-        public_folder: "../assets"
+        file: 'src/data/home/clients.md'
+        public_folder: '../assets'
         fields:
           - { label: Title, name: title }
           - { label: Description, name: description }
@@ -47,8 +47,8 @@ collections:
               - { label: Image, name: image, widget: image }
       - label: Works
         name: homeWorks
-        file: "src/data/home/works.md"
-        public_folder: "../assets"
+        file: 'src/data/home/works.md'
+        public_folder: '../assets'
         fields:
           - { label: Title, name: title }
           - label: Works
@@ -58,17 +58,12 @@ collections:
               - { label: ID, name: id, widget: number }
               - { label: Title, name: title }
               - { label: Description, name: description }
-              - {
-                  name: type,
-                  label: Type,
-                  widget: "select",
-                  options: ["casestudy", "website"],
-                }
+              - { name: type, label: Type, widget: "select", options: ["casestudy", "website"] }
               - { label: Link, name: link }
               - { label: Image, name: image, widget: image }
       - label: SEO
         name: homeSeo
-        file: "src/data/home/seo.md"
+        file: 'src/data/home/seo.md'
         fields:
           - { label: Title, name: title }
           - { label: Description, name: description }
@@ -78,8 +73,8 @@ collections:
     files:
       - label: Testimonials
         name: testimonials
-        file: "src/data/testimonials.md"
-        public_folder: "./assets"
+        file: 'src/data/testimonials.md'
+        public_folder: './assets'
         fields:
           - { label: Title, name: title }
           - label: Customers
@@ -95,23 +90,24 @@ collections:
               - { label: Image, name: image, widget: image }
   - name: blog
     label: Blog
-    label_singular: "Blog"
+    label_singular: 'Blog'
     folder: src/data/blog
-    slug: "{{slug}}"
+    slug: '{{slug}}'
     create: true
-    media_folder: ""
-    public_folder: ""
+    media_folder: ''
+    public_folder: ''
     nested:
       depth: 100
-      summary: "{{title}}"
+      summary: '{{title}}'
     fields:
-      - { name: previewImages, label: Author Image, widget: image, required: false }
-      - { name: author, label: Author, required: false }
-      - { name: bio, label: Bio, required: false }
-      - { name: title, label: Title, required: false }
-      - { name: date, label: Date, widget: date, default: "", required: false }
+      - { name: author_image, label: Author Image, widget: image }
+      - { name: author, label: Author }
+      - { name: bio, label: Bio }
+      - { name: title, label: Title }
+      - { name: date, label: Date, widget: date, default: ''}
       - { name: previewImage, label: Preview Image, widget: image }
       - { name: excerpt, label: Excerpt }
+      - { name: tags, label: Tags, widget: list }
       - { name: body, label: Body, widget: markdown }
       - label: SEO
         name: seo
@@ -125,8 +121,8 @@ collections:
     files:
       - label: Footer
         name: footer
-        file: "src/data/footer.md"
-        public_folder: "./assets"
+        file: 'src/data/footer.md'
+        public_folder: './assets'
         fields:
           - { label: Title, name: title }
           - { label: Image, name: image, widget: image }
@@ -135,15 +131,15 @@ collections:
     files:
       - label: Banner
         name: techBanner
-        file: "src/data/services/banner.md"
-        public_folder: "../assets"
+        file: 'src/data/services/banner.md'
+        public_folder: '../assets'
         fields:
           - { label: Description, name: description }
           - { label: Image, name: image, widget: image }
       - label: Tools
         name: techTools
-        file: "src/data/services/tools.md"
-        public_folder: "../assets"
+        file: 'src/data/services/tools.md'
+        public_folder: '../assets'
         fields:
           - { label: Title, name: title }
           - label: Technologies
@@ -154,15 +150,15 @@ collections:
               - { label: Description, name: description }
               - { label: ID, name: id }
               - label: Technologies
-                name: tools
+                name: technologies
                 widget: list
                 fields:
                   - { label: Title, name: title }
                   - { label: Image, name: image, widget: image }
       - label: Partnership
         name: partnership
-        file: "src/data/services/partner.md"
-        public_folder: "../assets"
+        file: 'src/data/services/partner.md'
+        public_folder: '../assets'
         fields:
           - { label: Title, name: title }
           - { label: HelpText, name: helpText }
@@ -170,7 +166,7 @@ collections:
           - { name: body, label: Body, widget: markdown }
       - label: SEO
         name: techSeo
-        file: "src/data/services/seo.md"
+        file: 'src/data/services/seo.md'
         fields:
           - { label: Title, name: title }
           - { label: Description, name: description }
@@ -180,15 +176,15 @@ collections:
     files:
       - label: Banner
         name: aboutBanner
-        file: "src/data/about/banner.md"
-        public_folder: "../assets"
+        file: 'src/data/about/banner.md'
+        public_folder: '../assets'
         fields:
           - { label: Description, name: description }
           - { label: Image, name: image, widget: image }
       - label: Highlights
         name: highlights
-        file: "src/data/about/highlights.md"
-        public_folder: "../assets"
+        file: 'src/data/about/highlights.md'
+        public_folder: '../assets'
         fields:
           - { label: Title, name: title }
           - { label: Description, name: description }
@@ -202,8 +198,8 @@ collections:
               - { label: Image, name: image, widget: image }
       - label: Activities
         name: activities
-        file: "src/data/about/activities.md"
-        public_folder: "../assets"
+        file: 'src/data/about/activities.md'
+        public_folder: '../assets'
         fields:
           - { label: Title, name: title }
           - label: Activities
@@ -216,24 +212,10 @@ collections:
               - { label: Nav Id, name: navId }
               - { label: Link, name: link }
               - { label: Image, name: image, widget: image }
-      - label: Family
-        name: familys
-        file: "src/data/about/family.md"
-        public_folder: "../assets"
-        fields:
-          - { label: Title, name: title }
-          - label: Fidi Family
-            name: members
-            widget: list
-            fields:
-              - { label: Name, name: title }
-              - { label: Position, name: description }
-              - { label: Linkdin, name: link }
-              - { label: Image, name: image, widget: image }
       - label: Fidishow
         name: fidishow
-        file: "src/data/about/fidishow.md"
-        public_folder: "../assets"
+        file: 'src/data/about/fidishow.md'
+        public_folder: '../assets'
         fields:
           - { label: Title, name: title }
           - { label: Help Text, name: helpText }
@@ -245,33 +227,28 @@ collections:
           - { name: body, label: Body, widget: markdown }
       - label: SEO
         name: aboutSeo
-        file: "src/data/about/seo.md"
+        file: 'src/data/about/seo.md'
         fields:
           - { label: Title, name: title }
           - { label: Description, name: description }
           - { label: Keywords, name: keywords, widget: list }
   - name: works
     label: Works
-    label_singular: "Works"
+    label_singular: 'Works'
     folder: src/data/works
-    slug: "{{slug}}"
+    slug: '{{slug}}'
     create: true
-    media_folder: ""
-    public_folder: ""
+    media_folder: ''
+    public_folder: ''
     nested:
       depth: 100
-      summary: "{{title}}"
+      summary: '{{title}}'
     fields:
       - { name: title, label: Title }
       - { name: description, label: Description }
       - { name: image, label: Image, widget: image, required: false }
       - { name: theme, label: Theme }
-      - {
-          name: categories,
-          label: Categories,
-          widget: "select",
-          options: ["mobileapp", "ui-ux", "websites"],
-        }
+      - { name: categories, label: Categories, widget: "select", options: ["mobileapp", "ui-ux", "websites"] }
       - label: Tags
         name: workTags
         widget: list
@@ -279,39 +256,17 @@ collections:
           - { name: title, label: Title }
           - { name: themeColor, label: Theme Color }
           - { name: themeBg, label: Theme Background }
-      - {
-          name: type,
-          label: Type,
-          widget: "select",
-          options: ["casestudy", "website"],
-        }
+      - { name: type, label: Type, widget: "select", options: ["casestudy", "website"] }
       - { name: pageLink, label: Page Link, required: false }
       - { name: appLogo, label: App Logo, widget: image, required: false }
-      - {
-          name: bannerImage,
-          label: Banner Image,
-          widget: image,
-          required: false,
-        }
-      - {
-          name: bannerBackgroundImage,
-          label: Banner background Image,
-          widget: image,
-          required: false,
-        }
+      - { name: bannerImage, label: Banner Image, widget: image, required: false }
+      - { name: bannerBackgroundImage, label: Banner background Image, widget: image, required: false }
       - label: Review
         name: review
         widget: object
         required: false
         fields:
-          - {
-              label: Rating,
-              name: rating,
-              widget: "number",
-              required: false,
-              min: 1,
-              max: 5,
-            }
+          - { label: Rating, name: rating, widget: "number", required: false, min: 1, max: 5 }
           - { label: Comment, name: comment, required: false }
           - { label: Username, name: username, required: false }
       - { name: body, label: Body, widget: markdown, required: false }
@@ -327,7 +282,7 @@ collections:
     files:
       - label: SEO Blog
         name: seoBlog
-        file: "src/data/seoBlog.md"
+        file: 'src/data/seoBlog.md'
         fields:
           - { label: Title, name: title }
           - { label: Description, name: description }
@@ -337,8 +292,8 @@ collections:
     files:
       - label: Social Media Links
         name: socialMediaLinks
-        file: "src/data/smLinks.md"
-        public_folder: "./assets"
+        file: 'src/data/smLinks.md'
+        public_folder: './assets'
         fields:
           - { label: Title, name: title }
           - label: Media Links
@@ -354,7 +309,7 @@ collections:
     files:
       - label: Sitemap
         name: sitemap
-        file: "src/data/sitemap.md"
+        file: 'src/data/sitemap.md'
         fields:
           - { label: Title, name: title }
           - label: SitemapList
@@ -376,8 +331,8 @@ collections:
     files:
       - label: Contact
         name: contact
-        file: "src/data/contact.md"
-        public_folder: "./assets"
+        file: 'src/data/contact.md'
+        public_folder: './assets'
         fields:
           - { label: Title, name: title }
           - label: Contact

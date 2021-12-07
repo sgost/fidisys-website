@@ -50,7 +50,7 @@ h1 {
     color: rgba(255, 255, 255, 0.9);
 }
 #cardsContainer #cards a{
-    width: 8vw;
+    width: 6vw;
     height: 5vw;
     position: relative;
     margin: auto;

@@ -18,7 +18,7 @@ members:
     link: https://www.linkedin.com/in/mohanapriya-palanisamy-69233999/
     image: ../assets/f4.png
   - title: Pachiyappan Velu
-    description: Frontend Developer
+    description: Engineering
     link: https://www.linkedin.com/in/pachiyappan-v-46a35311b/
     image: ../assets/f5.png
   - title: Muni Pravallika
@@ -26,7 +26,7 @@ members:
     link: https://www.linkedin.com/in/pravallika-ramesh-479388208/
     image: ../assets/f6.png
   - title: Manoj Ponugoti
-    description: Frontend Developer
+    description: Engineering
     link: https://www.linkedin.com/in/manoj-ponugoti-038ab0178/
     image: ../assets/f7.png
   - title: Mohamed Irshath

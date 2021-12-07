@@ -18,6 +18,7 @@ workTags:
     themeBg: rgba(248, 101, 150, 0.3)
     themeColor: "#FF699B"
 type: website
+pageLink: https://interior-studio.netlify.app/
 seo:
   description: Interior Design is the global, industry-leading design magazine
     publication, website and events company serving the architecture and design

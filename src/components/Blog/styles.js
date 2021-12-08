@@ -3,6 +3,7 @@ import * as palette from '../../styles/variables';
 
 export const BlogPageSection = styled.div`
   background: ${palette.WHITE_COLOR};
+  overflow: hidden;
 `;
 
 export const BlogContainer = styled.div`
@@ -19,6 +20,53 @@ export const AuthorInfo = styled.div`
   flex-direction: row;
   align-items: center;
   margin-bottom: 32px;
+  .author_info_side2{
+    display: none;
+  }
+  .author_info_side{
+    position: fixed;
+    top: 56%;
+    left: 5%;
+    display: flex;
+    transition: 0.5s ease-in-out;
+    flex-direction: column;
+    h4 {
+      font-size: 14px;
+      line-height: 12px;
+      color: ${palette.BLACK_COLOR};
+      margin: 0 0 5px 0;
+    }
+    span {
+      font-size: 10px;
+    }
+    h5 {
+      margin: 12px 0 0 0;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 29px;
+      font-weight: 200;
+      z-index: 0;
+      color: rgba(117, 117, 117, 1);
+      border-top: 1.2px solid #8080805e;
+    }
+    #social_icons {
+      margin: 10px 0 0 0;
+    }
+    #social_icons #link {
+      opacity: 0.8;
+      margin: 0 0 0 16px;
+    }
+    #social_icons #link:nth-child(1) {
+      margin: 0;
+    }
+    #social_icons #link img{
+      width: 14px;
+      height: 14px;
+    }
+    @media (max-width: 1237px) {
+      display: none;
+    }
+  }
   .author_image {
     margin-right: 22px;
     width: 100px;
@@ -85,6 +133,13 @@ export const BlogContent = styled.div`
   h3 {
     margin-bottom: 24px;
     color: ${palette.BLACK_COLOR};
+  }
+  h6 {
+    margin-bottom: 24px;
+    color: ${palette.BLACK_COLOR};
+    border-left: 3px solid ${palette.BLACK_COLOR};
+    padding: 0 0 0 10px;
+    font-style: italic;
   }
   .gatsby-resp-image-wrapper {
     margin-top: 40px;

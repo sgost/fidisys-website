@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useState } from "react"
 import { graphql } from "gatsby"
 import SEO from "../seo"
 import { ArrowRightOutlined } from '@ant-design/icons';
@@ -8,6 +8,9 @@ import {
   AuthorInfo,
   BlogContent,
 } from './styles';
+import linkdins from "../../images/linkedin.png";
+import dribble from "../../images/dribble.png";
+import github from "../../images/github.png";
 
 export const BlogPost = ({
   fields,
@@ -23,6 +26,20 @@ export const BlogPost = ({
 
   // const content = data.markdownRemark;
 
+  const [scroll, setScroll] = useState(0);
+  
+  const onScroll = () => {
+    const Scrolled = document.documentElement.scrollTop;
+    const MaxHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+    const ScrollPercent = (Scrolled / MaxHeight) * 100;
+    setScroll(ScrollPercent);
+  };
+  
+  window.addEventListener("scroll", onScroll);
+
+console.log(scroll)
 
   return (
     <BlogPageSection id="blogView">
@@ -44,17 +61,18 @@ export const BlogPost = ({
             <a id="link" href={linkdin} target="_blank"  without rel="noopener noreferrer">View Profile<ArrowRightOutlined className="icon"/></a>
           </div>
 
-{/* 
-          <div className= {navbar ? 'author_info_side' : 'author_info_side2'}>
+          <div className= {scroll >= 2 ? scroll >= 80 ? "author_info_side2" : "author_info_side" : "author_info_side2"}>
             <h4>{author}</h4>
-            <span>{bio}</span>
+            {
+                fields && <span>{fields.readingTime.text} &middot; </span>
+              }
             <h5>Follow Fidisys</h5>
             <div id="social_icons">
-            <a id="link" href="https://www.linkedin.com/company/fidisys" target="_blank"  without rel="noopener noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111532.png" alt="img" /></a>
-            <a id="link" href="https://github.com/fidisys" target="_blank"  without rel="noopener noreferrer"><img src="https://cdn-icons.flaticon.com/png/512/4926/premium/4926624.png?token=exp=1638946379~hmac=bbd9fc53ff82d5f0ed0f6f05658399de" alt="img" /></a>
-            <a id="link" href="https://dribbble.com/fidisys" target="_blank"  without rel="noopener noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/1532/1532490.png" alt="img" /></a>
+            <a id="link" href="https://www.linkedin.com/company/fidisys" target="_blank"  without rel="noopener noreferrer"><img src={linkdins} alt="img" /></a>
+            <a id="link" href="https://github.com/fidisys" target="_blank"  without rel="noopener noreferrer"><img src={github} alt="img" /></a>
+            <a id="link" href="https://dribbble.com/fidisys" target="_blank"  without rel="noopener noreferrer"><img src={dribble} alt="img" /></a>
             </div>
-          </div> */}
+          </div>
 
 
         </AuthorInfo>

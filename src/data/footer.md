@@ -1,4 +1,4 @@
 ---
 title: "Let’s work Together"
-image: "./assets/idea.png"
+image: "./assets/idea.svg"
 ---

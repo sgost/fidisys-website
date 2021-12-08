@@ -3,7 +3,6 @@ import * as palette from '../../styles/variables';
 
 export const BlogPageSection = styled.div`
   background: ${palette.WHITE_COLOR};
-  overflow: hidden;
 `;
 
 export const BlogContainer = styled.div`

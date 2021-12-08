@@ -37,7 +37,7 @@ export const BlogPost = ({
     setScroll(ScrollPercent);
   };
   
-  window.addEventListener("scroll", onScroll);
+  document.addEventListener("scroll", onScroll);
 
 console.log(scroll)
 

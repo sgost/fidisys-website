@@ -3,7 +3,7 @@ title: Interior Design
 description: Interior Design is the global, industry-leading design magazine
   publication, website and events company serving the architecture and design
   industry.
-image: interior.svg
+image: interior.png
 theme: "#6F67BD"
 categories:
   - websites
@@ -18,7 +18,7 @@ workTags:
     themeBg: rgba(248, 101, 150, 0.3)
     themeColor: "#FF699B"
 type: website
-pageLink: https://interior-studio.netlify.app/
+pageLink: 
 seo:
   description: Interior Design is the global, industry-leading design magazine
     publication, website and events company serving the architecture and design

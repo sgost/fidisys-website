@@ -2,7 +2,7 @@ import { graphql, Link, useStaticQuery } from "gatsby"
 import React, { useState, useEffect, useRef } from "react"
 import { Button, Drawer, Modal } from "antd"
 import ContactSection from "../Contact"
-import Logo from '../../images/logo.png';
+import Logo from '../../images/logo.svg';
 import MenuIconImg from "../../images/menu_icon.png"
 import {
   HeaderContainer,

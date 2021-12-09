@@ -60,7 +60,7 @@ export const FooterSection = ({ title, image, preview }) => {
             preview ? <img className="idea-img" src={image} alt={title} /> :
             <Fragment>
               {
-                (image.extension === 'svg' && image.childImageSharp === null) ? <img className="idea-img" src={image.publicURL} alt={title} /> : <img className="idea-img" src={image.childImageSharp.fluid.src} alt={title} />
+                (image.publicURL) ? <img className="idea-img" src={image.publicURL} alt={title} /> : <img className="idea-img" src={image} alt={title} />
               }
             </Fragment>
           }
@@ -98,12 +98,6 @@ const Footer = () => {
           frontmatter {
             title
             image {
-              childImageSharp {
-                fluid {
-                  src
-                }
-              }
-              extension
               publicURL
             }
           }

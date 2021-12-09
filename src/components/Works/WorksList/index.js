@@ -27,7 +27,7 @@ const WorksList = props => {
 
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(works)\\/.*\\\\.md$/"}}) {
+      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(works)\\/.*\\\\.md$/"}}, sort: { fields: [frontmatter___date] }) {
         nodes {
           id
           fields {

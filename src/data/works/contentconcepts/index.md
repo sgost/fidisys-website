@@ -2,7 +2,7 @@
 title: ContentConcepts
 description: We build the official website and CMS system for Content Concepts
   which involves in editing and proofreading services.
-image: contentconcepts.svg
+image: content_concepts.png
 theme: "#6F67BD"
 categories:
   - websites

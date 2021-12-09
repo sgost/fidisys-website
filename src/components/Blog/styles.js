@@ -3,51 +3,6 @@ import * as palette from '../../styles/variables';
 
 export const BlogPageSection = styled.div`
   background: ${palette.WHITE_COLOR};
-  position: relative;
-  .author_info_side{
-    position: absolute;
-    top: 40%;
-    left: 5%;
-    display: flex;
-    transition: 0.5s ease-in-out;
-    flex-direction: column;
-    h4 {
-      font-size: 14px;
-      line-height: 12px;
-      color: ${palette.BLACK_COLOR};
-      margin: 0 0 5px 0;
-    }
-    span {
-      font-size: 10px;
-    }
-    h5 {
-      margin: 12px 0 0 0;
-      font-weight: 600;
-      font-size: 12px;
-      line-height: 29px;
-      font-weight: 200;
-      z-index: 0;
-      color: rgba(117, 117, 117, 1);
-      border-top: 1.2px solid #8080805e;
-    }
-    #social_icons {
-      margin: 10px 0 0 0;
-    }
-    #social_icons #link {
-      opacity: 0.8;
-      margin: 0 0 0 16px;
-    }
-    #social_icons #link:nth-child(1) {
-      margin: 0;
-    }
-    #social_icons #link img{
-      width: 14px;
-      height: 14px;
-    }
-    @media (max-width: 1237px) {
-      display: none;
-    }
-  }
 `;
 
 export const BlogContainer = styled.div`
@@ -55,27 +10,9 @@ export const BlogContainer = styled.div`
   max-width: 700px;
   margin: 0 auto;
   padding: 48px 0px;
-  height: 100vh;
-  overflow: scroll;
   @media (max-width: 768px) {
     padding: 24px;
   }
-}
-#BlogContainer::-webkit-scrollbar {
-  width: 2px;
-}
-BlogContainer::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-BlogContainer::-webkit-scrollbar-thumb {
-  background: transparent;
-}
-
-#inbox_container2
-  #inbox_container2_bottom
-  #lists:hover::-webkit-scrollbar-thumb {
-  background: rgba(85, 85, 85, 0.11);
 }
 `;
 
@@ -164,7 +101,7 @@ export const BlogContent = styled.div`
   }
   p {
     margin-bottom: 24px;
-    font-size: 16px;
+    font-size: 18px;
     color: ${palette.BLACK_COLOR};
   }
   ul {

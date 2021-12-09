@@ -8,9 +8,6 @@ import {
   AuthorInfo,
   BlogContent,
 } from './styles';
-import linkdins from "../../images/linkedin.png";
-import dribble from "../../images/dribble.png";
-import github from "../../images/github.png";
 
 export const BlogPost = ({
   fields,
@@ -28,18 +25,6 @@ export const BlogPost = ({
 
   return (
     <BlogPageSection id="blogView">
-                <div className="author_info_side">
-            <h4>{author}</h4>
-            {
-                fields && <span>{fields.readingTime.text} &middot; </span>
-              }
-            <h5>Follow Fidisys</h5>
-            <div id="social_icons">
-            <a id="link" href="https://www.linkedin.com/company/fidisys" target="_blank"  without rel="noopener noreferrer"><img src={linkdins} alt="img" /></a>
-            <a id="link" href="https://github.com/fidisys" target="_blank"  without rel="noopener noreferrer"><img src={github} alt="img" /></a>
-            <a id="link" href="https://dribbble.com/fidisys" target="_blank"  without rel="noopener noreferrer"><img src={dribble} alt="img" /></a>
-            </div>
-          </div>
       <BlogContainer>
         <div id="BlogContainer">
         <AuthorInfo>

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react"
+import React, { Fragment } from "react"
 import { graphql } from "gatsby"
 import SEO from "../seo"
 import { ArrowRightOutlined } from '@ant-design/icons';
@@ -26,24 +26,22 @@ export const BlogPost = ({
 
   // const content = data.markdownRemark;
 
-  const [scroll, setScroll] = useState(0);
-  
-  const onScroll = () => {
-    const Scrolled = document.documentElement.scrollTop;
-    const MaxHeight =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
-    const ScrollPercent = (Scrolled / MaxHeight) * 100;
-    setScroll(ScrollPercent);
-  };
-  
-  document.addEventListener("scroll", onScroll);
-
-console.log(scroll)
-
   return (
     <BlogPageSection id="blogView">
+                <div className="author_info_side">
+            <h4>{author}</h4>
+            {
+                fields && <span>{fields.readingTime.text} &middot; </span>
+              }
+            <h5>Follow Fidisys</h5>
+            <div id="social_icons">
+            <a id="link" href="https://www.linkedin.com/company/fidisys" target="_blank"  without rel="noopener noreferrer"><img src={linkdins} alt="img" /></a>
+            <a id="link" href="https://github.com/fidisys" target="_blank"  without rel="noopener noreferrer"><img src={github} alt="img" /></a>
+            <a id="link" href="https://dribbble.com/fidisys" target="_blank"  without rel="noopener noreferrer"><img src={dribble} alt="img" /></a>
+            </div>
+          </div>
       <BlogContainer>
+        <div id="BlogContainer">
         <AuthorInfo>
           <div className="author_image">
             <img src={previewImages} alt={author} />
@@ -61,19 +59,6 @@ console.log(scroll)
             <a id="link" href={linkdin} target="_blank"  without rel="noopener noreferrer">View Profile<ArrowRightOutlined className="icon"/></a>
           </div>
 
-          <div className= {scroll >= 2 ? scroll >= 80 ? "author_info_side2" : "author_info_side" : "author_info_side2"}>
-            <h4>{author}</h4>
-            {
-                fields && <span>{fields.readingTime.text} &middot; </span>
-              }
-            <h5>Follow Fidisys</h5>
-            <div id="social_icons">
-            <a id="link" href="https://www.linkedin.com/company/fidisys" target="_blank"  without rel="noopener noreferrer"><img src={linkdins} alt="img" /></a>
-            <a id="link" href="https://github.com/fidisys" target="_blank"  without rel="noopener noreferrer"><img src={github} alt="img" /></a>
-            <a id="link" href="https://dribbble.com/fidisys" target="_blank"  without rel="noopener noreferrer"><img src={dribble} alt="img" /></a>
-            </div>
-          </div>
-
 
         </AuthorInfo>
         <BlogContent>
@@ -82,6 +67,7 @@ console.log(scroll)
             preview ? <div>{html}</div> : <div dangerouslySetInnerHTML={{ __html: html }} />
           }
         </BlogContent>
+        </div>
       </BlogContainer>
     </BlogPageSection>
   )

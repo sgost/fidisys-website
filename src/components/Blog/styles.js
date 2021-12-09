@@ -3,28 +3,10 @@ import * as palette from '../../styles/variables';
 
 export const BlogPageSection = styled.div`
   background: ${palette.WHITE_COLOR};
-`;
-
-export const BlogContainer = styled.div`
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 48px 0px;
-  @media (max-width: 768px) {
-    padding: 24px;
-  }
-`;
-
-export const AuthorInfo = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 32px;
-  .author_info_side2{
-    display: none;
-  }
+  position: relative;
   .author_info_side{
-    position: fixed;
-    top: 56%;
+    position: absolute;
+    top: 40%;
     left: 5%;
     display: flex;
     transition: 0.5s ease-in-out;
@@ -66,6 +48,42 @@ export const AuthorInfo = styled.div`
       display: none;
     }
   }
+`;
+
+export const BlogContainer = styled.div`
+#BlogContainer {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 48px 0px;
+  height: 100vh;
+  overflow: scroll;
+  @media (max-width: 768px) {
+    padding: 24px;
+  }
+}
+#BlogContainer::-webkit-scrollbar {
+  width: 2px;
+}
+BlogContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+BlogContainer::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+#inbox_container2
+  #inbox_container2_bottom
+  #lists:hover::-webkit-scrollbar-thumb {
+  background: rgba(85, 85, 85, 0.11);
+}
+`;
+
+export const AuthorInfo = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 32px;
   .author_image {
     margin-right: 22px;
     width: 100px;

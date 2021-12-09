@@ -3,7 +3,7 @@ title: Design System
 description: Design system is intended to be used in conjunction with a build
   tool, such as webpack, which will make it easy to import only the parts of
   design system that you are using.
-image: design-systems.svg
+image: design-systems.png
 theme: "#FF7550"
 categories:
   - websites

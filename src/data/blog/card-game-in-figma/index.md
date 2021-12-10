@@ -227,10 +227,6 @@ Click Load. By default, PuTTYgen displays only files with the extension .ppk. To
 
 ![Connect to EC2 instance using SSH and PuTTY](ubuntu_terminal.png)
 
-
-
-
-
 ### 4. Installation of Apache Web:
 
 **What is web server?** *First, we need to understand the different kinds of servers. The server where our database runs is called as a database server. The server we use for sending mails is called as a mail server. These are some examples of servers. Now we can start with what is the Web Server? Web server is used to serve content of websites over the network. When user request for any contest from the server, web server pulls the content from the server and delivers it to the web.*
@@ -245,8 +241,6 @@ Let’s begin by updating the local package index to reflect the latest upstream
 
 > $ sudo apt update
 
-
-
 ![Update ubuntu packages](apt_update.png)
 
 Update Completed.
@@ -254,8 +248,6 @@ Update Completed.
 Then, install the `apache2` package:
 
 > $ sudo apt install apache2
-
-
 
 ![Install Apache2](install_apache2.png)
 
@@ -270,8 +262,6 @@ During installation, Apache registers itself with UFW to provide a few applicati
 > $ sudo ufw app list
 
 You will receive a list of the application profiles:
-
-
 
 ![ufw app list](ufw_app_list.png)
 
@@ -291,23 +281,17 @@ You can verify the change by typing:
 
 The output will provide a list of allowed HTTP traffic:
 
-
-
 ![ufw status](ufw_status.png)
 
 As indicated by the output, the profile has been activated to allow access to the Apache web server.
 
 > $ sudo systemct1 status apache2
 
-
-
 ![systemct1 status apache2](system1_status_apache2.png)
 
 As confirmed by this output, the service has started successfully. However, the best way to test this is to request a page from Apache.
 
 You can access the default Apache landing page to confirm that the software is running properly through your IP address.
-
-
 
 ![Instance IP address](instance_ip_address.png)
 
@@ -316,8 +300,6 @@ When you have your server’s IP address, enter it into your browser’s address
 > http://your_server_ip
 
 You should see the default Ubuntu 20.04 Apache web page:
-
-
 
 ![Apache2 Ubuntu Default Page](apache_default_page.png)
 
@@ -337,8 +319,6 @@ We going to specific path cd /var/www/html/
 
 Mkdir test_nodejs_application
 
-
-
 ![Test NodeJS application](mkdir_nodejs.png)
 
 I try to create folder but getting error for cannot create directory. So we need to permission access.
@@ -353,11 +333,9 @@ step1: sudo chown -R ubuntu:www-data /var/www
 
 step2: sudo chmod 2775 /var/www
 
-step3: find /var/www -type d -exec sudo chmod 2775 {} \;
+step3: find /var/www -type d -exec sudo chmod 2775 {} ;
 
-step4: find /var/www -type f -exec sudo chmod 0664 {} \;
-
-
+step4: find /var/www -type f -exec sudo chmod 0664 {} ;
 
 ![Types](types.png)
 
@@ -367,8 +345,6 @@ We going to specific path cd /var/www/html/
 
 > /var/www/html mkdir test_nodejs_application
 
-
-
 ![NodeJS application](nodejs_application.png)
 
 successfully created.
@@ -376,10 +352,6 @@ successfully created.
 ![Successfully created](successfully_created.png)
 
 Alright now our Apache setup. let’s go to install Mysql database.
-
-
-
-
 
 ### 5. Install Mysql Database:
 
@@ -409,19 +381,13 @@ This will take you through a series of prompts where you can make some changes t
 
 If you elect to set up the Validate Password Plugin, any MySQL user you create that authenticates with a password will be required to have a password that satisfies the policy you select. The strongest policy level — which you can select by entering 2 — will require passwords to be at least eight characters long and include a mix of uppercase, lowercase, numeric, and special characters:
 
-
-
 ![Mysql database secure installation](mysql_secure_installation.png)
 
 Regardless of whether you choose to set up the Validate Password Plugin, the next prompt will be to set a password for the MySQL **root** user. Enter and then confirm a secure password of your choice:
 
-
-
 ![Set password for the root user](set_password.png)
 
 Note that even though you’ve set a password for the **root** MySQL user, this user is not currently configured to authenticate with a password when connecting to the MySQL shell.
-
-
 
 ![Estimated strength of password](password_strength.png)
 
@@ -439,13 +405,9 @@ Once you have access to the MySQL prompt, you can create a new user with a `CREA
 
 > Mysql> show databases;
 
-
-
 ![show databases](show_databases.png)
 
 > Mysql> use mysql;
-
-
 
 ![Use Mysql database](use_mysql.png)
 
@@ -467,21 +429,15 @@ Create database.
 
 Ex: Im creating test_database;
 
-
-
 ![Create Database](create_database.png)
 
 > Mysql> show databases;
-
-
 
 ![Show Database](show_database.png)
 
 After creating your new database, you can grant them the appropriate privileges. The general syntax for granting user privileges is as follows:
 
 > Mysql> GRANT ALL PRIVILEGES ON database_name.* TO ‘username’@’localhost’;
-
-
 
 ![Grant privileges for the database users](grant_previllage.png)
 
@@ -496,3 +452,65 @@ Following this, it’s good practice to run the `FLUSH PRIVILEGES` command. This
 The `-p` flag will cause the MySQL client to prompt you for your MySQL user’s password in order to authenticate.
 
 Finally, let’s test the MySQL installation complete.
+
+
+
+###  6. Install Nodejs and NPM:
+
+**Introduction**
+
+[Node.js](https://nodejs.org/) is a JavaScript runtime for server-side programming. It allows developers to create scalable backend functionality using JavaScript, a language many are already familiar with from browser-based web development.
+
+* using apt to install the nodejs package from Ubuntu’s default software repository
+
+To get this version, you can use the `apt` package manager. Refresh your local package index first by typing:
+
+> $ sudo apt update
+
+Then install Node.js
+
+> curl -fsSL <https://deb.nodesource.com/setup_current.x> | sudo -E bash –
+>
+> sudo apt-get install -y nodejs
+
+Check that the install was successful by querying `node` for its version number:
+
+> node –version
+
+
+
+![Show node version](node_version.png)
+
+If the package in the repositories suits your needs, this is all you need to do to get set up with Node.js. In most cases, you’ll also want to also install `npm`, the Node.js package manager. You can do this by installing the `npm` package with `apt`:
+
+> $ sudo apt install npm
+>
+> npm –version
+
+
+
+
+
+![npm version](npm_version.png)
+
+This will allow you to install modules and packages to use with Node.js.
+
+At this point you have successfully installed Node.js and npm using apt and the default Ubuntu software repositories.
+
+### 7. Create Github Repository
+
+Login your github account. after create new projects.
+
+
+
+![Login to git repository](create_new_git_repo.png)
+
+Fill in the required information in the above page, the repository get created with README.md and click create repository to get the repository created.
+
+Once it is done, you will be able to see something like this:
+
+
+
+![Created git repository details](created_git_repo.png)
+
+We have successfully created the repository!

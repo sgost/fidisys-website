@@ -20,8 +20,8 @@ export const BlogContainer = styled.div`
   margin-bottom: 32px;
   color: ${palette.BLACK_COLOR};
   @media (max-width: 768px) {
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 22px;
+    line-height: 29px;
   }
 }
 `;
@@ -38,8 +38,8 @@ export const AuthorInfo = styled.div`
     border-radius: 100%;
     overflow: hidden;
     @media (max-width: 600px){
-      width: 90px;
-      height: 90px;
+      width: 80px;
+      height: 80px;
     }
   }
   .author_info {
@@ -109,6 +109,17 @@ export const AuthorInfo = styled.div`
     #link .icon{
       width: 100%;
       height: 100%;
+    }
+  }
+  #pc_mob {
+    display: none;
+  }
+  @media (max-width: 600px) {
+    #pc_mob {
+      display: flex;
+    }
+    #pc_author {
+      display: none;
     }
   }
 `;

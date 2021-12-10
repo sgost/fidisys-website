@@ -36,8 +36,9 @@ export const BlogPost = ({
             <img src={previewImages} alt={author} className="author_image"/>
           <div className="author_info">
           <Popover placement="right" content={<Authordata bio={bio} author={author} previewImages={previewImages}/>}>
-          <h4>{author}</h4>
-      </Popover>
+          <h4 id="pc_author">{author}</h4>
+          </Popover>
+          <h4 id="pc_mob">{author}</h4>
             <div>
               {
                 fields && <span>{fields.readingTime.text} </span>

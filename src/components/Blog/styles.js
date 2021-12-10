@@ -33,8 +33,8 @@ export const AuthorInfo = styled.div`
   margin-bottom: 32px;
   .author_image {
     margin-right: 10px;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     border-radius: 100%;
     overflow: hidden;
     @media (max-width: 600px){
@@ -44,8 +44,10 @@ export const AuthorInfo = styled.div`
   }
   .author_info {
     display: flex;
+    width: 90%;
     align-items: center;
     @media (max-width: 600px){
+    width: fit-content;
     flex-direction: column;
     }
     h4 {

@@ -40,10 +40,10 @@ export const BlogPost = ({
           </Popover>
           <h4 id="pc_mob">{author}</h4>
             <div>
+              <span id="date">{date}</span>
               {
                 fields && <span>{fields.readingTime.text} </span>
               }
-              <span id="date">{date}</span>
             </div>
             <div id="socio_lnks">
             {

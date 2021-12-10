@@ -1,5 +1,6 @@
 ---
-previewImages: dinesh_img.jpg
+previewImages: ./author.png
+author_image: dinesh_img.jpg
 author: Fidisys Technologies
 bio: We are a digital product design and development company.
 title: CI/CD from Github to AWS Ec2 — Complete Nodejs Deployment
@@ -453,9 +454,7 @@ The `-p` flag will cause the MySQL client to prompt you for your MySQL user’s 
 
 Finally, let’s test the MySQL installation complete.
 
-
-
-###  6. Install Nodejs and NPM:
+### 6. Install Nodejs and NPM:
 
 **Introduction**
 
@@ -477,8 +476,6 @@ Check that the install was successful by querying `node` for its version number:
 
 > node –version
 
-
-
 ![Show node version](node_version.png)
 
 If the package in the repositories suits your needs, this is all you need to do to get set up with Node.js. In most cases, you’ll also want to also install `npm`, the Node.js package manager. You can do this by installing the `npm` package with `apt`:
@@ -486,10 +483,6 @@ If the package in the repositories suits your needs, this is all you need to do 
 > $ sudo apt install npm
 >
 > npm –version
-
-
-
-
 
 ![npm version](npm_version.png)
 
@@ -501,16 +494,235 @@ At this point you have successfully installed Node.js and npm using apt and the 
 
 Login your github account. after create new projects.
 
-
-
 ![Login to git repository](create_new_git_repo.png)
 
 Fill in the required information in the above page, the repository get created with README.md and click create repository to get the repository created.
 
 Once it is done, you will be able to see something like this:
 
-
-
 ![Created git repository details](created_git_repo.png)
 
 We have successfully created the repository!
+
+
+
+###  8. Create Nodejs Project:
+
+**Install Node.js for your local platform**
+
+The first step is to get yourself an instance of the JavaScript runtime up and running on your local machine
+
+> sudo apt install node js
+
+Initialize your project and link it to npm
+
+> sudo apt install npm
+
+Open a command prompt and type:
+
+create a folder for your app
+
+> $ mkdir test_nodejs_application
+
+On terminal/commandline go to the folder created from previous step
+
+> cd test_nodejs_application
+
+**Initialize node project :**
+
+Running this command initializes your project:
+
+> npm init
+
+This creates a *package.json* file in your *test_nodejs_application* folder. The file contains references for all npm packages you have downloaded to your project. The command will prompt you to enter a number of things.
+
+
+
+![npm init](npm_init.png)
+
+Install express framework, mySql, and body-parser
+
+> $ npm i express
+>
+> $ npm install mysql2
+>
+> $ npm install body-parser
+
+Create app.js file
+
+
+
+![app.js file ](appjs_file.png)
+
+**MySQL DB Setup:**
+
+Prerequisite: Install mySQL Community Edition
+
+**Create a DB:**
+
+CREATE DATABASE test_database;
+
+Create table:
+
+
+
+![create table query](create_table_query.png)
+
+Create new folder named app and inside app create additional folders named controller, routes.
+
+* Inside controller create new file named modules/index.js
+* Inside routes create new file named routes/index.js
+
+
+
+![Folder structure ](folder_structure.png)
+
+**Setting up the routes:**
+
+Routing refers to determining how an application responds to a client request for a specific endpoint, which is a URI (or path) and a specific HTTP request method (GET, POST, PUT,PATCH,DELETE)
+
+Each of our routes has different route handler functions, which are executed when the route is matched.
+
+Routes/index.js
+
+
+
+![index.js file](index_file.png)
+
+Let’s create a db connection wrapper, this will allow you to create connection on db which stored on a single file and can be reuse by other modules.
+
+To do this create a new file name database.js
+
+**Database.js**
+
+
+
+![database.js](database_file.png)
+
+Db.config.js
+
+
+
+![Db.config.js](db_config_file.png)
+
+Modules/index.js file
+
+
+
+![Modules/index.js](module_index_file.png)
+
+Earlier on, we had a minimal code for our server to be up and running in the app.js file.\
+In this section we will be connecting our handlers(modules), database, body parser and the created routes together.\
+Open the app.js file created a while ago and follow the following steps to put everything together.\
+Essentially, you will be replacing the code in your app.js with the code snippet from this section
+
+use bodyParser Parse incoming request bodies in a middleware before your handlers, available under the req.body property. It exposes various factories to create middle wares. All middle wares will populate the req.body property with the parsed body, or an empty object ({}) if there was no body to parse (or an error was returned).
+
+Register our created routes in the app\
+On app.js would have code below:
+
+This will start server and any changes made to the code will restart the server
+
+> $ npm start
+
+or
+
+> $ node app.js
+
+This will start app.js
+
+Now that everything is now connected, let’s test each of the routes and the respective methods.
+
+Open your postman and type:
+
+1. [http://localhost:4000/create](http://localhost:3000/create) in the enter request URL section and press enter.
+2. On the same address, change the method to POST, click body and select “raw” and on the drop\
+   menu choose application/json.
+
+
+
+![Show database details](post_database_details.png)
+
+3. http://localhost:4000/list in the enter request URL section and press enter.
+
+
+
+![List records from the database](list_data.png)
+
+**Database report**
+
+
+
+![Database reports](database_report.png)
+
+**Create a YAML file:**
+
+Create a **YAML** file with the configured that your build pipeline will use. This will be custom to your requirements.
+
+**appspec.yml**
+
+
+
+![application spec yml ](appspec_yml.png)
+
+**file:** Script/application_start.sh
+
+
+
+![application_start.sh](application_start_sh.png)
+
+**file:** Script/application_stop.sh
+
+
+
+![application_stop.sh](application_stop_sh.png)
+
+**file:** Script/before_install.sh
+
+
+
+![befor_install.sh](before_installation_sh.png)
+
+Create database migration setup:
+
+create **migration.js** file
+
+
+
+![migration.js](migration_file.png)
+
+add require to **app.js** file.
+
+
+
+![app.js](app_file.png)
+
+\#set a new remote
+
+> git init
+>
+> git remote add <https://github.com/dineshindn/test_nodejs_application.git>
+
+\#Verify new remote
+
+> git remote -v
+
+
+
+![git remote -v](git_remote_v.png)
+
+> git add .
+>
+> git commit -m “add your commit”
+>
+> git push
+
+
+
+![commit code in git](commit_t0_git.png)
+
+Awesome, we have created a nodejs application. Let's configure our application with AWS CodeDeploy Service.
+
+
+
+### 9. Configure AWS CodeDeploy Service

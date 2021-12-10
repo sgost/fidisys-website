@@ -27,6 +27,10 @@ seo:
     love.
   title: Gatsby+Fidisys
 ---
+
+
+![Continuous integration and continuous development.](cicd.png "Continuous integration and continuous development.")
+
 **What is AWS EC2 Instance?**
 
 EC2 instance is just a virtual server in AWS’s data center. It provides a resizable compute capacity in the cloud. You can quickly scale it up and down as per your requirements changes.
@@ -36,8 +40,6 @@ EC2 instance is just a virtual server in AWS’s data center. It provides a resi
 In this guide we will build a code deploys setup that takes our commits from github repo for our source codes and deploys it automatically on our servers. CICD practices in the most simplest form. This guide will focus more on CICD practices.
 
 This guide assumes that you have an intention of understanding how GitHub can be integrated into code deploy as a source.
-
-![Continuous integration and continuous development.](cicd.png "Continuous integration and continuous development.")
 
 # **Table of Contents:**
 
@@ -814,7 +816,5 @@ You now can access your web app via IPv4 Public IP (you can find it from your EC
 ### Conclusion
 
 I hope this blog has been informative to you all. I have tried as much as possible to make this blog look like a story because the main purpose of writing it is to show you the many challenges DevOps Engineers and Developers face to set up this solution and the various ways used to solve it. I will not stop updating this project and will make sure it has an improvement plan because I know it can even be better!
-
-
 
 ![happy coding](happy-coding.png)

@@ -1,10 +1,10 @@
 ---
 previewImages: ./author.png
 author_image: dinesh_img.jpg
-author: Fidisys Technologies
-bio: We are a digital product design and development company.
+author: Dhinesh
+bio: Backend developer
 title: CI/CD from Github to AWS Ec2 — Complete Nodejs Deployment
-date: 2021-12-02T18:30:00.000Z
+date: 2021-12-09T18:30:00.000Z
 previewImage: group-494.png
 excerpt: In this guide we will build a code deploys setup that takes our commits
   from github repo for our source codes and deploys it automatically on our
@@ -814,3 +814,7 @@ You now can access your web app via IPv4 Public IP (you can find it from your EC
 ### Conclusion
 
 I hope this blog has been informative to you all. I have tried as much as possible to make this blog look like a story because the main purpose of writing it is to show you the many challenges DevOps Engineers and Developers face to set up this solution and the various ways used to solve it. I will not stop updating this project and will make sure it has an improvement plan because I know it can even be better!
+
+
+
+![happy coding](happy-coding.png)

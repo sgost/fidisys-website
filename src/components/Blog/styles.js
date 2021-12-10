@@ -93,7 +93,10 @@ export const BlogContent = styled.div`
     color: ${palette.BLACK_COLOR};
     border-left: 3px solid ${palette.BLACK_COLOR};
     padding: 0 0 0 10px;
-    font-style: italic;
+    font-size: 18px;
+    font-weight: 600;
+    opacity: 0.85;
+    line-height: 1.36;
   }
   .gatsby-resp-image-wrapper {
     margin-top: 40px;

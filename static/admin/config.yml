@@ -100,7 +100,7 @@ collections:
       depth: 100
       summary: '{{title}}'
     fields:
-      - { name: author_image, label: Author Image, widget: image }
+      - { name: previewImages, label: Author Image, widget: image }
       - { name: author, label: Author }
       - { name: bio, label: Bio }
       - { name: title, label: Title }

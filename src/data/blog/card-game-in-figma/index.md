@@ -27,8 +27,6 @@ seo:
     love.
   title: Gatsby+Fidisys
 ---
-
-
 ![Continuous integration and continuous development.](cicd.png "Continuous integration and continuous development.")
 
 **What is AWS EC2 Instance?**
@@ -818,3 +816,11 @@ You now can access your web app via IPv4 Public IP (you can find it from your EC
 I hope this blog has been informative to you all. I have tried as much as possible to make this blog look like a story because the main purpose of writing it is to show you the many challenges DevOps Engineers and Developers face to set up this solution and the various ways used to solve it. I will not stop updating this project and will make sure it has an improvement plan because I know it can even be better!
 
 ![happy coding](happy-coding.png)
+
+
+
+
+
+### See More:
+
+* [Deploy a Node JS Web app](https://aws.amazon.com/getting-started/hands-on/deploy-nodejs-web-app/)

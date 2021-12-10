@@ -504,9 +504,7 @@ Once it is done, you will be able to see something like this:
 
 We have successfully created the repository!
 
-
-
-###  8. Create Nodejs Project:
+### 8. Create Nodejs Project:
 
 **Install Node.js for your local platform**
 
@@ -536,8 +534,6 @@ Running this command initializes your project:
 
 This creates a *package.json* file in your *test_nodejs_application* folder. The file contains references for all npm packages you have downloaded to your project. The command will prompt you to enter a number of things.
 
-
-
 ![npm init](npm_init.png)
 
 Install express framework, mySql, and body-parser
@@ -549,8 +545,6 @@ Install express framework, mySql, and body-parser
 > $ npm install body-parser
 
 Create app.js file
-
-
 
 ![app.js file ](appjs_file.png)
 
@@ -564,16 +558,12 @@ CREATE DATABASE test_database;
 
 Create table:
 
-
-
 ![create table query](create_table_query.png)
 
 Create new folder named app and inside app create additional folders named controller, routes.
 
 * Inside controller create new file named modules/index.js
 * Inside routes create new file named routes/index.js
-
-
 
 ![Folder structure ](folder_structure.png)
 
@@ -585,8 +575,6 @@ Each of our routes has different route handler functions, which are executed whe
 
 Routes/index.js
 
-
-
 ![index.js file](index_file.png)
 
 Let’s create a db connection wrapper, this will allow you to create connection on db which stored on a single file and can be reuse by other modules.
@@ -595,19 +583,13 @@ To do this create a new file name database.js
 
 **Database.js**
 
-
-
 ![database.js](database_file.png)
 
 Db.config.js
 
-
-
 ![Db.config.js](db_config_file.png)
 
 Modules/index.js file
-
-
 
 ![Modules/index.js](module_index_file.png)
 
@@ -639,19 +621,13 @@ Open your postman and type:
 2. On the same address, change the method to POST, click body and select “raw” and on the drop\
    menu choose application/json.
 
-
-
 ![Show database details](post_database_details.png)
 
 3. http://localhost:4000/list in the enter request URL section and press enter.
 
-
-
 ![List records from the database](list_data.png)
 
 **Database report**
-
-
 
 ![Database reports](database_report.png)
 
@@ -661,25 +637,17 @@ Create a **YAML** file with the configured that your build pipeline will use. Th
 
 **appspec.yml**
 
-
-
 ![application spec yml ](appspec_yml.png)
 
 **file:** Script/application_start.sh
-
-
 
 ![application_start.sh](application_start_sh.png)
 
 **file:** Script/application_stop.sh
 
-
-
 ![application_stop.sh](application_stop_sh.png)
 
 **file:** Script/before_install.sh
-
-
 
 ![befor_install.sh](before_installation_sh.png)
 
@@ -687,13 +655,9 @@ Create database migration setup:
 
 create **migration.js** file
 
-
-
 ![migration.js](migration_file.png)
 
 add require to **app.js** file.
-
-
 
 ![app.js](app_file.png)
 
@@ -707,8 +671,6 @@ add require to **app.js** file.
 
 > git remote -v
 
-
-
 ![git remote -v](git_remote_v.png)
 
 > git add .
@@ -717,12 +679,180 @@ add require to **app.js** file.
 >
 > git push
 
-
-
 ![commit code in git](commit_t0_git.png)
 
 Awesome, we have created a nodejs application. Let's configure our application with AWS CodeDeploy Service.
 
-
-
 ### 9. Configure AWS CodeDeploy Service
+
+
+
+To configure CodeDeploy , first I need to create an IAM Role that will allow the service to manage EC2 instances.
+
+Then I have to create a new CodeDeploy application, that will be my deploy target.
+
+**Create Deployment IAM Role:**
+
+From AWS, go to IAM section (Identity Access Management) and select “Roles” and then “Create Role”
+
+Already created these things
+
+Select services navigate to “CodeDeploy”.
+
+
+
+![All services](all_services.png)
+
+**Create CodeDeploy Application**
+
+Click on create application
+
+
+
+![Click on create application](create_application.png)
+
+CodeDeploy is a service that will communicate with Pipeline later. There are 2 modules that must be prepared, namely Application and Deployment Group. First, we go to the CodeDeploy service. Click Create Application then enter the desired application name and on the Compute Platform menu select EC2 / On-premises.
+
+
+
+![Fill application properties](create_application1.png)
+
+Configure your app name and select Amazon EC2 on compute platform, and click on create again.
+
+You will see this screen:
+
+
+
+![application details](application_details.png)
+
+After creating the application, I need to create a “Deployment Group”.
+
+
+
+![create deployment group](create_deployment_group.png)
+
+I name the deployment group **test_nodejs_application_group** and select as ‘**Service Role**” the IAM role created in the previous step.
+
+
+
+![deployment type](deployment_type.png)
+
+Select In-Place as deployment type , and my Auto Scaling group as Environment configuration.
+
+
+
+![deployment settings](deployment_settings.png)
+
+Finally , I leave the Deployment settings to “AllAtOnce” and disable load balancing , as I will not require it for this project. Hit Create to finish this step.
+
+**Deploy stage on the pipeline:**
+
+Click pipeline and create new pipeline.
+
+
+
+![deploy stage on the pipeline](pipeline.png)
+
+Let’s go back to the CI/CD pipeline , select “Edit” and “+Add stage” , naming it “Deploy”.
+
+Next, on the “Deploy” stage I add an “Action Group”, which will contain deploy steps. On the Action creation form, name it “Deploy” and select “AWS CodeDeploy” as provider.
+
+Step1 : create pipeline name and choose new service role and click next.
+
+
+
+![choose pipeline settings](choose_pipeline_settings.png)
+
+Step2: add source stage:
+
+Select github version 2
+
+Click connect to github
+
+
+
+![add source stage](add_source_stage.png)
+
+Add connection name.
+
+
+
+![create github app connection](create_connection.png)
+
+Then connect to github.
+
+click install a new app. select github repository
+
+
+
+![connect with github](connect_github.png)
+
+After complete this section. redirect to your codeDeploy services.
+
+select repository name and branch name. click next
+
+
+
+![Your github connection is ready for use](ready_to_connect.png)
+
+Then go to **add build stage**.
+
+skip this stage. because dont need to nodejs application.
+
+
+
+![add build stage](add_build_stage.png)
+
+**Go to add deploy stage.**
+
+step1: Select Deploy Provider
+
+step2: Application Name: select codeDeploy name
+
+step3: Deployment Group: select codeDeploy group name and click next.
+
+
+
+![add deploy stage](add_deploy_stage.png)
+
+Then redirect to pipeline services.
+
+
+
+![Node application connection pipeline](test_node_application_pipeline.png)
+
+**Congratulations ! our CI/CD is now working.**
+
+
+
+![connection successful](succeeded.png)
+
+### 10. Running the Complete Pipeline
+
+You now can access your web app via IPv4 Public IP (you can find it from your EC2 Instance page in the description)
+
+**Checking chrome Browser:**
+
+
+
+![check endpoint in chrome browser](chicking_chrome_browser.png)
+
+**Checking Postman:**
+
+<http://13.233.149.247:4000/list> ther the URL
+
+
+
+![get the list from postman collection](checking_postman.png)
+
+[http://13.233.149.247:4000/](http://13.233.149.247:4000/list)create ther the URL
+
+
+
+![create records using postman](checking_postman_create.png)
+
+**There you go! Now you have a highly scalable NodeJS Application that is fully automated using AWS CodePipeline.**
+
+### Conclusion
+
+I hope this blog has been informative to you all. I have tried as much as possible to make this blog look like a story because the main purpose of writing it is to show you the many challenges DevOps Engineers and Developers face to set up this solution and the various ways used to solve it. I will not stop updating this project and will make sure it has an improvement plan because I know it can even be better!

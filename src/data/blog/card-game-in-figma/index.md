@@ -227,3 +227,153 @@ Click Load. By default, PuTTYgen displays only files with the extension .ppk. To
 * Then put server user name.
 
 ![Connect to EC2 instance using SSH and PuTTY](ubuntu_terminal.png)
+
+
+
+
+
+### 4. Installation of Apache Web:
+
+**What is web server?** *First, we need to understand the different kinds of servers. The server where our database runs is called as a database server. The server we use for sending mails is called as a mail server. These are some examples of servers. Now we can start with what is the Web Server? Web server is used to serve content of websites over the network. When user request for any contest from the server, web server pulls the content from the server and delivers it to the web.*
+
+**What is Apache Web Server?** *Apache is an open source web server which is available to use for free. It’s a most widely used web server in Linux OS, but it can be used on Windows as well. It allows users to get content on the web served by the server. We call it a web server, but it’s not a physical server, rather it’s an application that runs on the actual server.*
+
+**Step 1 — Installing Apache:**
+
+Apache is available within Ubuntu’s default software repositories, making it possible to install it using conventional package management tools.
+
+Let’s begin by updating the local package index to reflect the latest upstream changes:
+
+> $ sudo apt update
+
+
+
+![Update ubuntu packages](apt_update.png)
+
+Update Completed.
+
+Then, install the `apache2` package:
+
+> $ sudo apt install apache2
+
+
+
+![Install Apache2](install_apache2.png)
+
+After confirming the installation, apt will install Apache and required dependencies.
+
+**Step 2 — Adjusting the Firewall:**
+
+Before testing Apache, it’s necessary to modify the firewall settings to allow outside access to the default web ports. Assuming that you followed the instructions in the prerequisites, you should have a UFW firewall configured to restrict access to your server.
+
+During installation, Apache registers itself with UFW to provide a few application profiles that can be used to enable or disable access to Apache through the firewall.
+
+> $ sudo ufw app list
+
+You will receive a list of the application profiles:
+
+
+
+![ufw app list](ufw_app_list.png)
+
+As indicated by the output, there are three profiles available for Apache:
+
+* **Apache**: This profile opens only port 80 (normal, unencrypted web traffic)
+* **Apache Full**: This profile opens both port 80 (normal, unencrypted web traffic) and port 443 (TLS/SSL encrypted traffic)
+* **Apache Secure**: This profile opens only port 443 (TLS/SSL encrypted traffic)
+
+It is recommended that you enable the most restrictive profile that will still allow the traffic you’ve configured. Since we haven’t configured SSL for our server yet in this guide, we will only need to allow traffic on port 80:
+
+> $ sudo ufw allow Apache
+
+You can verify the change by typing:
+
+> $ sudo ufw status
+
+The output will provide a list of allowed HTTP traffic:
+
+
+
+![ufw status](ufw_status.png)
+
+As indicated by the output, the profile has been activated to allow access to the Apache web server.
+
+> $ sudo systemct1 status apache2
+
+
+
+![systemct1 status apache2](system1_status_apache2.png)
+
+As confirmed by this output, the service has started successfully. However, the best way to test this is to request a page from Apache.
+
+You can access the default Apache landing page to confirm that the software is running properly through your IP address.
+
+
+
+![Instance IP address](instance_ip_address.png)
+
+When you have your server’s IP address, enter it into your browser’s address bar:
+
+> http://your_server_ip
+
+You should see the default Ubuntu 20.04 Apache web page:
+
+
+
+![Apache2 Ubuntu Default Page](apache_default_page.png)
+
+* If you see the above page, it means your Apache server is working fine.
+
+**Step 5 — Setting Up Virtual Hosts:**
+
+When using the Apache web server, you can use *virtual hosts* to encapsulate configuration details and host more than one domain from a single server. We will set up a domain called **your_domain_name**, but you should **replace this with your own domain name**.
+
+Apache on Ubuntu 20.04 has one server block enabled by default that is configured to serve documents from the `/var/www/html` directory. While this works well for a single site, it can become unwieldy if you are hosting multiple sites. Instead of modifying `/var/www/html`, let’s create a directory structure within `/var/www/html` for a **your_domain_name** site, leaving `/var/www/html` in place as the default directory to be served if a client request doesn’t match any other sites.
+
+I am create one folder for test_nodejs_application
+
+We going to specific path cd /var/www/html/
+
+/var/www/html mkdir test_nodejs_application
+
+Mkdir test_nodejs_application
+
+
+
+![Test NodeJS application](mkdir_nodejs.png)
+
+I try to create folder but getting error for cannot create directory. So we need to permission access.
+
+> ls -1 /var/www
+>
+> sudo usermod -a -G www-data ubuntu
+>
+> exit
+
+step1: sudo chown -R ubuntu:www-data /var/www
+
+step2: sudo chmod 2775 /var/www
+
+step3: find /var/www -type d -exec sudo chmod 2775 {} \;
+
+step4: find /var/www -type f -exec sudo chmod 0664 {} \;
+
+
+
+![Types](types.png)
+
+Again follow these steps.
+
+We going to specific path cd /var/www/html/
+
+> /var/www/html mkdir test_nodejs_application
+
+
+
+![NodeJS application](nodejs_application.png)
+
+successfully created.
+
+![Successfully created](successfully_created.png)
+
+Alright now our Appache setup. let’s go to install mysql database.

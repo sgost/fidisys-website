@@ -3,7 +3,8 @@ previewImages: ./author.png
 author_image: dinesh_img.jpg
 author: Dhinesh
 bio: Backend developer
-title: CI/CD from Github to AWS Ec2 — Complete Nodejs Deployment
+title: A Complete Nodejs Application Deployment from Github to AWS EC2 Instance
+  - CI/CD
 date: 2021-12-09T18:30:00.000Z
 previewImage: group-494.png
 excerpt: In this guide we will build a code deploys setup that takes our commits
@@ -17,15 +18,14 @@ tags:
   - GitHub
 seo:
   keywords:
-    - gatsby
-    - gatsbyjs
-    - fidisys
-    - web development
-    - Chennai Startup
-  description: We design and develop beautiful applications, experience and brands
-    that breaks the barriers of time and burn into the memories of customers
-    love.
-  title: Gatsby+Fidisys
+    - AWS
+    - EC2 Instance
+    - Github
+    - Mysql
+  description: A Complete Nodejs Application Deployment from Github to AWS EC2
+    Instance - CI/CD
+  title: A Complete Nodejs Application Deployment from Github to AWS EC2 Instance
+    - CI/CD
 ---
 ![Continuous integration and continuous development.](cicd.png "Continuous integration and continuous development.")
 

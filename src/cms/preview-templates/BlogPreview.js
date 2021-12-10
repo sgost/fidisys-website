@@ -25,6 +25,7 @@ const BlogPreview = ({ entry, widgetFor, getAsset }) => {
       author={data.author}
       bio={data.bio}
       linkdin={data.linkdin}
+      twitter={data.twitter}
       date={date}
       title={data.title}
       html={widgetFor('body')}

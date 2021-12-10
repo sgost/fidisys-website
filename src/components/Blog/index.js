@@ -1,13 +1,16 @@
 import React, { Fragment } from "react"
 import { graphql } from "gatsby"
 import SEO from "../seo"
-import { ArrowRightOutlined } from '@ant-design/icons';
+import linkd from "../../data/assets/linkedin.svg"
+import twitters from "../../data/assets/twitter.svg"
 import {
   BlogPageSection,
   BlogContainer,
   AuthorInfo,
   BlogContent,
 } from './styles';
+import { Popover } from 'antd';
+import Authordata from "./pop"
 
 export const BlogPost = ({
   fields,
@@ -15,6 +18,7 @@ export const BlogPost = ({
   author,
   bio,
   linkdin,
+  twitter,
   date,
   title,
   html,
@@ -27,27 +31,32 @@ export const BlogPost = ({
     <BlogPageSection id="blogView">
       <BlogContainer>
         <div id="BlogContainer">
+        <h2 className="blogTitle">{title}</h2>
         <AuthorInfo>
-          <div className="author_image">
-            <img src={previewImages} alt={author} />
-          </div>
+            <img src={previewImages} alt={author} className="author_image"/>
           <div className="author_info">
-            <h4>{author}</h4>
-            <span>{bio}</span>
-           
+          <Popover placement="right" content={<Authordata bio={bio} author={author} previewImages={previewImages}/>}>
+          <h4>{author}</h4>
+      </Popover>
             <div>
               {
-                fields && <span>{fields.readingTime.text} &middot; </span>
+                fields && <span>{fields.readingTime.text} </span>
               }
-              <span>{date}</span>
+              <span id="date">{date}</span>
             </div>
-            <a id="link" href={linkdin} target="_blank"  without rel="noopener noreferrer">View Profile<ArrowRightOutlined className="icon"/></a>
+            <div id="socio_lnks">
+            {
+              linkdin &&
+              <a id="link" href={linkdin} target="_blank"  without rel="noopener noreferrer"><img src={linkd} alt="img" className="icon"/></a>
+            }
+            {
+              twitter &&
+            <a id="link" href={twitter} target="_blank"  without rel="noopener noreferrer"><img src={twitters} alt="img" className="icon"/></a>
+            }
+            </div>
           </div>
-
-
         </AuthorInfo>
         <BlogContent>
-          <h2 className="blogTitle">{title}</h2>
           {
             preview ? <div>{html}</div> : <div dangerouslySetInnerHTML={{ __html: html }} />
           }
@@ -80,6 +89,7 @@ const Blog = ({ data }) => {
         author={post.frontmatter.author}
         bio={post.frontmatter.bio}
         linkdin={post.frontmatter.linkdin}
+        twitter={post.frontmatter.twitter}
         date={post.frontmatter.date}
         title={post.frontmatter.title}
         html={post.html}
@@ -108,6 +118,7 @@ export const query = graphql`
         }
         bio
         linkdin
+        twitter
         date(formatString: "MMMM DD, YYYY")
         title
         seo {

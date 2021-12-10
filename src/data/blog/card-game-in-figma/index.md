@@ -1,8 +1,7 @@
 ---
-previewImages: ./author.png
-author_image: dinesh_img.jpg
+previewImages: dinesh_img.jpg
 author: Fidisys Technologies
-bio: We are a digital product design and development company.
+bio: Full Stack Developer.
 title: CI/CD from Github to AWS Ec2 — Complete Nodejs Deployment
 date: 2021-12-02T18:30:00.000Z
 previewImage: group-494.png

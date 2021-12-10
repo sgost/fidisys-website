@@ -376,4 +376,124 @@ successfully created.
 
 ![Successfully created](successfully_created.png)
 
-Alright now our Appache setup. let’s go to install mysql database.
+Alright now our Apache setup. let’s go to install Mysql database.
+
+
+
+
+
+### 5. Install Mysql Database:
+
+**Step 1 — Installing MySQL:**
+
+On Ubuntu 20.04, you can install MySQL using the APT package repository. At the time of this writing, the version of MySQL available in the default Ubuntu repository is version 8.0.19.
+
+To install it, update the package index on your server if you’ve not done so recently:
+
+> $ sudo apt update
+
+Then install the mysql-server package
+
+> $ sudo apt install mysql-server
+
+This will install MySQL, but will not prompt you to set a password or make any other configuration changes. Because this leaves your installation of MySQL insecure, we will address this next.
+
+**Step 2 — Configuring MySQL:**
+
+For fresh installations of MySQL, you’ll want to run the DBMS’s included security script. This script changes some of the less secure default options for things like remote root logins and sample users.
+
+Run the security script with `sudo`:
+
+> sudo mysql_secure_installation
+
+This will take you through a series of prompts where you can make some changes to your MySQL installation’s security options. The first prompt will ask whether you’d like to set up the Validate Password Plugin, which can be used to test the password strength of new MySQL users before deeming them valid.
+
+If you elect to set up the Validate Password Plugin, any MySQL user you create that authenticates with a password will be required to have a password that satisfies the policy you select. The strongest policy level — which you can select by entering 2 — will require passwords to be at least eight characters long and include a mix of uppercase, lowercase, numeric, and special characters:
+
+
+
+![Mysql database secure installation](mysql_secure_installation.png)
+
+Regardless of whether you choose to set up the Validate Password Plugin, the next prompt will be to set a password for the MySQL **root** user. Enter and then confirm a secure password of your choice:
+
+
+
+![Set password for the root user](set_password.png)
+
+Note that even though you’ve set a password for the **root** MySQL user, this user is not currently configured to authenticate with a password when connecting to the MySQL shell.
+
+
+
+![Estimated strength of password](password_strength.png)
+
+From there, you can press `Y` and then `ENTER` to accept the defaults for all the subsequent questions. This will remove some anonymous users and the test database, disable remote root logins, and load these new rules so that MySQL immediately respects the changes you have made.
+
+Once the script completes, your MySQL installation will be secured. You can now move on to creating a dedicated database user with the MySQL client.
+
+**Step 3 — Creating a Dedicated MySQL User and Granting Privileges:**
+
+Upon installation, MySQL creates a **root** user account which you can use to manage your database. This user has full privileges over the MySQL server, meaning it has complete control over every database, table, user, and so on. Because of this, it’s best to avoid using this account outside of administrative functions. This step outlines how to use the **root** MySQL user to create a new user account and grant it privileges.
+
+> Mysql> sudo mysql
+
+Once you have access to the MySQL prompt, you can create a new user with a `CREATE USER` statement. These follow this general syntax:
+
+> Mysql> show databases;
+
+
+
+![show databases](show_databases.png)
+
+> Mysql> use mysql;
+
+
+
+![Use Mysql database](use_mysql.png)
+
+> Mysql> ALTER USER ‘root’@’localhost’ IDENTIFIED WITH mysql_native_password BY ‘password’;
+
+Once you alter your root user password.
+
+> Mysql> CREATE USER ‘username’@’localhost’ IDENTIFIED WITH mysql_native_password BY ‘password’;
+
+After CREATE USER, you specify a username. This is immediately followed by an @ sign and then the hostname from which this user will connect. If you only plan to access this user locally from your Ubuntu server, you can specify localhost. Wrapping both the username and host in single quotes isn’t always necessary, but doing so can help to prevent errors
+
+After creating your new user, you can grant them the appropriate privileges. The general syntax for granting user privileges is as follows:
+
+> Mysql> GRANT ALL PRIVILEGES ON \*.\* TO username@’localhost’ WITH GRANT OPTION;
+
+Create database.
+
+> Mysql> create database <database_name>
+
+Ex: Im creating test_database;
+
+
+
+![Create Database](create_database.png)
+
+> Mysql> show databases;
+
+
+
+![Show Database](show_database.png)
+
+After creating your new database, you can grant them the appropriate privileges. The general syntax for granting user privileges is as follows:
+
+> Mysql> GRANT ALL PRIVILEGES ON database_name.* TO ‘username’@’localhost’;
+
+
+
+![Grant privileges for the database users](grant_previllage.png)
+
+Following this, it’s good practice to run the `FLUSH PRIVILEGES` command. This will free up any memory that the server cached as a result of the preceding `CREATE USER` and `GRANT` statements:
+
+> Mysql> FLUSH PRIVILEGES;
+>
+> Mysql> exit
+>
+> Mysql> mysql –u test_user –p
+
+The `-p` flag will cause the MySQL client to prompt you for your MySQL user’s password in order to authenticate.
+
+Finally, let’s test the MySQL installation complete.

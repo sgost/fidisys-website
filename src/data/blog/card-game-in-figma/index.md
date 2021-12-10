@@ -685,8 +685,6 @@ Awesome, we have created a nodejs application. Let's configure our application w
 
 ### 9. Configure AWS CodeDeploy Service
 
-
-
 To configure CodeDeploy , first I need to create an IAM Role that will allow the service to manage EC2 instances.
 
 Then I have to create a new CodeDeploy application, that will be my deploy target.
@@ -699,21 +697,15 @@ Already created these things
 
 Select services navigate to “CodeDeploy”.
 
-
-
 ![All services](all_services.png)
 
 **Create CodeDeploy Application**
 
 Click on create application
 
-
-
 ![Click on create application](create_application.png)
 
 CodeDeploy is a service that will communicate with Pipeline later. There are 2 modules that must be prepared, namely Application and Deployment Group. First, we go to the CodeDeploy service. Click Create Application then enter the desired application name and on the Compute Platform menu select EC2 / On-premises.
-
-
 
 ![Fill application properties](create_application1.png)
 
@@ -721,25 +713,17 @@ Configure your app name and select Amazon EC2 on compute platform, and click on 
 
 You will see this screen:
 
-
-
 ![application details](application_details.png)
 
 After creating the application, I need to create a “Deployment Group”.
-
-
 
 ![create deployment group](create_deployment_group.png)
 
 I name the deployment group **test_nodejs_application_group** and select as ‘**Service Role**” the IAM role created in the previous step.
 
-
-
 ![deployment type](deployment_type.png)
 
 Select In-Place as deployment type , and my Auto Scaling group as Environment configuration.
-
-
 
 ![deployment settings](deployment_settings.png)
 
@@ -749,8 +733,6 @@ Finally , I leave the Deployment settings to “AllAtOnce” and disable load ba
 
 Click pipeline and create new pipeline.
 
-
-
 ![deploy stage on the pipeline](pipeline.png)
 
 Let’s go back to the CI/CD pipeline , select “Edit” and “+Add stage” , naming it “Deploy”.
@@ -758,8 +740,6 @@ Let’s go back to the CI/CD pipeline , select “Edit” and “+Add stage” ,
 Next, on the “Deploy” stage I add an “Action Group”, which will contain deploy steps. On the Action creation form, name it “Deploy” and select “AWS CodeDeploy” as provider.
 
 Step1 : create pipeline name and choose new service role and click next.
-
-
 
 ![choose pipeline settings](choose_pipeline_settings.png)
 
@@ -769,13 +749,9 @@ Select github version 2
 
 Click connect to github
 
-
-
 ![add source stage](add_source_stage.png)
 
 Add connection name.
-
-
 
 ![create github app connection](create_connection.png)
 
@@ -783,23 +759,17 @@ Then connect to github.
 
 click install a new app. select github repository
 
-
-
 ![connect with github](connect_github.png)
 
 After complete this section. redirect to your codeDeploy services.
 
 select repository name and branch name. click next
 
-
-
 ![Your github connection is ready for use](ready_to_connect.png)
 
 Then go to **add build stage**.
 
 skip this stage. because dont need to nodejs application.
-
-
 
 ![add build stage](add_build_stage.png)
 
@@ -811,19 +781,13 @@ step2: Application Name: select codeDeploy name
 
 step3: Deployment Group: select codeDeploy group name and click next.
 
-
-
 ![add deploy stage](add_deploy_stage.png)
 
 Then redirect to pipeline services.
 
-
-
 ![Node application connection pipeline](test_node_application_pipeline.png)
 
 **Congratulations ! our CI/CD is now working.**
-
-
 
 ![connection successful](succeeded.png)
 
@@ -833,21 +797,15 @@ You now can access your web app via IPv4 Public IP (you can find it from your EC
 
 **Checking chrome Browser:**
 
-
-
 ![check endpoint in chrome browser](chicking_chrome_browser.png)
 
 **Checking Postman:**
 
 <http://13.233.149.247:4000/list> ther the URL
 
-
-
 ![get the list from postman collection](checking_postman.png)
 
 [http://13.233.149.247:4000/](http://13.233.149.247:4000/list)create ther the URL
-
-
 
 ![create records using postman](checking_postman_create.png)
 

@@ -105,8 +105,9 @@ collections:
       - { name: bio, label: Bio }
       - { name: linkdin, label: Linkdin }
       - { name: twitter, label: Twitter }
-      - { name: date, label: Date, widget: date, default: ''}
+      - { name: date, label: Date, widget: datetime, default: '' }
       - { name: previewImage, label: Preview Image, widget: image }
+      - { name: previewTitle, label: Blog Category Tag, widget: "select", options: ["Frontend Development", "Backend Development", "Full Stack"] }
       - { name: excerpt, label: Excerpt }
       - { name: tags, label: Tags, widget: list }
       - { name: body, label: Body, widget: markdown }

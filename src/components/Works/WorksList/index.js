@@ -144,7 +144,7 @@ const WorksList = props => {
           {
             worksData && worksData.map(dataItem =>
               <Col xs={24} sm={24} md={12} lg={12} xl={12} key={dataItem.id} className="workCol">
-                <WorkItem href={dataItem.frontmatter.type === 'casestudy' ? dataItem.fields.slug : dataItem.frontmatter.pageLink} target="_blank" without="true" rel="noopener noreferrer" type={dataItem.frontmatter.type} image={dataItem.frontmatter.image}>
+                z<WorkItem href={dataItem.frontmatter.type === 'casestudy' ? dataItem.fields.slug : dataItem.frontmatter.pageLink} target="_blank" without="true" rel="noopener noreferrer" type={dataItem.frontmatter.type} image={dataItem.frontmatter.image}>
                   <ImageContainer bg={dataItem.frontmatter.image === null && dataItem.frontmatter.theme} className="imageCont">
                     {
                       dataItem.frontmatter.image !== null ?

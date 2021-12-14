@@ -37,6 +37,7 @@ export const ArticleListItem = styled.a`
 
 export const PreviewImage = styled.div`
   height: 100%;
+  display: flex;
   span {
     background: ${palette.SILVER};
     border-radius: 16px;

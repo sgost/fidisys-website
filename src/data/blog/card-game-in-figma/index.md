@@ -5,6 +5,7 @@ bio: Backend developer
 title: CI/CD from Github to AWS Ec2 — Complete Nodejs Deployment
 date: 2021-12-09T18:30:00.000Z
 previewImage: group-494.png
+previewTitle: Backend Development
 excerpt: In this guide we will build a code deploys setup that takes our commits
   from github repo for our source codes and deploys it automatically on our
   servers. CICD practices in the most simplest form. This guide will focus more
@@ -39,25 +40,28 @@ This guide assumes that you have an intention of understanding how GitHub can be
 
 # **Table of Contents:**
 
-1. The Requirements
-2. Create IAM Role
-3. Create and Launch EC2 Instance
-4. Installation of Apache Web
-5. Install Mysql Database
-6. Install Nodejs and NPM
-7. Create Github Repository
-8. Create Nodejs Project
-9. Configure AWS CodeDeploy Service
-10. Running the Complete Pipeline
+<div id="bullet">
+ <p>1. The Requirements</p>
+ <p>2. Create IAM Role</p>
+ <p>3. Create and Launch EC2 Instance</p>
+ <p>4. Installation of Apache Web</p>
+ <p>5. Install Mysql Database</p>
+ <p>6. Install Nodejs and NPM</p>
+ <p>7. Create Github Repository</p>
+ <p>8. Create Nodejs Project</p>
+ <p>9. Configure AWS CodeDeploy Service</p>
+ <p>10. Running the Complete Pipeline</p>
+</div>
 
 ### **1. The Requirements**
 
 To create the CI/CD pipeline, make sure to create these accounts first:
-
-1. Go to Amazon Web Services Website. ([link](https://aws.amazon.com/))
-2. Sign in to your AWS account using Root user if you don’t have account please create
-3. For Sign In Click on My Account -> AWS Management Console.
-4. Create Github Account. ([link](https://github.com/join))
+<div id="bullet">
+<p>1. Go to Amazon Web Services Website. ([link](https://aws.amazon.com/))</p>
+<p>2. Sign in to your AWS account using Root user if you don’t have account please create</p>
+<p>3. For Sign In Click on My Account -> AWS Management Console.</p>
+<p>4. Create Github Account. ([link](https://github.com/join))</p>
+</div>
 
 ### **2. Create IAM Role**
 
@@ -127,7 +131,8 @@ All set! Now IAM roles are done.
 
 ### 3. Create and Launch EC2 Instance
 
-1. in this AWS EC2 Tutorial, let’s understand the whole EC2 instance creation process through a use case in which we’ll be creating an Ubuntu instance for a test environment
+
+1. In this AWS EC2 Tutorial, let’s understand the whole EC2 instance creation process through a use case in which we’ll be creating an Ubuntu instance for a test environment
 2. **Select EC2 Services:** Click EC2 under compute section. This will take you to the EC2 dashboard.
 3. **Click lunch instance:**
 4. **1.** **Select an AMI:** because you require a Linux instance, in the row for the basic 64-bit Ubuntu AMI, click select.

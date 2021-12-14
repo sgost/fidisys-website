@@ -22,23 +22,29 @@ const BlogPage = ( { data } ) =>
               <div key={ blogItem.node.id } className="blogListItem">
                 <Link to={ blogItem.node.fields.slug } id="blog_card">
                   <div className="blogInfo">
-                    <h3>{ blogItem.node.frontmatter.title }</h3>
-                    <div id="text">
-                    <p>
-                      { blogItem.node.frontmatter.excerpt }
-                    </p>
-                    </div>
-                    <div className="authorImage">
+                  <div className="authorImage">
                       {
                         blogItem.node.frontmatter.previewImages.publicURL ?
                           <img src={ blogItem.node.frontmatter.previewImages.publicURL } alt={ blogItem.node.frontmatter.author } style={ { borderRadius: `30px` } } /> :
                           <img src={ blogItem.node.frontmatter.previewImages } alt={ blogItem.node.frontmatter.author } style={ { borderRadius: `30px` } } />
                       }
                       <p className="blogAuthor">{ blogItem.node.frontmatter.author }</p>
-                      <p className="blogDate">{ blogItem.node.frontmatter.date }</p>
+                      <p className="blogDate">
+                        <span>.</span>{ blogItem.node.frontmatter.date }</p>
+                    </div>
+                    <h3>{ blogItem.node.frontmatter.title }</h3>
+                    <div id="text">
+                    <p>
+                      { blogItem.node.frontmatter.excerpt }
+                    </p>
+                    </div>
+                    <div id="dev_type">
+                      <button style = {{background: `rgba(53, 208, 247, 0.3)`}}>{ blogItem.node.frontmatter.previewTitle }</button>
+                      <p>{
+                blogItem.node.fields && <span>{blogItem.node.fields.readingTime.text}</span>}</p>
                     </div>
                   </div>
-                  <img src={ blogItem.node.frontmatter.previewImage.publicURL } alt={ blogItem.node.frontmatter.author } id="preview_img" />
+                  <img src={ blogItem.node.frontmatter.previewImage.publicURL } alt={ blogItem.node.frontmatter.author } alt={ blogItem.node.frontmatter.title } id="preview_img" />
                 </Link>
               </div>
             )
@@ -59,6 +65,9 @@ export const pageQuery = graphql`
           id
           fields {
             slug
+            readingTime {
+              text
+            }
           }
           frontmatter {
             title
@@ -70,6 +79,7 @@ export const pageQuery = graphql`
             previewImage {
               publicURL
             }
+            previewTitle
             date(formatString: "MMMM DD, YYYY")
           }
         }

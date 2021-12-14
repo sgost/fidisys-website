@@ -37,6 +37,7 @@ export const AuthorInfo = styled.div`
     height: 50px;
     border-radius: 100%;
     overflow: hidden;
+    object-fit: cover;
     @media (max-width: 600px){
       width: 80px;
       height: 80px;
@@ -138,7 +139,7 @@ export const BlogContent = styled.div`
     }
   }
   h3 {
-    margin-bottom: 24px;
+    margin: 74px 0 15px 0;
     color: ${palette.BLACK_COLOR};
   }
   h6 {
@@ -159,7 +160,10 @@ export const BlogContent = styled.div`
     margin-bottom: 24px;
     font-size: 18px;
     color: ${palette.BLACK_COLOR};
-    line-height: inherit;
+    line-height: 29px;
+    @media (max-width: 750px) {
+      line-height: inherit;
+    }
   }
   ul {
     list-style: inside;
@@ -169,7 +173,7 @@ export const BlogContent = styled.div`
     font-weight: normal;
     font-size: 16px;
     color: ${palette.BLACK_COLOR};
-    margin: 15px 0px;
+    margin: 5px 0px;
   }
   pre {
     background: #000000b8;
@@ -185,8 +189,14 @@ export const BlogContent = styled.div`
   }
   a {
     font-weight: normal;
-    color: ${palette.BLACK_COLOR};
+    color: blue;
     text-decoration: underline;
+  }
+  #bullet p {
+    margin-bottom: 1px;
+    font-size: 17px;
+    color: ${palette.BLACK_COLOR};
+    line-height: inherit;
   }
 `;
 

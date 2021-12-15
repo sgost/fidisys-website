@@ -2,9 +2,9 @@
 previewImages: ./f5.png
 author: Pachiyappan Velu
 bio: Senior Frontend Developer
-linkdin: https://www.linkedin.com/in/pachiyappan-v-46a35311b/
-twitter: https://www.linkedin.com/in/pachiyappan-v-46a35311b/
 title: How to communicate with Web Serial Port using Serial API and Reactjs.
+linkdin: https://www.linkedin.com/in/pachiyappan-v-46a35311b/
+twitter: https://twitter.com/fidisysInc
 date: 2021-11-30T18:30:00.000Z
 previewImage: ./port.jpg
 previewTitle: Backend Development

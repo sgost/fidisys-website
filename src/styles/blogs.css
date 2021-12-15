@@ -6,7 +6,7 @@
 #blog_card {
     display: flex;
     align-items: center;
-    padding: 15px 32px 10px 32px;
+    padding: 29px 32px 20px 32px;
 }
 #blog_card .blogInfo {
     display: flex;
@@ -25,7 +25,8 @@
     overflow: hidden;
 }
 #blog_card .blogInfo #text p {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 26px;
     color: rgb(120, 117, 122);
 }
 #blog_card .blogInfo .authorImage{
@@ -66,6 +67,8 @@
     font-size: 13px;
     padding: 5px 13px;
     border-radius: 9px;
+    color: rgb(14 95 116);
+    font-weight: 500;
 }
 #blog_card .blogInfo #dev_type p {
     margin: 0 0 0 22px;
@@ -91,6 +94,15 @@
     } 
     #blog_card .blogInfo .authorImage p{
         font-size: 12px;
+    }
+    #blog_card .blogInfo #text p {
+        line-height: 20.8px;
+    }
+    #blog_card .blogInfo #dev_type button {
+        font-size: 9px;
+    }
+    #blog_card .blogInfo h3 {
+        font-size: 18px;
     }
 }
 @media (max-width: 410px) {

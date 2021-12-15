@@ -103,6 +103,7 @@ collections:
       - { name: previewImages, label: Author Image, widget: image }
       - { name: author, label: Author }
       - { name: bio, label: Bio }
+      - { name: title, label: Title }
       - { name: linkdin, label: Linkdin }
       - { name: twitter, label: Twitter }
       - { name: date, label: Date, widget: datetime, default: '' }

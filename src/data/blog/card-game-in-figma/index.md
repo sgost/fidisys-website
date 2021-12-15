@@ -2,7 +2,9 @@
 previewImages: dinesh_img.jpg
 author: Dhinesh
 bio: Backend developer
-title: CI/CD from Github to AWS Ec2 — Complete Nodejs Deployment
+title: A Complete Nodejs Application Deployment from Github to AWS EC2  - CI/CD
+linkdin: https://www.linkedin.com/in/dinesh-n-528222130/
+twitter: https://twitter.com/fidisysInc
 date: 2021-12-09T18:30:00.000Z
 previewImage: group-494.png
 previewTitle: Backend Development
@@ -10,7 +12,6 @@ excerpt: In this guide we will build a code deploys setup that takes our commits
   from github repo for our source codes and deploys it automatically on our
   servers. CICD practices in the most simplest form. This guide will focus more
   on CICD practices.
-linkdin: https://www.linkedin.com/feed/?trk=homepage-basic_google-one-tap-submit
 tags:
   - AWS
   - CI/CD
@@ -21,10 +22,8 @@ seo:
     - EC2 Instance
     - Github
     - Mysql
-  description: A Complete Nodejs Application Deployment from Github to AWS EC2
-    Instance - CI/CD
-  title: A Complete Nodejs Application Deployment from Github to AWS EC2 Instance
-    - CI/CD
+  description: A Complete Nodejs Application Deployment from Github to AWS EC2  - CI/CD
+  title: A Complete Nodejs Application Deployment from Github to AWS EC2  - CI/CD
 ---
 ![Continuous integration and continuous development.](cicd.png "Continuous integration and continuous development.")
 
@@ -56,12 +55,11 @@ This guide assumes that you have an intention of understanding how GitHub can be
 ### **1. The Requirements**
 
 To create the CI/CD pipeline, make sure to create these accounts first:
-<div id="bullet">
-<p>1. Go to Amazon Web Services Website. ([link](https://aws.amazon.com/))</p>
-<p>2. Sign in to your AWS account using Root user if you don’t have account please create</p>
-<p>3. For Sign In Click on My Account -> AWS Management Console.</p>
-<p>4. Create Github Account. ([link](https://github.com/join))</p>
-</div>
+
+* Go to Amazon Web Services Website. [link](https://aws.amazon.com/)
+* Sign in to your AWS account using Root user if you don’t have account please create.
+* For Sign In Click on My Account -> AWS Management Console.
+* Create Github Account. [link](< https://github.com/join>)
 
 ### **2. Create IAM Role**
 
@@ -131,11 +129,11 @@ All set! Now IAM roles are done.
 
 ### 3. Create and Launch EC2 Instance
 
+* In this AWS EC2 Tutorial, let’s understand the whole EC2 instance creation process through a use case in which we’ll be creating an Ubuntu instance for a test environment
+* **Select EC2 Services:** Click EC2 under compute section. This will take you to the EC2 dashboard.
+* **Click lunch instance:**
 
-1. In this AWS EC2 Tutorial, let’s understand the whole EC2 instance creation process through a use case in which we’ll be creating an Ubuntu instance for a test environment
-2. **Select EC2 Services:** Click EC2 under compute section. This will take you to the EC2 dashboard.
-3. **Click lunch instance:**
-4. **1.** **Select an AMI:** because you require a Linux instance, in the row for the basic 64-bit Ubuntu AMI, click select.
+**Step 1.** **Select an AMI:** because you require a Linux instance, in the row for the basic 64-bit Ubuntu AMI, click select.
 
 ![Select an AMI](select_ami.png)
 
@@ -819,10 +817,6 @@ You now can access your web app via IPv4 Public IP (you can find it from your EC
 I hope this blog has been informative to you all. I have tried as much as possible to make this blog look like a story because the main purpose of writing it is to show you the many challenges DevOps Engineers and Developers face to set up this solution and the various ways used to solve it. I will not stop updating this project and will make sure it has an improvement plan because I know it can even be better!
 
 ![happy coding](happy-coding.png)
-
-
-
-
 
 ### See More:
 

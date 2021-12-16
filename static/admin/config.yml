@@ -104,14 +104,12 @@ collections:
       - { name: author, label: Author }
       - { name: bio, label: Bio }
       - { name: title, label: Title }
-      - { name: linkdin, label: Linkdin }
-      - { name: twitter, label: Twitter }
+      - { name: linkdin, label: Linkdin, required: false }
+      - { name: twitter, label: Twitter, required: false }
       - { name: date, label: Date, widget: datetime, default: '' }
       - { name: previewImages, label: Card Preview Image, widget: image }
-      - { name: previewImage, label: Preview Image, widget: image }
-      - { name: previewTitle, label: Blog Category Tag, widget: "select", options: ["Frontend Development", "Backend Development", "Full Stack"] }
+      - { name: previewTitle, label: Blog Category Tag, widget: "select", options: ["Frontend Development", "Backend Development", "Full Stack"], required: false }
       - { name: excerpt, label: Excerpt }
-      - { name: tags, label: Tags, widget: list }
       - { name: body, label: Body, widget: markdown }
       - label: SEO
         name: seo

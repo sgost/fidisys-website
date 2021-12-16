@@ -1,5 +1,5 @@
 ---
-previewImages: dinesh_img.jpg
+previewImages: author.png
 author: Dhinesh
 bio: Backend developer
 title: A Complete Nodejs Application Deployment from Github to AWS EC2  - CI/CD

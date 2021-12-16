@@ -44,7 +44,11 @@ const BlogPage = ( { data } ) =>
                 blogItem.node.fields && <span>{blogItem.node.fields.readingTime.text}</span>}</p>
                     </div>
                   </div>
-                  <img src={ blogItem.node.frontmatter.previewImages.publicURL } alt={ blogItem.node.frontmatter.author } alt={ blogItem.node.frontmatter.title } id="preview_img" />
+                  {
+                        blogItem.node.frontmatter.previewImages.publicURL ?
+                          <img src={ blogItem.node.frontmatter.previewImages.publicURL } alt={ blogItem.node.frontmatter.author } alt={ blogItem.node.frontmatter.title } id="preview_img" /> :
+                          <img src={ blogItem.node.frontmatter.previewImages } alt={ blogItem.node.frontmatter.author } alt={ blogItem.node.frontmatter.title } id="preview_img" />
+                      }
                 </Link>
               </div>
             )

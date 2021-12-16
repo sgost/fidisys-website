@@ -16,13 +16,18 @@ export const SectionHeading = styled.div`
   h2 {
     text-align: center;
   }
+  @media (max-width: 600px) {
+    h2 {
+      font-size: 28px;
+    }
+  }
 `;
 
 export const ArticlesList = styled.div`
   margin: 25px auto;
   max-width: 1000px;
   @media only screen and (max-width: 768px) {
-    margin: 12px auto;
+    margin: 0px auto 12px auto;
     max-width: 600px;
   }
 `;
@@ -48,6 +53,14 @@ export const PreviewImage = styled.div`
       object-fit: cover;
     }
   }
+  @media (max-width: 750px) {
+    span {
+      img {
+        width: 25vw;
+        height: 23vw;
+      }
+    }
+  }
 `;
 
 export const BlogContent = styled.div`
@@ -67,20 +80,21 @@ export const BlogContent = styled.div`
     margin-top: 30px;
     display: block;
   }
-  @media only screen and (max-width: 768px) {
+  @media (max-width: 750px) {
     padding-left: 16px;
-    h3 {
+     h3 {
       font-weight: 500;
-      font-size: 14px;
-      line-height: 18px;
-    }
+      font-size: 3.3vw;
+      line-height: 4.3vw;
+      }
     p {
       display: none;
     }
-    span {
+     span {
       font-size: 10px;
       line-height: 26px;
-      margin-top: 10px;
-    }
+      margin-top: 3px;
+      opacity: 0.7;
+  }
   }
 `;

@@ -25,7 +25,7 @@ const Articles = ({ data }) => {
             frontmatter {
               title
               date
-              previewImage {
+              previewImages {
                 childImageSharp {
                   fluid {
                     src
@@ -56,12 +56,12 @@ const Articles = ({ data }) => {
                   <PreviewImage>
                     <span>
                       {
-                        (edge.node.frontmatter.previewImage.extension === 'svg' && edge.node.frontmatter.previewImage.childImageSharp === null) ? <img src={edge.node.frontmatter.previewImage.publicURL} alt={edge.node.frontmatter.title} /> : <img src={edge.node.frontmatter.previewImage.childImageSharp.fluid.src} alt={edge.node.frontmatter.title} />
+                        (edge.node.frontmatter.previewImages.extension === 'svg' && edge.node.frontmatter.previewImages.childImageSharp === null) ? <img src={edge.node.frontmatter.previewImages.publicURL} alt={edge.node.frontmatter.title} /> : <img src={edge.node.frontmatter.previewImages.childImageSharp.fluid.src} alt={edge.node.frontmatter.title} />
                       }
                     </span>
                   </PreviewImage>
                 </Col>
-                <Col xs={16} sm={16} md={18} lg={18} xl={18}>
+                <Col xs={16} sm={16} md={18} lg={18} xl={18} style={{display: `flex`, alignItems: `center`}}>
                   <BlogContent>
                     <h3>{edge.node.frontmatter.title}</h3>
                     <p>{edge.node.frontmatter.excerpt}</p>

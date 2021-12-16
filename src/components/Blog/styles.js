@@ -221,6 +221,7 @@ img {
   width: 35px;
   height: 35px;
   border-radius: 10vw;
+  object-fit: cover;
 }
 h1{
   line-height: 22px;

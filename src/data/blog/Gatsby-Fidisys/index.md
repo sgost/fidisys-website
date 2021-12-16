@@ -1,11 +1,10 @@
 ---
-previewImages: ./author.png
-author_image: author.png
+authImg: ./author.png
 author: Fidisys Technologies
 bio: We are a digital product design and development company.
 title: Gatsby+Fidisys
 date: 2020-07-07
-previewImage: ./gatsby_fidisys.png
+previewImages: ./gatsby_fidisys.png
 previewTitle: Backend Development
 excerpt: "#WithFidisys We are happy to announce our partnership with Gatsby. Now
   we are official agency partner with Gatsby.Gatsby is an open source, modern

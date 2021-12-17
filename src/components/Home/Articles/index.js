@@ -25,7 +25,7 @@ const Articles = ({ data }) => {
             frontmatter {
               title
               date
-              previewImages {
+              authImg {
                 childImageSharp {
                   fluid {
                     src
@@ -56,7 +56,7 @@ const Articles = ({ data }) => {
                   <PreviewImage>
                     <span>
                       {
-                        (edge.node.frontmatter.previewImages.extension === 'svg' && edge.node.frontmatter.previewImages.childImageSharp === null) ? <img src={edge.node.frontmatter.previewImages.publicURL} alt={edge.node.frontmatter.title} /> : <img src={edge.node.frontmatter.previewImages.childImageSharp.fluid.src} alt={edge.node.frontmatter.title} />
+                        (edge.node.frontmatter.authImg.extension === 'svg' && edge.node.frontmatter.authImg.childImageSharp === null) ? <img src={edge.node.frontmatter.authImg.publicURL} alt={edge.node.frontmatter.title} /> : <img src={edge.node.frontmatter.authImg.childImageSharp.fluid.src} alt={edge.node.frontmatter.title} />
                       }
                     </span>
                   </PreviewImage>

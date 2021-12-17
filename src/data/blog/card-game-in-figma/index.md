@@ -1,5 +1,5 @@
 ---
-authImg: ./dinesh_img.jpg
+authImg: cicd.png
 author: Dhinesh
 bio: Backend developer
 title: A Complete Nodejs Application Deployment from Github to AWS EC2  - CI/CD

@@ -3,12 +3,12 @@ import {
   Pop,
 } from './styles';
 
-const Authordata = ({bio, author, authImg}) => {
+const Authordata = ({bio, author, previewImages}) => {
 
   return (
     <Pop>
         <div id="data">
-         <img src={authImg} alt={author}/>
+         <img src={previewImages} alt={author}/>
          <h1>{author}</h1>
          </div>
          <p>{bio}</p>

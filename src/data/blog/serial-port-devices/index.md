@@ -1,12 +1,12 @@
 ---
-previewImages: f5.png
+authImg: f5.png
 author: Pachiyappan Velu
 bio: Senior Frontend Developer
 title: How to communicate with Web Serial Port using Serial API and Reactjs.
 linkdin: https://www.linkedin.com/in/pachiyappan-v-46a35311b/
 twitter: https://twitter.com/fidisysInc
 date: 2021-11-30T18:30:00.000Z
-authImg: port.jpg
+previewImages: port.jpg
 previewTitle: Backend Development
 excerpt: A serial port is a bidirectional communication interface that allows
   sending and receiving data byte by byte.    Web Serial API bridges the web and

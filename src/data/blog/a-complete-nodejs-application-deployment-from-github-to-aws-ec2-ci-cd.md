@@ -28,3 +28,5 @@ seo:
 EC2 instance is just a virtual server in AWS’s data center. It provides a resizable compute capacity in the cloud. You can quickly scale it up and down as per your requirements changes.
 
 <!--EndFragment-->
+
+![Continuous integration and continuous development.](cicd.png "Continuous integration and continuous development.")

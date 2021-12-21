@@ -42,9 +42,9 @@ const BlogPage = ( { data } ) =>
                     </div>
                   </div>
                   {
-                        (blogItem.node.frontmatter.previewImages.extension === 'svg' && blogItem.node.frontmatter.previewImages.childImageSharp === null) ?
-                          <img src={ blogItem.node.frontmatter.previewImages.publicURL } alt={ blogItem.node.frontmatter.author } id="preview_img" /> :
-                          <img src={ blogItem.node.frontmatter.previewImages.childImageSharp.fluid.src } alt={ blogItem.node.frontmatter.author } id="preview_img" />
+                        (blogItem.node.frontmatter.author_image.extension === 'svg' && blogItem.node.frontmatter.author_image.childImageSharp === null) ?
+                          <img src={ blogItem.node.frontmatter.author_image.publicURL } alt={ blogItem.node.frontmatter.author } id="preview_img" /> :
+                          <img src={ blogItem.node.frontmatter.author_image.childImageSharp.fluid.src } alt={ blogItem.node.frontmatter.author } id="preview_img" />
                       }
                 </Link>
               </div>
@@ -74,7 +74,7 @@ export const pageQuery = graphql`
             title
             excerpt
             author
-            previewImages {
+            author_image {
               childImageSharp {
                 fluid {
                   src

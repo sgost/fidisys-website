@@ -100,14 +100,13 @@ collections:
       depth: 100
       summary: '{{title}}'
     fields:
-      - { name: authImg, label: Preview Image, widget: image }
+      - { name: author_image, label: Preview Image, widget: image }
       - { name: author, label: Author }
       - { name: bio, label: Bio }
       - { name: title, label: Title }
       - { name: linkdin, label: Linkdin, required: false }
       - { name: twitter, label: Twitter, required: false }
       - { name: date, label: Date, widget: datetime, default: '' }
-      - { name: previewImages, label: Card Preview Image, widget: image }
       - { name: previewTitle, label: Blog Category Tag, widget: "select", options: ["Frontend Development", "Backend Development", "Full Stack"], required: false }
       - { name: excerpt, label: Excerpt }
       - { name: body, label: Body, widget: markdown }

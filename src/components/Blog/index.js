@@ -35,7 +35,7 @@ export const BlogPost = ({
         <AuthorInfo>
             <img src={logo} alt={author} className="author_image"/>
           <div className="author_info">
-          {/* <Popover placement="right" content={<Authordata bio={bio} author={author} previewImages={previewImages}/>}>
+          {/* <Popover placement="right" content={<Authordata bio={bio} author={author} author_image={author_image}/>}>
           <h4 id="pc_author">{author}</h4>
           </Popover> */}
           <h4>{author}</h4>
@@ -74,11 +74,11 @@ const Blog = ({ data }) => {
 
   const seoData = post.frontmatter.seo;
 
-  let previewImages;
-  if(post.frontmatter.previewImages.publicURL) {
-    previewImages = post.frontmatter.previewImages.publicURL;
+  let author_image;
+  if(post.frontmatter.author_image.publicURL) {
+    author_image = post.frontmatter.author_image.publicURL;
   } else {
-    previewImages = post.frontmatter.previewImages;
+    author_image = post.frontmatter.author_image;
   }
 
   return (
@@ -86,7 +86,7 @@ const Blog = ({ data }) => {
       <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
       <BlogPost
         fields={post.fields}
-        previewImages={previewImages}
+        author_image={author_image}
         author={post.frontmatter.author}
         bio={post.frontmatter.bio}
         linkdin={post.frontmatter.linkdin}
@@ -114,7 +114,7 @@ export const query = graphql`
       }
       frontmatter {
         author
-        previewImages {
+        author_image {
           publicURL
         }
         bio

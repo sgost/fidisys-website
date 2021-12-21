@@ -32,10 +32,9 @@ export const AuthorInfo = styled.div`
   align-items: center;
   margin-bottom: 32px;
   .author_image {
-    margin-right: 10px;
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
     overflow: hidden;
     object-fit: cover;
     @media (max-width: 600px){

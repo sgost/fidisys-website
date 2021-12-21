@@ -9,12 +9,12 @@ import {
   AuthorInfo,
   BlogContent,
 } from './styles';
-import { Popover } from 'antd';
-import Authordata from "./pop"
+// import { Popover } from 'antd';
+// import Authordata from "./pop"
+import logo from "../../images/favicon.png"
 
 export const BlogPost = ({
   fields,
-  authImg,
   author,
   bio,
   linkdin,
@@ -33,12 +33,12 @@ export const BlogPost = ({
         <div id="BlogContainer">
         <h2 className="blogTitle">{title}</h2>
         <AuthorInfo>
-            <img src={authImg} alt={author} className="author_image"/>
+            <img src={logo} alt={author} className="author_image"/>
           <div className="author_info">
-          <Popover placement="right" content={<Authordata bio={bio} author={author} authImg={authImg}/>}>
+          {/* <Popover placement="right" content={<Authordata bio={bio} author={author} previewImages={previewImages}/>}>
           <h4 id="pc_author">{author}</h4>
-          </Popover>
-          <h4 id="pc_mob">{author}</h4>
+          </Popover> */}
+          <h4>{author}</h4>
             <div>
               <span id="date">{date}</span>
               {
@@ -74,11 +74,11 @@ const Blog = ({ data }) => {
 
   const seoData = post.frontmatter.seo;
 
-  let authImg;
-  if(post.frontmatter.authImg.publicURL) {
-    authImg = post.frontmatter.authImg.publicURL;
+  let previewImages;
+  if(post.frontmatter.previewImages.publicURL) {
+    previewImages = post.frontmatter.previewImages.publicURL;
   } else {
-    authImg = post.frontmatter.authImg;
+    previewImages = post.frontmatter.previewImages;
   }
 
   return (
@@ -86,7 +86,7 @@ const Blog = ({ data }) => {
       <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
       <BlogPost
         fields={post.fields}
-        authImg={authImg}
+        previewImages={previewImages}
         author={post.frontmatter.author}
         bio={post.frontmatter.bio}
         linkdin={post.frontmatter.linkdin}
@@ -114,7 +114,7 @@ export const query = graphql`
       }
       frontmatter {
         author
-        authImg {
+        previewImages {
           publicURL
         }
         bio

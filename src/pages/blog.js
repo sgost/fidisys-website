@@ -42,9 +42,9 @@ const BlogPage = ( { data } ) =>
                     </div>
                   </div>
                   {
-                        blogItem.node.frontmatter.previewImages.publicURL ?
+                        (blogItem.node.frontmatter.previewImages.extension === 'svg' && blogItem.node.frontmatter.previewImages.childImageSharp === null) ?
                           <img src={ blogItem.node.frontmatter.previewImages.publicURL } alt={ blogItem.node.frontmatter.author } id="preview_img" /> :
-                          <img src={ blogItem.node.frontmatter.previewImages } alt={ blogItem.node.frontmatter.author } id="preview_img" />
+                          <img src={ blogItem.node.frontmatter.previewImages.childImageSharp.fluid.src } alt={ blogItem.node.frontmatter.author } id="preview_img" />
                       }
                 </Link>
               </div>
@@ -75,7 +75,13 @@ export const pageQuery = graphql`
             excerpt
             author
             previewImages {
-                publicURL
+              childImageSharp {
+                fluid {
+                  src
+                }
+              }
+              extension
+              publicURL
             }
             previewTitle
             date(formatString: "MMMM DD, YYYY")

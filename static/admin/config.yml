@@ -100,7 +100,6 @@ collections:
       depth: 100
       summary: '{{title}}'
     fields:
-      - { name: authImg, label: Author Image, widget: image }
       - { name: author, label: Author }
       - { name: bio, label: Bio }
       - { name: title, label: Title }

@@ -1,5 +1,4 @@
 ---
-authImg: f5.png
 author: Pachiyappan Velu
 bio: Senior Frontend Developer
 title: How to communicate with Web Serial Port using Serial API and Reactjs.

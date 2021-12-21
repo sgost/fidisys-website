@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import "../styles/blogs.css"
 import SEO from "../components/seo"
+import logo from "../images/favicon.png"
 
 const BlogPage = ( { data } ) =>
 {
@@ -23,11 +24,7 @@ const BlogPage = ( { data } ) =>
                 <Link to={ blogItem.node.fields.slug } id="blog_card">
                   <div className="blogInfo">
                   <div className="authorImage">
-                      {
-                        blogItem.node.frontmatter.authImg.publicURL ?
-                          <img src={ blogItem.node.frontmatter.authImg.publicURL } alt={ blogItem.node.frontmatter.author } style={ { borderRadius: `30px` } } /> :
-                          <img src={ blogItem.node.frontmatter.authImg } alt={ blogItem.node.frontmatter.author } style={ { borderRadius: `30px` } } />
-                      }
+                          <img src={ logo } alt={ blogItem.node.frontmatter.author }/>
                       <p className="blogAuthor">{ blogItem.node.frontmatter.author }</p>
                       <p className="blogDate">
                         <span>.</span>{ blogItem.node.frontmatter.date }</p>
@@ -46,8 +43,8 @@ const BlogPage = ( { data } ) =>
                   </div>
                   {
                         blogItem.node.frontmatter.previewImages.publicURL ?
-                          <img src={ blogItem.node.frontmatter.previewImages.publicURL } alt={ blogItem.node.frontmatter.author } alt={ blogItem.node.frontmatter.title } id="preview_img" /> :
-                          <img src={ blogItem.node.frontmatter.previewImages } alt={ blogItem.node.frontmatter.author } alt={ blogItem.node.frontmatter.title } id="preview_img" />
+                          <img src={ blogItem.node.frontmatter.previewImages.publicURL } alt={ blogItem.node.frontmatter.author } id="preview_img" /> :
+                          <img src={ blogItem.node.frontmatter.previewImages } alt={ blogItem.node.frontmatter.author } id="preview_img" />
                       }
                 </Link>
               </div>
@@ -77,9 +74,6 @@ export const pageQuery = graphql`
             title
             excerpt
             author
-            authImg {
-                publicURL
-            }
             previewImages {
                 publicURL
             }

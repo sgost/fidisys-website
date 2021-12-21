@@ -27,3 +27,7 @@ We are happy to announce our partnership with Gatsby.
 ###### Now we are official agency partner with Gatsby. Gatsby is an open source, modern website framework that builds performance into every site by leveraging the latest Web technologies such as React and GraphQL
 
 ![manoj](exploring2.jpg "manoj")
+
+###### Now we are official agency partner with Gatsby. Gatsby is an open source, modern website framework that builds performance into every site by leveraging the latest Web technologies such as React and GraphQL
+
+![ official agency](cicd.png "official agency")

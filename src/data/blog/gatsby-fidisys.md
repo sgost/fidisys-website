@@ -29,6 +29,6 @@ We are happy to announce our partnership with Gatsby.
 
 Build blazing fast website — #WithFidisys
 
-![WithFidisys](blob:https://fidisys-web.netlify.app/60f52858-89ac-420d-b3d3-2c79e462255f "WithFidisys")
+![WithFidisys](gatsby_fidisys.png "WithFidisys")
 
 <!--EndFragment-->

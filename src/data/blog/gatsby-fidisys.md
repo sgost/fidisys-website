@@ -5,6 +5,7 @@ bio: We are a digital product design and development company.
 title: Gatsby+Fidisys
 linkdin: https://www.linkedin.com/feed/?trk=homepage-basic_google-one-tap-submit
 date: 2020-07-06T18:30:00.000Z
+previewTitle: Frontend Development
 excerpt: "#WithFidisys We are happy to announce our partnership with Gatsby. Now
   we are official agency partner with Gatsby.Gatsby is an open source, modern
   website framework that builds performance into every site by leveraging the

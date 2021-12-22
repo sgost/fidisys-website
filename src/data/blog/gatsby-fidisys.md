@@ -22,4 +22,4 @@ seo:
     - web development
     - Chennai Startup
 ---
-![WithFidisys](gatsby_fidisys.png "WithFidisys")
+![WithFidisys](exploring2.jpg "WithFidisys")

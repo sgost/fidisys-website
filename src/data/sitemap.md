@@ -67,5 +67,5 @@ sitemapList:
       - id: 2
         title: Email
         link: pravallika@fidisys.com
-copyright: ©2021 Fidisys Technologies
+copyright: ©2022 Fidisys Technologies
 ---

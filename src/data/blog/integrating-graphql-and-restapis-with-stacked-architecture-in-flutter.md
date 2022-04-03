@@ -15,6 +15,7 @@ seo:
   keywords:
     - Stacked
     - stacked services
+    - Dio
     - graphql
     - RestApi
     - Flutter.
@@ -55,8 +56,6 @@ From this, it will be very easy to pass on data returned from the integrated API
 
 ### Integrating GraphQL APIs.
 
-
-
 GraphQL is an  open-source data query and manipulation language  created by Facebook for APIs. It is used to precisely fetch only the required data working as an improvement of RestAPIs that does overfetching.
 
 In order to successfully integrate GraphQL Apis to your application, you have to first ensure that the endpoints are working well i.e returning the required data/schemas; based on queries or mutations passed. To do this, you can use a free software created by Facebook called the GraphiQL. You can download it here: [Link](https://www.electronjs.org/apps/graphiql)
@@ -65,6 +64,12 @@ This software allows you to pass the specific queries, input required headers an
 
 ![Image of GraphiQL UI](screenshot-57-.png "Image of GraphQL User Interface")
 
-### Creating Queries in GraphiQL.
+### Todo:
 
-depending on the developer
+1.  introduce graphql_flutter plugin and properties
+
+2. describe how to create client using dio 
+
+3. write query, mutation and subscription
+
+4. look for preview image

@@ -20,6 +20,8 @@ seo:
     - RestApi
     - Flutter.
 ---
+![graphql and flutter](graphql.jpg "Integrating graphQL  APIs With Stacked Architecture In Flutter")
+
 ### Stacked Architecture.
 
 Stacked is a simple to use, highly scalable, flexible and easily maintainable and testable Flutter MVVM(Model-View-ViewModel) architecture.

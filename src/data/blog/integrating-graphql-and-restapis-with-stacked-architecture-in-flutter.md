@@ -115,7 +115,7 @@ Below is a code sample on how to create a graphql client using dio:
 
 There are variables that need to pass for the connection to the server to be successful and that is;  ***the appropriate graphql endpoint ,the client which is a dio client, the default headers and the appropriate query to be passed.***
 
-### **The graphql architecture/ flow**
+**The graphql architecture/ flow**
 
 **Step 1:** The graphql query is sent to the server by the client as a string format. The string format looks like the shape of the respective JSON, this including the variables needed to be passed.
 
@@ -125,7 +125,7 @@ There are variables that need to pass for the connection to the server to be suc
 
 **Step 4:** The server then returns the requested data to the client as a JSON Object.
 
-#### Fetching Data -Queries
+### Fetching Data -Queries
 
 Fetching data from a graphql server you need to write a specific query in relation to the schema/ database you want to fetch the data from. You can then test the queries if they are well written for the specific data using the GraphiQL tool.
 
@@ -182,7 +182,7 @@ accountHierarchy(targetcustomeruid:"",toplevelsonly:"true"){
 }"""
 ```
 
-#### Modify Data - Mutation
+### Modify Data - Mutation
 
 Mutations are often used for inserts, updates and deletion of data in the database and return a JSON object as value.
 
@@ -239,7 +239,7 @@ mutation{
 }""";
 ```
 
-#### **Listening to data -Subscription.**
+### **Listening to data -Subscription.**
 
 GraphQL  subscriptions are subscription queries set to a websocket endpoint that returns data from the server continuously whenever data changes on the backend.
 

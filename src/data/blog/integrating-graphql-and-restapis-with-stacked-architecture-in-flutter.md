@@ -64,12 +64,6 @@ This software allows you to pass the graphql endpoint link, specific queries, in
 
 ![Image of GraphiQL UI](screenshot-57-.png "Image of GraphQL User Interface")
 
-### Todo:
-
-1. describe how to create client using dio 
-2. write query, mutation and subscription
-3. look for preview image
-
 To fetch data from a graphql endpoint, you need to install the [graphql_flutter](https://pub.dev/packages/graphql_flutter) plugin to the pubspec.yaml file. This plugin provides APIs and widgets that allows you to fetch and use data from a Graphql backend. They include:
 
 **httpLink:**  sets the graphQL endpoint or URL.
@@ -244,3 +238,7 @@ mutation{
   actionutc:"$utc")
 }""";
 ```
+
+#### **Listening to data -Subscription.**
+
+GraphQL  subscriptions are subscription queries set to a websocket endpoint that returns data from the server continuously whenever data changes on the backend.

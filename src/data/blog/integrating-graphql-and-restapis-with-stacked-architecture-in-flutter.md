@@ -242,3 +242,56 @@ mutation{
 #### **Listening to data -Subscription.**
 
 GraphQL  subscriptions are subscription queries set to a websocket endpoint that returns data from the server continuously whenever data changes on the backend.
+
+Subscriptions are often used where live data is required. There are often triggered by constant updates of the database through mutation and the easiest way to show live data on a flutter app UI is using the subscription widget.
+
+To create a subscription you can do it as follows:
+
+```
+static String fetchLiveRequests= """
+   subscription fetchLiveRequestData {
+   live_requests {
+     user {
+       name
+       time
+     }
+   }
+ }
+ """;
+```
+
+You can then listen to the requested data using subscription widget as below:
+
+```
+Subscription(
+  options: SubscriptionOptions(
+    document: gql(
+      OnlineFetch.fetchLiveRequests,
+    ),
+  ),
+  builder: (result) {
+    if (result.hasException) {
+      return Text(result.exception.toString());
+    }
+    if (result.isLoading) {
+      return Center(
+        child: const CircularProgressIndicator(),
+      );
+    }
+    return Expanded(
+      child: ListView.builder(
+        itemCount: onlineList.list.length,
+        itemCount: payload['live_requests'].length,
+        itemBuilder: (context, index) {
+          return Card(
+            child: ListTile(
+              title: Text(onlineList.list[index]),
+              title: Text(payload['live_requests'][index]['user']['name']),
+            ),
+          );
+        },
+      ),
+    );
+  },
+),
+```

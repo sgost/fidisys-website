@@ -1,5 +1,5 @@
 ---
-author_image: graphql.jpg
+author_image: blog-image.png
 author: Sharon Leah
 bio: "Flutter Developer "
 title: Integrating GraphQL  APIs With Stacked Architecture In Flutter
@@ -20,7 +20,7 @@ seo:
     - RestApi
     - Flutter.
 ---
-![graphql and flutter](graphql.jpg "Integrating graphQL  APIs With Stacked Architecture In Flutter")
+![graphql and flutter](blog-image.png "Integrating graphQL  APIs With Stacked Architecture In Flutter")
 
 ### Stacked Architecture.
 

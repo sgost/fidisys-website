@@ -1,5 +1,5 @@
 ---
-author_image: whatsapp-image-2022-03-07-at-3.00.01-pm.jpeg
+author_image: graphql.jpg
 author: Sharon Leah
 bio: "Flutter Developer "
 title: Integrating GraphQL  APIs With Stacked Architecture In Flutter

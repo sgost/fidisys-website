@@ -3,7 +3,9 @@ author_image: blog-image.png
 author: Sharon Leah
 bio: "Flutter Developer "
 title: Integrating GraphQL  APIs With Stacked Architecture In Flutter
-date: 2022-03-31T06:08:47.804Z
+linkdin: https://www.linkedin.com/in/sharonolang/
+twitter: "@leahSharon8"
+date: 2022-04-07T15:36:28.848Z
 previewTitle: Full Stack
 excerpt: In this article we will go through how to implement graphQL and
   RestApis on a flutter application successfully using the stacked architecture.

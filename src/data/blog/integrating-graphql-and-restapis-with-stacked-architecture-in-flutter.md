@@ -64,7 +64,7 @@ In order to successfully integrate GraphQL Apis to your application, you have to
 
 This software allows you to pass the graphql endpoint link, specific queries, input required headers and view the response/ schemas.
 
-![Image of GraphiQL UI](screenshot-57-.png "Image of GraphQL User Interface")
+![Image of GraphiQL UI](screenshot-61-.png "Image of GraphQL User Interface")
 
 To fetch data from a graphql endpoint, you need to install the [graphql_flutter](https://pub.dev/packages/graphql_flutter) plugin to the pubspec.yaml file. This plugin provides APIs and widgets that allows you to fetch and use data from a Graphql backend. They include:
 

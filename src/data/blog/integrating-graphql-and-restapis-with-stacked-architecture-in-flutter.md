@@ -22,9 +22,11 @@ seo:
 ---
 ![graphql and flutter](blog-image.png "Integrating graphQL  APIs With Stacked Architecture In Flutter")
 
-### Stacked Architecture.
+.
 
-Stacked is a simple to use, highly scalable, flexible and easily maintainable and testable Flutter MVVM(Model-View-ViewModel) architecture.
+**GraphQL** is an  open-source data query and manipulation language  created by Facebook for APIs. It is used to precisely fetch only the required data working as an improvement of RestAPIs that does overfetching.
+
+**Stacked** is a simple to use, highly scalable, flexible and easily maintainable and testable Flutter MVVM(Model-View-ViewModel) architecture.
 
 Previously known as the provider architecture, you begin to implement the stacked architecture on a flutter application by adding the libraries: [Stacked](https://pub.dev/packages/stacked) , [Stacked_services](https://pub.dev/packages/stacked_services). The stacked_services library, helps in implementing the stacked architecture, while the stacked library is the architecture itself.
 
@@ -34,7 +36,7 @@ The stacked architecture consists of 3 major aspects:
 * ***ViewModel:*** Manages the business Logic, state of the view and other logic required by the users.
 * ***Services:*** It wraps all the shared functionalities or feature sets e.g  database functionality, integrating APIs, and share data transfer between viewModels.
 
-   Services in the stacked architecture are registered and shared with the 'get_it' service locator. Example, as shown below:-
+ Services in the stacked architecture are registered and shared with the 'get_it' service locator. Example, as shown below:-
 
 > Remember to import the [get_it](https://pub.dev/packages/get_it) package and initiate a get_it instance.
 
@@ -56,9 +58,7 @@ AssetService? _assetService = locator<AssetService>();
 
 From this, it will be very easy to pass on data returned from the integrated APIs found in the services to the view model.
 
-### Integrating GraphQL APIs.
-
-GraphQL is an  open-source data query and manipulation language  created by Facebook for APIs. It is used to precisely fetch only the required data working as an improvement of RestAPIs that does overfetching.
+**Integrating GraphQL APIs.**
 
 In order to successfully integrate GraphQL Apis to your application, you have to first ensure that the endpoints are working well i.e returning the required data/schemas; based on queries or mutations passed. To do this, you can use a free software created by Facebook called the GraphiQL. You can download it here: [Link](https://www.electronjs.org/apps/graphiql)
 
@@ -68,19 +68,13 @@ This software allows you to pass the graphql endpoint link, specific queries, in
 
 To fetch data from a graphql endpoint, you need to install the [graphql_flutter](https://pub.dev/packages/graphql_flutter) plugin to the pubspec.yaml file. This plugin provides APIs and widgets that allows you to fetch and use data from a Graphql backend. They include:
 
-**httpLink:**  sets the graphQL endpoint or URL.
-
-**graphQLClient :** connects the graphQL endpoint to the graphql server. Used to fetch query/mutation.
-
-**graphQLCache :** it is used to store the queries and mutations.
-
-**graphQLProvider:** it wraps the query and mutation widgets in order to use the client. it is recommended to wrap the Material App with graphQLProvider.
-
-**query:** widget used to make queries to the graphQL endpoint.
-
-**mutation**: widget used to make mutations on the graphQL backend.
-
-**subscription:** this is used to setup subscription on the data received from the backend.
+* **httpLink:**  sets the graphQL endpoint or URL.
+* **graphQLClient :** connects the graphQL endpoint to the graphql server. Used to fetch query/mutation.
+* **graphQLCache :** it is used to store the queries and mutations.
+* **graphQLProvider:** it wraps the query and mutation widgets in order to use the client. it is recommended to wrap the Material App with graphQLProvider.
+* **query:** widget used to make queries to the graphQL endpoint.
+* **mutation**: widget used to make mutations on the graphQL backend.
+* **subscription:** this is used to setup subscription on the data received from the backend.
 
 In our example for this article on integrating graphql in a flutter app, we will look at how to setup a graphql client using dio, through this client, we will connect to the graphql server.
 
@@ -115,19 +109,16 @@ Below is a code sample on how to create a graphql client using dio:
       return res;
 ```
 
-There are variables that need to pass for the connection to the server to be successful and that is;  ***the appropriate graphql endpoint ,the client which is a dio client, the default headers and the appropriate query to be passed.***
+There are variables that need to pass for the connection to the server to be successful and that is; the appropriate graphql endpoint ,the client which is a dio client, the default headers and the appropriate query to be passed.
 
 **The graphql architecture/ flow**
 
-**Step 1:** The graphql query is sent to the server by the client as a string format. The string format looks like the shape of the respective JSON, this including the variables needed to be passed.
+* **Step 1:** The graphql query is sent to the server by the client as a string format. The string format looks like the shape of the respective JSON, this including the variables needed to be passed.
+* **Step 2:** The server then extracts the query string, validates and processes it as per the graphQL Schema.
+* **Step 3:** The graphQL API Server then makes calls to a database to fetch the requested data.
+* **Step 4:** The server then returns the requested data to the client as a JSON Object.
 
-**Step 2:** The server then extracts the query string, validates and processes it as per the graphQL Schema.
-
-**Step 3:** The graphQL API Server then makes calls to a database to fetch the requested data.
-
-**Step 4:** The server then returns the requested data to the client as a JSON Object.
-
-### Fetching Data -Queries
+**Queries - Fetching Data**
 
 Fetching data from a graphql server you need to write a specific query in relation to the schema/ database you want to fetch the data from. You can then test the queries if they are well written for the specific data using the GraphiQL tool.
 
@@ -184,7 +175,7 @@ accountHierarchy(targetcustomeruid:"",toplevelsonly:"true"){
 }"""
 ```
 
-### Modify Data - Mutation
+**Mutation - Modify Data**
 
 Mutations are often used for inserts, updates and deletion of data in the database and return a JSON object as value.
 
@@ -241,7 +232,7 @@ mutation{
 }""";
 ```
 
-### **Listening to data -Subscription.**
+**Subscription - Listen To Data**
 
 GraphQL  subscriptions are subscription queries set to a websocket endpoint that returns data from the server continuously whenever data changes on the backend.
 

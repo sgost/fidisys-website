@@ -288,3 +288,15 @@ Subscription(
   },
 ),
 ```
+
+
+
+**Conclusion:**
+
+This blog is targeted to Flutter developers especially those looking to integrate graphQL endpoints using Stacked architecture and Dio. I hope it has been beneficial to you, as you continue with your learning journey; Happy Coding!!
+
+
+
+For more resources on graphql check out the following link:
+
+* <https://hasura.io/learn/graphql/flutter-graphql/introduction/>

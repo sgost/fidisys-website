@@ -19,30 +19,45 @@ To do so at best, the application should be well organized following the stacked
 
 Systematically, as a developer, you could begin with integrating REST APIs first, then later on move to GraphQL Endpoints integration.
 
-Flutter applications do have networking and JSON Serialization modules. **Networking module** do contain, app data localization, URL constants, retrofit file, and service models. While the **JSON Serialization module** contains model classes that are structures based on responses from the API call.
+**RestApi call procedure flow using retrofit in Stacked Architecture**
 
-### Retrofit.
+##### **step 1: Create a Flutter application**
+
+Well-formatted flutter applications do have networking and JSON Serialization modules. These modules help in API calls and data flow through the application. The **Networking module** contains, app data localization, URL constants, retrofit file, and service models. While the **JSON Serialization module** contains model classes that are structures based on responses from the API call.
+
+#####  **step 2:** **Add the required dependencies.**
 
 To call Rest APIs by sending dynamic headers, parameters, requests, and responses in a custom and secured way we use the [retrofit](https://pub.dev/packages/retrofit/install) package, which is installed in the pubspec.yaml file.
 
 > Retrofit  is a dio cient, that make consuming rest APIs easier. 
 
-some of the dependencies and dev dependencies that are used as helpers to the retrofit depedency are:
+some of the dependencies and dev dependencies that are used as helpers to the retrofit dependency are:
 
-* **Dio** - is used to create a retrofit client to enable request making. It also provides the developer with the ability to add interceptors. Together with the http-wrapper, it also helps in error handling.
+* **Dio** - is used to create a retrofit client to enable request making. It also provides the developer with the ability to add interceptors. Together with the HTTP wrapper, it also helps in error handling.
 * **Build-runner and retrofit_generator** - used to generate the .g.dart files. By running the command below after adding the respective methods.
 
 ```
 flutter pub run build_runner build --delete-conflicting-outputs
 ```
 
-
-
 * **json_serializable** - used to automatically generate code to and from JSON by annotating dart classes.
 
-An example, of how a retrofit class looks like:
+##### Step 3: API calling  with retrofit
 
-> Kindly note the methods for get, post, put and delete, will contain different properties pass.
+As shown in the get method below, the Rest Client Class is responsible for handling all the network call methods. The annotations on the methods and URL Parameters help in determining how a request will be handled. Every method must have a HTTP annotation, and the built in annotations include; GET, PUT, PATCH, DELETE, POST.
+
+The methods also contain parameters, which include:
+
+> <!--StartFragment-->
+>
+> **@Path-** To update the URL dynamically replacement block surrounded by { } must be annotated with @Path using the same string.\
+> **@Body-** Sends dart object as the request body.\
+> **@Query-** used to append the URL.\
+> **@Headers-** to pass the headers dynamically.
+>
+> <!--EndFragment-->
+>
+>
 
 **Get :**
 
@@ -99,7 +114,3 @@ Used to delete data from the database:
        @Header("x-cat-fact-uid") String? uId,,
       @Header("service") String service);
 ```
-
-**RestApi call procedure flow using retrofit**
-
-1.

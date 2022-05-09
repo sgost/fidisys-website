@@ -137,6 +137,85 @@ Let's look at some of the functionalities used in the class above:
 
 Note: based on the URL endpoints, some do have queries, depending on the structure of your application. please ensure they are passed appropriately.
 
+The respective services are registered under the get_it locator as a singleton, which is called in the viewModel when needed.
+
+**How do we add Graphql to an already built application with restApi?**
 
 
-The respective services are
+
+First as a developer, you have to take note of when the application should be running on GraphQL and when the application should be running on Rest APIs.
+
+Create the flags appropriately when calling the endpoints under the services screen. For example:-
+
+```
+if(graphQlEnabled){
+// call the graphql endpoint.
+}else if{
+// call the rest Api endpoint.
+}
+```
+
+with this flag in place we can proceed to implement graphql by:
+
+##### Step 1: create a graphQL service.
+
+This service will contain all the query, mutation, and subscription functions for easy and fast access throughout the application.
+
+##### Step 2: create a graphql method class.
+
+This is the class we declare the graphql network methods including, the Url endpoint, network interceptors, and graphql function for fetching data.
+
+```
+
+class Network {
+static final graphqlEndpoint =
+      "https://test/cats/frame-gateway-gql/1.0/graphql";
+  
+  final LocalService? _localService = locator<LocalService>();
+
+  Network._internal() {
+    client.interceptors
+      ..add(LogInterceptor(
+        responseBody: true,
+        requestBody: true,
+      ));
+  }
+
+  getGraphqlData(
+    String? query,
+  ) async {
+    final Link link = DioLink(graphqlEndpoint, client: client, defaultHeaders: {
+      "content-type": "application/json",
+      "Accept": "application/json",
+      "Authorization": "bearer " + await _localService!.getToken(),
+    });
+    final res = await link
+        .request(Request(
+          operation: Operation(document: gql.parseString(query!)),
+        ))
+        .first;
+
+    return res;
+  }
+  }
+```
+
+
+
+The response that is returned from the graphql network class can then be passed through to the viewModel.
+
+**conclusion:**
+
+Graphql endpoint and Rest APIs can be used in one flutter application. The point to note is, as a developer you have to determine when to call, a specific endpoint and this can be aided by using the if /else conditions. This article has shown how you can be able to integrate both RestApis and Graphql endpoints in a flutter app. 
+
+References:
+
+1. https://pub.dev/packages/stacked
+
+2. https://www.filledstacks.com/post/flutter-and-provider-architecture-using-stacked/
+
+3. https://fidisys.com/blog/integrating-graphql-and-restapis-with-stacked-architecture-in-flutter/
+
+
+
+Happy Coding!!

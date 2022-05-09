@@ -25,7 +25,7 @@ Systematically, as a developer, you could begin with integrating REST APIs first
 
 Well-formatted flutter applications do have networking and JSON Serialization modules. These modules help in API calls and data flow through the application. The **Networking module** contains, app data localization, URL constants, retrofit file, and service models. While the **JSON Serialization module** contains model classes that are structures based on responses from the API call.
 
-#####  **step 2:** **Add the required dependencies.**
+##### **step 2:** **Add the required dependencies.**
 
 To call Rest APIs by sending dynamic headers, parameters, requests, and responses in a custom and secured way we use the [retrofit](https://pub.dev/packages/retrofit/install) package, which is installed in the pubspec.yaml file.
 
@@ -47,17 +47,6 @@ flutter pub run build_runner build --delete-conflicting-outputs
 As shown in the get method below, the Rest Client Class is responsible for handling all the network call methods. The annotations on the methods and URL Parameters help in determining how a request will be handled. Every method must have a HTTP annotation, and the built in annotations include; GET, PUT, PATCH, DELETE, POST.
 
 The methods also contain parameters, which include:
-
-> <!--StartFragment-->
->
-> **@Path-** To update the URL dynamically replacement block surrounded by { } must be annotated with @Path using the same string.\
-> **@Body-** Sends dart object as the request body.\
-> **@Query-** used to append the URL.\
-> **@Headers-** to pass the headers dynamically.
->
-> <!--EndFragment-->
->
->
 
 **Get :**
 
@@ -114,3 +103,40 @@ Used to delete data from the database:
        @Header("x-cat-fact-uid") String? uId,,
       @Header("service") String service);
 ```
+
+##### **Step 4:  connecting the retrofit methods to Services.**
+
+The service class, when using stacked architecture is used to group all shared functionalities i.e native plugins and third-party libraries. It also allows data to be shared among viewModels. 
+
+In our case, the service class will allow data parsing by calling the retrofit methods and allow access to the response in various view models.
+
+```
+ class userService{
+ 
+ 
+  Future<User> updateUser(userUID, Map<String, dynamic> updateData) async {
+    try {
+     UserResponse userResponse = await MyApi()
+          .getClient()!
+          .updateUserData(url, userUID, updateData);
+      return userResponse;
+    } catch (e) {
+      return [];
+    }
+  }
+ }
+```
+
+Let's look at some of the functionalities used in the class above:
+
+> MyApi() is a singleton
+>
+> getClient()  is used to help in monitoring the Api call and also in error hadling
+>
+> updateUserData - is the method created by the retrofit call that now allows you to pass the required parameters for successful API call.
+
+Note: based on the URL endpoints, some do have queries, depending on the structure of your application. please ensure they are passed appropriately.
+
+
+
+The respective services are

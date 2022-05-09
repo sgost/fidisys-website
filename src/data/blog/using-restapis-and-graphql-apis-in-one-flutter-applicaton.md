@@ -3,13 +3,20 @@ author_image: blog-image.png
 author: Sharon Leah
 bio: Flutter Developer
 title: "Using RestAPIs and GraphQL APIs in One Flutter Applicaton "
+linkdin: https://www.linkedin.com/in/sharonolang/
+twitter: "@leahSharon8"
 date: 2022-04-25T08:45:18.559Z
-excerpt: "This blog is on "
+previewTitle: Full Stack
+excerpt: This blog is on how to integrate both RestAPIs and GraphQL endpoints on
+  one flutter application.
 seo:
-  title: blog
-  description: blog
+  title: "Using RestAPIs and GraphQL APIs in One Flutter Applicaton "
+  description: This blog is on how to integrate both RestAPIs and GraphQL
+    endpoints on one flutter application.
   keywords:
-    - blog
+    - RestApi
+    - graphQL
+    - stacked architecture.
 ---
 Passing data on most flutter applications over time has been done by only one third-party library throughout the application, i.e either REST API endpoint or GraphQL endpoints alone.
 

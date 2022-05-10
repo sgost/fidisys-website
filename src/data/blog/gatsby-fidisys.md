@@ -1,5 +1,6 @@
 ---
 author_image: gatsby_fidisys.png
+profile: favicon.png
 author: Fidisys Technologies
 bio: We are a digital product design and development company.
 title: Gatsby+Fidisys

@@ -34,7 +34,7 @@ const AboutPage = () => {
       <Highlights />
       <Fidishow />
       <Activities />
-      <Family/>
+      <Family />
       <Testimonials />
     </Fragment>
   )

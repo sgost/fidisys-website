@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import moment  from 'moment';
+import moment from 'moment';
 
 import { BlogPost } from "../../components/Blog";
 
@@ -8,20 +8,32 @@ const BlogPreview = ({ entry, widgetFor, getAsset }) => {
 
   const data = entry.getIn(["data"]).toJS();
 
-  if(data.date) {
+  if (data.date) {
     var date = moment(data.date).format("MMMM DD YYYY")
   }
 
   var image = entry.getIn(['data', 'author_image']);
   var getImage = getAsset(image);
 
-  if(getImage) {
+  if (getImage) {
     var author_image = getImage.toString();
   }
 
+
+
+  var images = entry.getIn(['data', 'profile_image']);
+  var getImages = getAsset(images);
+
+  if (getImages) {
+    var profile_image = getImages.toString();
+  }
+
+
+  console.log(getImages)
   return (
     <BlogPost
       author_image={author_image}
+      profile_image={profile_image}
       author={data.author}
       bio={data.bio}
       linkdin={data.linkdin}

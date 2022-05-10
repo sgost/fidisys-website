@@ -1,10 +1,11 @@
 ---
 author_image: blog-image.png
+profile: sharon.jpeg
 author: Sharon Leah
 bio: "Flutter Developer "
 title: Integrating GraphQL  APIs With Stacked Architecture In Flutter
 linkdin: https://www.linkedin.com/in/sharonolang/
-twitter: "@leahSharon8"
+twitter: "https://twitter.com/leahsharon8"
 date: 2022-04-07T15:36:28.848Z
 previewTitle: Full Stack
 excerpt: In this article we will go through how to implement graphQL and

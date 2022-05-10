@@ -11,12 +11,12 @@ import {
 } from './styles';
 // import { Popover } from 'antd';
 // import Authordata from "./pop"
-import logo from "../../images/favicon.png"
 
 export const BlogPost = ({
   fields,
   author,
   bio,
+  profile_image,
   linkdin,
   twitter,
   date,
@@ -25,43 +25,44 @@ export const BlogPost = ({
   preview
 }) => {
 
+
   // const content = data.markdownRemark;
 
   return (
     <BlogPageSection id="blogView">
       <BlogContainer>
         <div id="BlogContainer">
-        <h2 className="blogTitle">{title}</h2>
-        <AuthorInfo>
-            <img src={logo} alt={author} className="author_image"/>
-          <div className="author_info">
-          {/* <Popover placement="right" content={<Authordata bio={bio} author={author} author_image={author_image}/>}>
+          <h2 className="blogTitle">{title}</h2>
+          <AuthorInfo>
+            <img src={profile_image} alt={author} className="author_image" />
+            <div className="author_info">
+              {/* <Popover placement="right" content={<Authordata bio={bio} author={author} author_image={author_image}/>}>
           <h4 id="pc_author">{author}</h4>
           </Popover> */}
-          <h4>{author}</h4>
-            <div>
-              <span id="date">{date}</span>
-              {
-                fields && <span>{fields.readingTime.text} </span>
-              }
+              <h4>{author}</h4>
+              <div>
+                <span id="date">{date}</span>
+                {
+                  fields && <span>{fields.readingTime.text} </span>
+                }
+              </div>
+              <div id="socio_lnks">
+                {
+                  linkdin &&
+                  <a id="link" href={linkdin} target="_blank" without rel="noopener noreferrer"><img src={linkd} alt="img" className="icon" /></a>
+                }
+                {
+                  twitter &&
+                  <a id="link" href={twitter} target="_blank" without rel="noopener noreferrer"><img src={twitters} alt="img" className="icon" /></a>
+                }
+              </div>
             </div>
-            <div id="socio_lnks">
+          </AuthorInfo>
+          <BlogContent>
             {
-              linkdin &&
-              <a id="link" href={linkdin} target="_blank"  without rel="noopener noreferrer"><img src={linkd} alt="img" className="icon"/></a>
+              preview ? <div>{html}</div> : <div dangerouslySetInnerHTML={{ __html: html }} />
             }
-            {
-              twitter &&
-            <a id="link" href={twitter} target="_blank"  without rel="noopener noreferrer"><img src={twitters} alt="img" className="icon"/></a>
-            }
-            </div>
-          </div>
-        </AuthorInfo>
-        <BlogContent>
-          {
-            preview ? <div>{html}</div> : <div dangerouslySetInnerHTML={{ __html: html }} />
-          }
-        </BlogContent>
+          </BlogContent>
         </div>
       </BlogContainer>
     </BlogPageSection>
@@ -75,11 +76,21 @@ const Blog = ({ data }) => {
   const seoData = post.frontmatter.seo;
 
   let author_image;
-  if(post.frontmatter.author_image.publicURL) {
+  if (post.frontmatter.author_image.publicURL) {
     author_image = post.frontmatter.author_image.publicURL;
   } else {
     author_image = post.frontmatter.author_image;
   }
+
+
+  let profile_image;
+  if (post.frontmatter.profile.publicURL) {
+    profile_image = post.frontmatter.profile.publicURL;
+  } else {
+    profile_image = post.frontmatter.profile;
+  }
+
+
 
   return (
     <Fragment>
@@ -87,6 +98,7 @@ const Blog = ({ data }) => {
       <BlogPost
         fields={post.fields}
         author_image={author_image}
+        profile_image={profile_image}
         author={post.frontmatter.author}
         bio={post.frontmatter.bio}
         linkdin={post.frontmatter.linkdin}
@@ -98,7 +110,7 @@ const Blog = ({ data }) => {
         preview={false}
       />
     </Fragment>
-    )
+  )
 }
 
 export default Blog
@@ -115,6 +127,9 @@ export const query = graphql`
       frontmatter {
         author
         author_image {
+          publicURL
+        }
+        profile {
           publicURL
         }
         bio

@@ -4,7 +4,7 @@ author: Sharon Leah
 bio: Flutter Developer
 title: "Using RestAPIs and GraphQL APIs in One Flutter Applicaton "
 linkdin: https://www.linkedin.com/in/sharonolang/
-twitter: "@leahSharon8"
+twitter: https://twitter.com/leahsharon8
 date: 2022-04-25T08:45:18.559Z
 previewTitle: Full Stack
 excerpt: This blog is on how to integrate both RestAPIs and GraphQL endpoints on

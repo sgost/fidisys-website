@@ -22,7 +22,11 @@ const BlogPage = ({ data }) => {
                 <Link to={blogItem.node.fields.slug} id="blog_card">
                   <div className="blogInfo">
                     <div className="authorImage">
-                      <img src={logo} alt={blogItem.node.frontmatter.author} />
+                      {blogItem.node.frontmatter.profile_image.publicURL ?
+                        <img src={blogItem.node.frontmatter.profile_image.publicURL} alt={blogItem.node.frontmatter.author} />
+                        :
+                        <img src={blogItem.node.frontmatter.profile_image} alt={blogItem.node.frontmatter.author} />
+                      }
                       <p className="blogAuthor">{blogItem.node.frontmatter.author}</p>
                       <p className="blogDate">
                         <span>.</span>{blogItem.node.frontmatter.date}</p>
@@ -72,6 +76,9 @@ export const pageQuery = graphql`
             title
             excerpt
             author
+            profile_image {
+              publicURL
+            }
             author_image {
               childImageSharp {
                 fluid {

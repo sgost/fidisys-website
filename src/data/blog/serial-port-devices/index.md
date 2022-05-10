@@ -1,6 +1,6 @@
 ---
 author_image: port.jpg
-profile: ../favicon.png
+profile_image: ../favicon.png
 author: Pachiyappan Velu
 bio: Senior Frontend Developer
 title: How to communicate with Web Serial Port using Serial API and Reactjs.

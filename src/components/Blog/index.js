@@ -75,7 +75,7 @@ const Blog = ({ data }) => {
 
   const seoData = post.frontmatter.seo;
 
-  let author_image;
+  var author_image;
   if (post.frontmatter.author_image.publicURL) {
     author_image = post.frontmatter.author_image.publicURL;
   } else {
@@ -83,13 +83,15 @@ const Blog = ({ data }) => {
   }
 
 
-  let profile_image;
-  if (post.frontmatter.profile.publicURL) {
-    profile_image = post.frontmatter.profile.publicURL;
+  var profile_image;
+  if (post.frontmatter.profile_image.publicURL) {
+    profile_image = post.frontmatter.profile_image.publicURL;
   } else {
-    profile_image = post.frontmatter.profile;
+    profile_image = post.frontmatter.profile_image;
   }
 
+
+  console.log(post.frontmatter.profile_image.publicURL)
 
 
   return (
@@ -129,7 +131,7 @@ export const query = graphql`
         author_image {
           publicURL
         }
-        profile {
+        profile_image {
           publicURL
         }
         bio

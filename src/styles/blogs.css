@@ -38,6 +38,7 @@
 #blog_card .blogInfo .authorImage img{
     max-width: 35px;
     height: 35px;
+    border-radius: 30px;
     object-fit: cover;
 } 
 #blog_card .blogInfo .authorImage p{

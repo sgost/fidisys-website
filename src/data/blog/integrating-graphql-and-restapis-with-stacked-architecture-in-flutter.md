@@ -1,6 +1,6 @@
 ---
 author_image: blog-image.png
-profile: sharon.jpeg
+profile_image: sharon.jpeg
 author: Sharon Leah
 bio: "Flutter Developer "
 title: Integrating GraphQL  APIs With Stacked Architecture In Flutter

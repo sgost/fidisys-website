@@ -19,6 +19,10 @@ seo:
     - graphQL
     - stacked architecture.
 ---
+![Using REST and GraphQL apis together with flutter application](frame_1.png "Using REST and GraphQL apis together with flutter application")
+
+
+
 Passing data on most flutter applications over time has been done by only one third-party library throughout the application, i.e either REST API endpoint or GraphQL endpoints alone.
 
 > **How do we handle a situation where an application is required to integrate both endpoints?**
@@ -149,8 +153,6 @@ The respective services are registered under the get_it locator as a singleton, 
 
 **How do we add Graphql to an already built application with restApi?**
 
-
-
 First as a developer, you have to take note of when the application should be running on GraphQL and when the application should be running on Rest APIs.
 
 Create the flags appropriately when calling the endpoints under the services screen. For example:-
@@ -174,7 +176,6 @@ This service will contain all the query, mutation, and subscription functions fo
 This is the class we declare the graphql network methods including, the Url endpoint, network interceptors, and graphql function for fetching data.
 
 ```
-
 class Network {
 static final graphqlEndpoint =
       "https://test/cats/frame-gateway-gql/1.0/graphql";
@@ -208,8 +209,6 @@ static final graphqlEndpoint =
   }
 ```
 
-
-
 The response that is returned from the graphql network class can then be passed through to the viewModel.
 
 **conclusion:**
@@ -219,11 +218,7 @@ Graphql endpoint and Rest APIs can be used in one flutter application. The point
 References:
 
 1. https://pub.dev/packages/stacked
-
 2. https://www.filledstacks.com/post/flutter-and-provider-architecture-using-stacked/
-
 3. https://fidisys.com/blog/integrating-graphql-and-restapis-with-stacked-architecture-in-flutter/
-
-
 
 Happy Coding!!

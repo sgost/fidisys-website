@@ -37,7 +37,6 @@ export const AuthorInfo = styled.div`
     height: 40px;
     overflow: hidden;
     object-fit: cover;
-    border-radius: 30px;
     @media (max-width: 600px){
       width: 80px;
       height: 80px;

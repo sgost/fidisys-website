@@ -1,6 +1,5 @@
 ---
 author_image: frame_1.png
-profile_image: whatsapp-image-2022-05-08-at-5.12.50-pm-1-.jpeg
 author: Sharon Leah
 bio: Flutter Developer
 title: "Using RestAPIs and GraphQL APIs in One Flutter Applicaton "

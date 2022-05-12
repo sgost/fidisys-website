@@ -100,7 +100,6 @@ collections:
       summary: '{{title}}'
     fields:
       - { name: author_image, label: Preview Image, widget: image }
-      - { name: profile_image, label: Profile Image, widget: image }
       - { name: author, label: Author }
       - { name: bio, label: Bio }
       - { name: title, label: Title }

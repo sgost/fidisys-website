@@ -1,6 +1,7 @@
 import React, { Fragment } from "react"
 import { graphql } from "gatsby"
 import SEO from "../seo"
+import logo from "../../images/favicon.png"
 import linkd from "../../data/assets/linkedin.svg"
 import twitters from "../../data/assets/twitter.svg"
 import {
@@ -16,7 +17,6 @@ export const BlogPost = ({
   fields,
   author,
   bio,
-  profile_image,
   linkdin,
   twitter,
   date,
@@ -34,7 +34,7 @@ export const BlogPost = ({
         <div id="BlogContainer">
           <h2 className="blogTitle">{title}</h2>
           <AuthorInfo>
-            <img src={profile_image} alt={author} className="author_image" />
+            <img src={logo} alt={author} className="author_image" />
             <div className="author_info">
               {/* <Popover placement="right" content={<Authordata bio={bio} author={author} author_image={author_image}/>}>
           <h4 id="pc_author">{author}</h4>
@@ -83,24 +83,12 @@ const Blog = ({ data }) => {
   }
 
 
-  var profile_image;
-  if (post.frontmatter.profile_image.publicURL) {
-    profile_image = post.frontmatter.profile_image.publicURL;
-  } else {
-    profile_image = post.frontmatter.profile_image;
-  }
-
-
-  console.log(post.frontmatter.profile_image.publicURL)
-
-
   return (
     <Fragment>
       <SEO title={seoData.title} description={seoData.description} keywords={seoData.keywords} />
       <BlogPost
         fields={post.fields}
         author_image={author_image}
-        profile_image={profile_image}
         author={post.frontmatter.author}
         bio={post.frontmatter.bio}
         linkdin={post.frontmatter.linkdin}
@@ -129,9 +117,6 @@ export const query = graphql`
       frontmatter {
         author
         author_image {
-          publicURL
-        }
-        profile_image {
           publicURL
         }
         bio

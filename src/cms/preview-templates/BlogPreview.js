@@ -20,20 +20,9 @@ const BlogPreview = ({ entry, widgetFor, getAsset }) => {
   }
 
 
-
-  var images = entry.getIn(['data', 'profile_image']);
-  var getImages = getAsset(images);
-
-  if (getImages) {
-    var profile_image = getImages.toString();
-  }
-
-
-  console.log(getImages)
   return (
     <BlogPost
       author_image={author_image}
-      profile_image={profile_image}
       author={data.author}
       bio={data.bio}
       linkdin={data.linkdin}
